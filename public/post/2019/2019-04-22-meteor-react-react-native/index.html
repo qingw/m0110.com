@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>React 与 React-Native 使用同一个 meteor 后台 - Heal The World</title>
+    <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Simon Wang" /><meta name="description" content="meteor 可以快速构建 pc,移动端，桌面端应用。
+最大的优点是：数据库的数据发生变化时，可以实时推送到前端，非常适用于实时展示的应用开发。
+在 react,react-native 应用中，可以仅使用同一个 meteor 后台，实时向前端推送数据。
+github 代码地址
+" /><meta name="keywords" content="Mac, Github, Vue, React, Front End" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.1 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://qingw.github.io/post/2019/2019-04-22-meteor-react-react-native/" />
+<link href="/post/2019/2019-04-22-meteor-react-react-native/" rel="alternate" type="application/rss+xml" title="Heal The World" />
+<link href="/post/2019/2019-04-22-meteor-react-react-native/" rel="feed" type="application/rss+xml" title="Heal The World" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.06658218.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/reset-even.css">
+
+
+<meta property="og:title" content="React 与 React-Native 使用同一个 meteor 后台" />
+<meta property="og:description" content="meteor 可以快速构建 pc,移动端，桌面端应用。
+
+最大的优点是：数据库的数据发生变化时，可以实时推送到前端，非常适用于实时展示的应用开发。
+
+在 react,react-native 应用中，可以仅使用同一个 meteor 后台，实时向前端推送数据。
+
+github 代码地址" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qingw.github.io/post/2019/2019-04-22-meteor-react-react-native/" />
+<meta property="article:published_time" content="2019-04-22T09:07:06+08:00" />
+<meta property="article:modified_time" content="2019-04-22T09:07:06+08:00" />
+<meta itemprop="name" content="React 与 React-Native 使用同一个 meteor 后台">
+<meta itemprop="description" content="meteor 可以快速构建 pc,移动端，桌面端应用。
+
+最大的优点是：数据库的数据发生变化时，可以实时推送到前端，非常适用于实时展示的应用开发。
+
+在 react,react-native 应用中，可以仅使用同一个 meteor 后台，实时向前端推送数据。
+
+github 代码地址">
+
+
+<meta itemprop="datePublished" content="2019-04-22T09:07:06&#43;08:00" />
+<meta itemprop="dateModified" content="2019-04-22T09:07:06&#43;08:00" />
+<meta itemprop="wordCount" content="1927">
+
+
+
+<meta itemprop="keywords" content="Meteor,React,React-Native," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="React 与 React-Native 使用同一个 meteor 后台"/>
+<meta name="twitter:description" content="meteor 可以快速构建 pc,移动端，桌面端应用。
+
+最大的优点是：数据库的数据发生变化时，可以实时推送到前端，非常适用于实时展示的应用开发。
+
+在 react,react-native 应用中，可以仅使用同一个 meteor 后台，实时向前端推送数据。
+
+github 代码地址"/>
+
+</head>
+<body>
+<div id="mobile-navbar" class="mobile-navbar">
+    <div class="mobile-header-logo">
+        <a href="/" class="logo">Heal The World</a>
+    </div>
+    <div class="mobile-navbar-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+    <ul class="mobile-menu-list">
+        <a href="/">
+            <li class="mobile-menu-item" title="首页">首页</li>
+        </a>
+        <a href="/post/">
+            <li class="mobile-menu-item" title="归档">归档</li>
+        </a>
+        <a href="/categories/">
+            <li class="mobile-menu-item" title="分类">分类</li>
+        </a>
+        <a href="/tags/">
+            <li class="mobile-menu-item" title="标签">标签</li>
+        </a>
+        <a href="/about/">
+            <li class="mobile-menu-item" title="关于我">关于我</li>
+        </a>
+        <a href="https://github.com/qingw/reading-list/">
+            <li class="mobile-menu-item" title="阅读清单">阅读清单</li>
+        </a>
+        
+    </ul>
+    <form class="search-form" style="position: absolute;">
+    <input name="search" type="search" style="height: 28px;padding-left: 30px;"/>
+    <input type="image" src="/img/search.svg" alt="Search" style="position: absolute;left: 6px;top: 6px;"/>
+</form>
+
+
+</nav>
+
+<div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+    <a href="/" class="logo">Heal The World</a>
+</div>
+
+<nav class="site-navbar">
+    <ul id="menu" class="menu" data-sum="0">
+        
+        <li class="menu-item menu-item-home">
+            <a class="menu-item-link" href="/" title="首页">首页</a>
+        </li>
+        
+        <li class="menu-item menu-item-archives">
+            <a class="menu-item-link" href="/post/" title="归档">归档</a>
+        </li>
+        
+        <li class="menu-item menu-item-categories">
+            <a class="menu-item-link" href="/categories/" title="分类">分类</a>
+        </li>
+        
+        <li class="menu-item menu-item-tags">
+            <a class="menu-item-link" href="/tags/" title="标签">标签</a>
+        </li>
+        
+        <li class="menu-item menu-item-about">
+            <a class="menu-item-link" href="/about/" title="关于我">关于我</a>
+        </li>
+        
+        <li class="menu-item menu-item-reading-list">
+            <a class="menu-item-link" href="https://github.com/qingw/reading-list/" title="阅读清单">阅读清单</a>
+        </li>
+        
+    </ul>
+</nav>
+
+        <form class="search-form" style="position: absolute;">
+    <input name="search" type="search" style="height: 28px;padding-left: 30px;"/>
+    <input type="image" src="/img/search.svg" alt="Search" style="position: absolute;left: 6px;top: 6px;"/>
+</form>
+
+
+
+    </header>
+
+
+    <main id="main" class="main">
+        <div class="content-wrapper">
+            <div id="content" class="content">
+                <article class="post">
+  
+  <header class="post-header">
+    <h1 class="post-title">React 与 React-Native 使用同一个 meteor 后台</h1>
+
+    <div class="post-meta">
+      <span class="post-time"> 2019-04-22 09:07 </span>
+      <div class="post-category">
+        <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+        </div>
+      <span class="more-meta"> 约 1927 字 </span>
+      <span class="more-meta"> 预计阅读 4 分钟 </span>
+      <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+    </div>
+  </header>
+
+  <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#metaor-安装">metaor 安装</a>
+<ul>
+<li><a href="#windows-安装-meteor">windows 安装 meteor</a></li>
+<li><a href="#osx-linux-安装-meteor">OSX/Linux 安装 meteor</a></li>
+<li><a href="#验证安装">验证安装</a></li>
+</ul></li>
+<li><a href="#mongodb-安装">mongodb 安装</a>
+<ul>
+<li><a href="#windows-安装-mongodb">windows 安装 mongodb</a></li>
+<li><a href="#osx-安装-mongodb">OSX 安装 mongodb</a></li>
+<li><a href="#mongodb-图形界面">mongodb 图形界面</a></li>
+</ul></li>
+<li><a href="#meteor-ddp">meteor DDP</a></li>
+<li><a href="#创建-meteor-项目">创建 meteor 项目</a></li>
+<li><a href="#meteor-连接-mongodb">meteor 连接 mongodb</a></li>
+<li><a href="#meteor-连接自己的-mongodb">meteor 连接自己的 mongodb</a></li>
+<li><a href="#编写-meteor-后台">编写 meteor 后台</a></li>
+<li><a href="#前端调用">前端调用</a>
+<ul>
+<li><a href="#定义高阶组件">定义高阶组件</a></li>
+<li><a href="#react-使用示例">react 使用示例</a></li>
+<li><a href="#react-native-使用示例">react-native 使用示例</a></li>
+</ul></li>
+<li><a href="#开启远程调试">开启远程调试</a></li>
+<li><a href="#ios-运行报错">IOS 运行报错</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-content">
+    <p><a href="https://www.meteor.com/">meteor</a> 可以快速构建 pc,移动端，桌面端应用。</p>
+
+<p>最大的优点是：数据库的数据发生变化时，可以实时推送到前端，非常适用于实时展示的应用开发。</p>
+
+<p>在 react,react-native 应用中，可以仅使用同一个 meteor 后台，实时向前端推送数据。</p>
+
+<p><a href="https://github.com/nusr/meteor">github 代码地址</a></p>
+
+<h2 id="metaor-安装">metaor 安装</h2>
+
+<h3 id="windows-安装-meteor">windows 安装 meteor</h3>
+
+<p>官方推荐 <a href="https://chocolatey.org/install">chocolatey</a> 安装 meteor。</p>
+
+<ol>
+<li>先从 <a href="https://chocolatey.org/install">chocolatey</a> 安装 chocolatey</li>
+<li>然后在命令行中运行 <code>choco install meteor</code></li>
+</ol>
+
+<p>但是 meteor 安装速度非常慢,一顿搜索之后，找到了 Windows 下通过二进制包安装的下载地址 <a href="https://install.meteor.com/windows">https://install.meteor.com/windows</a>,搜索来源 <a href="https://github.com/meteor/docs/blob/version-NEXT/long-form/alternate-windows-installation.md">https://github.com/meteor/docs/blob/version-NEXT/long-form/alternate-windows-installation.md</a></p>
+
+<h3 id="osx-linux-安装-meteor">OSX/Linux 安装 meteor</h3>
+
+<p>安装非常简单</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">curl https://install.meteor.com/ <span class="p">|</span> sh</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="验证安装">验证安装</h3>
+
+<p>命令行输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">meteor --version</code></pre></td></tr></table>
+</div>
+</div>
+<p>输出版本号，表示安装成功</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">Meteor <span class="m">1</span>.8.1</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="mongodb-安装">mongodb 安装</h2>
+
+<h3 id="windows-安装-mongodb">windows 安装 mongodb</h3>
+
+<p><a href="https://www.mongodb.com/">https://www.mongodb.com/</a> 下载安装包安装</p>
+
+<h3 id="osx-安装-mongodb">OSX 安装 mongodb</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">brew install mongod</code></pre></td></tr></table>
+</div>
+</div>
+<p>或者下载二进制包安装</p>
+
+<p>是 <strong>mongod</strong> ,不是 <strong>mongodb</strong></p>
+
+<h3 id="mongodb-图形界面">mongodb 图形界面</h3>
+
+<p>推荐 <a href="https://robomongo.org/">https://robomongo.org/</a>, 易于使用，也是免费的。</p>
+
+<h2 id="meteor-ddp">meteor DDP</h2>
+
+<p>react,react-native 使用同一个 meteor 后台，所以 meteor 后台要与前端应用分开编写。</p>
+
+<p>这就涉及到 meteor 中后台与前端的数据交互,meteor 中定义了一个 <strong><a href="https://github.com/meteor/meteor/blob/devel/packages/ddp/DDP.md">DDP 协议</a></strong>。</p>
+
+<p>DDP 协议定义了 meteor 后台发布数据，客户端订阅数据的操作。</p>
+
+<p>本应用使用已经编写好了的 DDP 协议库，地址如下： <a href="https://github.com/mondora/ddp.js">https://github.com/mondora/ddp.js</a>。</p>
+
+<h2 id="创建-meteor-项目">创建 meteor 项目</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">meteor create --bare <span class="o">[</span>project-name<span class="o">]</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>更多创建参数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">meteor <span class="nb">help</span> create</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="meteor-连接-mongodb">meteor 连接 mongodb</h2>
+
+<p>meteor 项目启动命令如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">meteor run</code></pre></td></tr></table>
+</div>
+</div>
+<p>配置端口</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">meteor run --port <span class="m">9090</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="meteor-连接自己的-mongodb">meteor 连接自己的 mongodb</h2>
+
+<p>meteor 安装包中集成了 mongodb，默认启动的是集成的 mongodb。
+为了连接自己的 mongodb，需要传入参数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">MONGO_URL</span><span class="o">=</span>mongodb://username:password@localhost:27017/<span class="o">[</span>database-name<span class="o">]</span>?authSource<span class="o">=</span>admin meteor  run --port <span class="m">9090</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>刚开始没加上 <strong>authSource=admin</strong> 参数，一直连接不上 mongodb，加上之后就好了，根据需要加。</p>
+
+<p><a href="https://docs.mongodb.com/manual/reference/connection-string/">更多连接参数</a></p>
+
+<h2 id="编写-meteor-后台">编写 meteor 后台</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">import</span> <span class="p">{</span> <span class="nx">Meteor</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;meteor/meteor&#34;</span><span class="p">;</span>
+<span class="c1">// mongodb 的 todo collection
+</span><span class="c1"></span><span class="k">const</span> <span class="nx">Todo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Meteor</span><span class="p">.</span><span class="nx">Collection</span><span class="p">(</span><span class="s2">&#34;todo&#34;</span><span class="p">);</span>
+<span class="c1">// 发布数据，前端就可以调用
+</span><span class="c1"></span><span class="nx">Meteor</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s2">&#34;todo&#34;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">Todo</span><span class="p">.</span><span class="nx">find</span><span class="p">();</span>
+<span class="p">});</span>
+<span class="cm">/**
+</span><span class="cm"> * 定义前端调用的方法
+</span><span class="cm"> */</span>
+<span class="nx">Meteor</span><span class="p">.</span><span class="nx">methods</span><span class="p">({</span>
+  <span class="c1">// 查找一条数据
+</span><span class="c1"></span>  <span class="nx">getTodo</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">Todo</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">id</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="c1">// 查找所有数据
+</span><span class="c1"></span>  <span class="nx">getAllTodo</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">Todo</span><span class="p">.</span><span class="nx">find</span><span class="p">().</span><span class="nx">fetch</span><span class="p">();</span>
+  <span class="p">},</span>
+  <span class="c1">// 新增
+</span><span class="c1"></span>  <span class="nx">addTodo</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">Todo</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+  <span class="p">},</span>
+  <span class="c1">// 删除
+</span><span class="c1"></span>  <span class="nx">removeTodo</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">Todo</span><span class="p">.</span><span class="nx">remove</span><span class="p">({</span> <span class="nx">_id</span><span class="o">:</span> <span class="nx">id</span> <span class="p">});</span>
+  <span class="p">},</span>
+  <span class="c1">// 编辑
+</span><span class="c1"></span>  <span class="nx">editTodo</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">Todo</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span> <span class="nx">_id</span><span class="o">:</span> <span class="nx">item</span><span class="p">.</span><span class="nx">id</span> <span class="p">},</span> <span class="p">{</span> <span class="nx">$set</span><span class="o">:</span> <span class="nx">item</span> <span class="p">});</span>
+  <span class="p">},</span>
+  <span class="cm">/**
+</span><span class="cm">   *
+</span><span class="cm">   * @param {number 当前页面 从 1 开始} currentPage
+</span><span class="cm">   * @param {number 单次请求总条数} pageSize
+</span><span class="cm">   */</span>
+  <span class="nx">getPageTodo</span><span class="p">(</span><span class="nx">currentPage</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">pageSize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">page</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">// meteor 对 mongodb 的操作方法做了封装
+</span><span class="c1"></span>    <span class="c1">// 更多操作请查看 meteor 官方文档
+</span><span class="c1"></span>    <span class="k">const</span> <span class="nx">total</span> <span class="o">=</span> <span class="nx">Todo</span><span class="p">.</span><span class="nx">find</span><span class="p">().</span><span class="nx">count</span><span class="p">();</span>
+    <span class="k">const</span> <span class="nx">list</span> <span class="o">=</span> <span class="nx">Todo</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span>
+      <span class="p">{},</span>
+      <span class="p">{</span>
+        <span class="nx">skip</span><span class="o">:</span> <span class="p">(</span><span class="nx">currentPage</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="nx">pageSize</span><span class="p">,</span>
+        <span class="nx">limit</span><span class="o">:</span> <span class="nx">pageSize</span>
+      <span class="p">}</span>
+    <span class="p">).</span><span class="nx">fetch</span><span class="p">();</span>
+    <span class="k">return</span> <span class="p">{</span> <span class="nx">total</span><span class="p">,</span> <span class="nx">data</span><span class="o">:</span> <span class="nx">list</span> <span class="p">};</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+<span class="c1">// 定义对 mongodb 的操作权限
+</span><span class="c1">// 若没有定义，则是允许所有增删改查操作
+</span><span class="c1"></span><span class="nx">Todo</span><span class="p">.</span><span class="nx">deny</span><span class="p">({</span>
+  <span class="c1">// 是否允许 mongodb 的新增操作， 返回 true 表示允许，否则不允许
+</span><span class="c1"></span>  <span class="nx">insert</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="nx">update</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="nx">remove</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">Todo</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="前端调用">前端调用</h2>
+
+<h3 id="定义高阶组件">定义高阶组件</h3>
+
+<p>为了代码复用，定义了高阶组件，react 与 react-native 可以共用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// meteor.js
+</span><span class="c1"></span><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;react&#34;</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">DDP</span> <span class="nx">from</span> <span class="s2">&#34;ddp.js&#34;</span><span class="p">;</span>
+<span class="cm">/**
+</span><span class="cm"> * meteor 连接选项
+</span><span class="cm"> */</span>
+<span class="k">const</span> <span class="nx">meteorOptions</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">endpoint</span><span class="o">:</span> <span class="s2">&#34;ws://192.168.31.121:9090/websocket&#34;</span><span class="p">,</span> <span class="c1">// react-native 不支持 localhost,127.0.0.1,请替换为自己的 IPv4 地址
+</span><span class="c1"></span>  <span class="nx">SocketConstructor</span><span class="o">:</span> <span class="nx">WebSocket</span><span class="p">,</span>
+  <span class="nx">reconnectInterval</span><span class="o">:</span> <span class="mi">10000</span><span class="p">,</span> <span class="c1">// 重连间隔
+</span><span class="c1"></span>  <span class="nx">autoConnect</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// 是否自动连接
+</span><span class="c1"></span>  <span class="nx">autoReconnect</span><span class="o">:</span> <span class="kc">true</span> <span class="c1">// 是否自动重连
+</span><span class="c1"></span><span class="p">};</span>
+<span class="k">const</span> <span class="nx">PUBLIC_EVENTS</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="c1">// &#39;ready&#39;,
+</span><span class="c1"></span>  <span class="c1">// &#39;nosub&#39;,
+</span><span class="c1"></span>  <span class="s2">&#34;added&#34;</span><span class="p">,</span>
+  <span class="s2">&#34;changed&#34;</span><span class="p">,</span>
+  <span class="s2">&#34;removed&#34;</span>
+  <span class="c1">// &#39;result&#39;,
+</span><span class="c1"></span>  <span class="c1">// &#39;updated&#39;,
+</span><span class="c1"></span>  <span class="c1">// &#39;error&#39;,
+</span><span class="c1"></span><span class="p">];</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">(</span><span class="nx">WrapperComponent</span><span class="p">,</span> <span class="p">{</span> <span class="nx">collectionName</span><span class="p">,</span> <span class="nx">methodName</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">class</span> <span class="nx">MeteorWrapper</span> <span class="k">extends</span> <span class="nx">Component</span> <span class="p">{</span>
+    <span class="nx">ddp</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DDP</span><span class="p">(</span><span class="nx">meteorOptions</span><span class="p">);</span>
+    <span class="nx">lockRequest</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="nx">recordSubscriptions</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="nx">meteorList</span><span class="o">:</span> <span class="p">[],</span>
+      <span class="nx">initOver</span><span class="o">:</span> <span class="kc">false</span>
+    <span class="p">};</span>
+
+    <span class="nx">componentDidMount</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">ddp</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="sb">`数据推送未连接上服务器！`</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="c1">// 添加订阅
+</span><span class="c1"></span>      <span class="k">this</span><span class="p">.</span><span class="nx">addSubscription</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="nx">componentWillUnmount</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// 取消订阅
+</span><span class="c1"></span>      <span class="k">this</span><span class="p">.</span><span class="nx">removeSubscription</span><span class="p">();</span>
+      <span class="c1">// 断开连接
+</span><span class="c1"></span>      <span class="k">this</span><span class="p">.</span><span class="nx">ddp</span><span class="p">.</span><span class="nx">disconnect</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="nx">getDataResult</span><span class="p">()</span> <span class="p">{</span>
+      <span class="c1">// 防止初始化请求次数过多
+</span><span class="c1"></span>      <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">lockRequest</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">lockRequest</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+      <span class="k">const</span> <span class="p">{</span> <span class="nx">ddp</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+      <span class="k">const</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+      <span class="cm">/**
+</span><span class="cm">       * 调用后台定义的方法， 前端传递数组参数，meteor 后台接受到的是列表参数
+</span><span class="cm">       */</span>
+      <span class="nx">ddp</span><span class="p">.</span><span class="nx">method</span><span class="p">(</span><span class="nx">methodName</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">]);</span>
+      <span class="nx">ddp</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&#34;result&#34;</span><span class="p">,</span> <span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">const</span> <span class="p">{</span> <span class="nx">result</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span>
+          <span class="nx">meteorList</span><span class="o">:</span> <span class="nx">result</span><span class="p">,</span>
+          <span class="nx">initOver</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">});</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">lockRequest</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="nx">componentDidCatch</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">info</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">info</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">addSubscription</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">collectionName</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&#34;mongodb collection 为空！&#34;</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="k">const</span> <span class="p">{</span> <span class="nx">ddp</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+      <span class="k">const</span> <span class="nx">self</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+      <span class="c1">// 订阅数据
+</span><span class="c1"></span>      <span class="nx">self</span><span class="p">.</span><span class="nx">recordSubscriptions</span><span class="p">[</span><span class="nx">collectionName</span><span class="p">]</span> <span class="o">=</span> <span class="nx">ddp</span><span class="p">.</span><span class="nx">sub</span><span class="p">(</span><span class="nx">collectionName</span><span class="p">);</span>
+      <span class="nx">PUBLIC_EVENTS</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">event</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">ddp</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">);</span>
+          <span class="nx">self</span><span class="p">.</span><span class="nx">getDataResult</span><span class="p">();</span>
+        <span class="p">});</span>
+      <span class="p">});</span>
+      <span class="nx">ddp</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&#34;error&#34;</span><span class="p">,</span> <span class="nx">error</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="sb">`服务器推送数据错误,错误消息：</span><span class="si">${</span><span class="nx">error</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+      <span class="p">});</span>
+      <span class="nx">ddp</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&#34;ready&#34;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">self</span><span class="p">.</span><span class="nx">getDataResult</span><span class="p">();</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="nx">removeSubscription</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">ddp</span><span class="p">.</span><span class="nx">unsub</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">recordSubscriptions</span><span class="p">[</span><span class="nx">collectionName</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="o">&lt;</span><span class="nx">WrapperComponent</span> <span class="p">{...</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">}</span> <span class="p">{...</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nx">MeteorWrapper</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="react-使用示例">react 使用示例</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;react&#34;</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">List</span><span class="p">,</span> <span class="nx">Skeleton</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;antd&#34;</span><span class="p">;</span>
+<span class="k">import</span> <span class="s2">&#34;./App.css&#34;</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">MeteorWrapper</span> <span class="nx">from</span> <span class="s2">&#34;./meteor&#34;</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">const</span> <span class="p">{</span> <span class="nx">meteorList</span> <span class="o">=</span> <span class="p">[],</span> <span class="nx">initOver</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&#34;App&#34;</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">List</span>
+        <span class="nx">itemLayout</span><span class="o">=</span><span class="s2">&#34;horizontal&#34;</span>
+        <span class="nx">dataSource</span><span class="o">=</span><span class="p">{</span><span class="nx">meteorList</span><span class="p">}</span>
+        <span class="nx">renderItem</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span> <span class="p">=&gt;</span> <span class="p">(</span>
+          <span class="o">&lt;</span><span class="nx">List</span><span class="p">.</span><span class="nx">Item</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">id</span><span class="p">}</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">Skeleton</span> <span class="nx">loading</span><span class="o">=</span><span class="p">{</span><span class="o">!</span><span class="nx">initOver</span><span class="p">}</span> <span class="nx">active</span> <span class="nx">avatar</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="nx">List</span><span class="p">.</span><span class="nx">Item</span><span class="p">.</span><span class="nx">Meta</span> <span class="nx">title</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span> <span class="nx">description</span><span class="o">=</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">desc</span><span class="p">}</span> <span class="o">/&gt;</span>
+            <span class="o">&lt;</span><span class="err">/Skeleton&gt;</span>
+          <span class="o">&lt;</span><span class="err">/List.Item&gt;</span>
+        <span class="p">)}</span>
+      <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="err">/div&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">MeteorWrapper</span><span class="p">(</span><span class="nx">App</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">collectionName</span><span class="o">:</span> <span class="s2">&#34;todo&#34;</span><span class="p">,</span>
+  <span class="nx">methodName</span><span class="o">:</span> <span class="s2">&#34;getAllTodo&#34;</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="react-native-使用示例">react-native 使用示例</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="k">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s2">&#34;react&#34;</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">StyleSheet</span><span class="p">,</span> <span class="nx">Text</span><span class="p">,</span> <span class="nx">View</span><span class="p">,</span> <span class="nx">FlatList</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&#34;react-native&#34;</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">MeteorWrapper</span> <span class="nx">from</span> <span class="s2">&#34;./meteor&#34;</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">const</span> <span class="p">{</span> <span class="nx">meteorList</span> <span class="o">=</span> <span class="p">[],</span> <span class="nx">initOver</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">container</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">FlatList</span>
+        <span class="nx">data</span><span class="o">=</span><span class="p">{</span><span class="nx">meteorList</span><span class="p">}</span>
+        <span class="nx">renderItem</span><span class="o">=</span><span class="p">{({</span> <span class="nx">item</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">(</span>
+          <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">item</span><span class="p">}</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
+            <span class="o">&lt;</span><span class="err">/View&gt;</span>
+            <span class="o">&lt;</span><span class="nx">View</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">desc</span><span class="p">}</span><span class="o">&gt;</span>
+              <span class="o">&lt;</span><span class="nx">Text</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">item</span><span class="p">.</span><span class="nx">desc</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
+            <span class="o">&lt;</span><span class="err">/View&gt;</span>
+          <span class="o">&lt;</span><span class="err">/View&gt;</span>
+        <span class="p">)}</span>
+      <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="err">/View&gt;</span>
+  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="nx">MeteorWrapper</span><span class="p">(</span><span class="nx">App</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">collectionName</span><span class="o">:</span> <span class="s2">&#34;todo&#34;</span><span class="p">,</span>
+  <span class="nx">methodName</span><span class="o">:</span> <span class="s2">&#34;getAllTodo&#34;</span>
+<span class="p">});</span>
+<span class="k">const</span> <span class="nx">styles</span> <span class="o">=</span> <span class="nx">StyleSheet</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+  <span class="nx">container</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">flex</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">backgroundColor</span><span class="o">:</span> <span class="s2">&#34;#fff&#34;</span><span class="p">,</span>
+    <span class="nx">fontSize</span><span class="o">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="nx">lineHeight</span><span class="o">:</span> <span class="mi">2</span>
+  <span class="p">},</span>
+  <span class="nx">item</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">padding</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nx">borderColor</span><span class="o">:</span> <span class="s2">&#34;#ccc&#34;</span><span class="p">,</span>
+    <span class="nx">borderBottomWidth</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">borderStyle</span><span class="o">:</span> <span class="s2">&#34;solid&#34;</span>
+  <span class="p">},</span>
+  <span class="nx">name</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">color</span><span class="o">:</span> <span class="s2">&#34;#000&#34;</span><span class="p">,</span>
+    <span class="nx">fontWeight</span><span class="o">:</span> <span class="s2">&#34;900&#34;</span><span class="p">,</span>
+    <span class="nx">fontSize</span><span class="o">:</span> <span class="mi">24</span>
+  <span class="p">},</span>
+  <span class="nx">desc</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">color</span><span class="o">:</span> <span class="s2">&#34;#666&#34;</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="开启远程调试">开启远程调试</h2>
+
+<p>运行命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">adb shell input keyevent <span class="m">82</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>点击 <strong>dev setting</strong>
+然后点击 <strong>Debug server host &amp; port for device</strong>
+设置为 <strong>127.0.0。1:8081</strong></p>
+
+<p>再次运行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">adb shell input keyevent <span class="m">82</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>点击 <strong>Debug js remote</strong> ，就会自动弹出调试页面。</p>
+
+<h2 id="ios-运行报错">IOS 运行报错</h2>
+
+<p>错误信息如下，请查看<a href="https://juejin.im/post/5cbc2ee5f265da035a1f1b79">解决 React-Native mac10.14.4 运行报错 error Failed to build iOS project</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">error Failed to build iOS project. We ran <span class="s2">&#34;xcodebuild&#34;</span> <span class="nb">command</span> but it exited with error code <span class="m">65</span>. To debug build logs further, consider building your app with Xcode.app, by opening reactNative.xcodeproj</code></pre></td></tr></table>
+</div>
+</div>
+  </div>
+
+  <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Simon Wang</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-04-22 09:07
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a target="_blank" rel="license noopener" href="https://github.com/qingw/m0110.com/blob/master/LICENSE">MIT</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin-simon.jpeg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay-simon.jpeg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+    <div class="post-tags">
+      <a href="/tags/Meteor/">Meteor</a>
+      <a href="/tags/React/">React</a>
+      <a href="/tags/React-Native/">React-Native</a>
+      </div>
+    <nav class="post-nav">
+      <a class="prev" href="/post/2019/2019-04-25-delete-mac-launchpad-icon/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">解决 Mac launchpad 启动台 Gitter 图标无法删除的问题</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+      <a class="next" href="/post/2019/2019-04-21-react-native-mac-error/">
+        <span class="next-text nav-default">解决 React-Native 在 Mac 下启动报 error code 65</span>
+        <span class="next-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav>
+  </footer>
+  <script src="https://utteranc.es/client.js"
+          repo="qingw/m0110.com"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterance.</a></noscript>
+</article>
+            </div>
+            
+
+        </div>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="social-links">
+  <a href="http://www.cnblogs.com/m0110" class="iconfont icon-cnblogs" title="cnblogs" rel="noopener" target="_blank" data-title="cnblogs"> </a>
+  <a href="mailto:qingwuking@gmail.com" class="iconfont icon-email" title="email" rel="noopener" target="_blank" data-title="email"> </a>
+  <a href="https://github.com/qingw" class="iconfont icon-github" title="github" rel="noopener" target="_blank" data-title="github"> </a>
+  <a href="https://juejin.im/user/5da59ad26fb9a04e0762dc7d" class="iconfont icon-juejin" title="juejin" rel="noopener" target="_blank" data-title="juejin"> </a>
+  <a href="https://www.v2ex.com/member/haskeller" class="iconfont icon-v2ex" title="v2ex" rel="noopener" target="_blank" data-title="v2ex"> </a>
+  <a href="https://qingw.github.io/index.xml" type="application/rss+xml" rel="noopener" target="_blank" class="iconfont icon-rss" title="rss"></a>
+
+
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+    <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy;
+    2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Simon Wang</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+    </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOjkYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "zh-CN".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.47f727f4.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150101234-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

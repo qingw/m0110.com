@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leetcode on Heal The World</title>
+    <link>https://qingw.github.io/tags/Leetcode/</link>
+    <description>Recent content in Leetcode on Heal The World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 31 Jan 2019 17:12:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://qingw.github.io/tags/Leetcode/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Leetcode 题解</title>
+      <link>https://qingw.github.io/post/2019/2019-01-31-leetcode-solutions/</link>
+      <pubDate>Thu, 31 Jan 2019 17:12:18 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-01-31-leetcode-solutions/</guid>
+      <description>&lt;p align=&#34;center&#34;&gt;&lt;img width=&#34;300&#34; src=&#34;https://raw.githubusercontent.com/Ma63d/leetcode-spider/master/img/site-logo.png&#34;&gt;&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;
+    &lt;img src=&#34;https://img.shields.io/badge/Solved/Total(Locked)-104/957(162)-green.svg?style=flat-square&#34; alt=&#34;&#34;&gt;
+    &lt;img src=&#34;https://img.shields.io/badge/Hard-1-blue.svg?style=flat-square&#34; alt=&#34;&#34;&gt;
+    &lt;img src=&#34;https://img.shields.io/badge/Medium-11-blue.svg?style=flat-square&#34; alt=&#34;&#34;&gt;
+    &lt;img src=&#34;https://img.shields.io/badge/Easy-92-blue.svg?style=flat-square&#34; alt=&#34;&#34;&gt;
+&lt;/p&gt;
+&lt;h3 align=&#34;center&#34;&gt;Leetcode Solutions&lt;/h3&gt;
+
+&lt;p align=&#34;center&#34;&gt;
+    &lt;b&gt;Language: javascript c mysql&lt;/b&gt;
+    &lt;br&gt;
+    &lt;b&gt;Last updated: 2019-01-04&lt;/b&gt;
+    &lt;br&gt;
+    &lt;a href=&#34;https://github.com/nusr/leetcode&#34;&gt;https://github.com/nusr/leetcode&lt;/a&gt;
+    &lt;br&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

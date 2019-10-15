@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue on Heal The World</title>
+    <link>https://qingw.github.io/tags/Vue/</link>
+    <description>Recent content in Vue on Heal The World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 16 Apr 2019 21:20:39 +0800</lastBuildDate>
+    
+	<atom:link href="https://qingw.github.io/tags/Vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>vue cli 3.x 项目部署到 github pages</title>
+      <link>https://qingw.github.io/post/2019/2019-04-16-vue-cli-github-pages/</link>
+      <pubDate>Tue, 16 Apr 2019 21:20:39 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-16-vue-cli-github-pages/</guid>
+      <description>&lt;p&gt;github pages 是 github 免费为用户提供的服务，写博客，或者部署一些纯静态项目。&lt;/p&gt;
+
+&lt;p&gt;最近将 vue cli 3.x 初始化项目部署到 github pages，踩了一些坑，记录如下。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title> @vue/cli 3.0 使用 svg-sprite-loader 加载本地 SVG 文件</title>
+      <link>https://qingw.github.io/post/2019/2019-04-03-vue-cli-svg-symbol/</link>
+      <pubDate>Wed, 03 Apr 2019 16:34:59 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-03-vue-cli-svg-symbol/</guid>
+      <description>&lt;p&gt;Vue 脚手架升级 3.0，项目也随之升级。&lt;a href=&#34;https://cli.vuejs.org/&#34;&gt;Vue cli 3.0&lt;/a&gt; 使用 svg-symbol(svg 雪碧图)，整个 &lt;a href=&#34;https://www.iconfont.cn&#34;&gt;iconfont&lt;/a&gt; 的图标库为你所用，加快开发速度。Ant-Design 也使用这种方式引入图标。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

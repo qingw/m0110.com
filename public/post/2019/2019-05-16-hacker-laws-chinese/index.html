@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>黑客不可不知的定律 - Heal The World</title>
+    <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Simon Wang" /><meta name="description" content=" hacker-laws 的的中文翻译。
+ 对开发人员有用的定律、理论、原则和模式。(Laws, Theories, Principles and Patterns that developers will find useful.)
+为了方便阅读，维基百科增加了中文链接。英文链接表示 hacker-laws 项目尚未完成的主题。
+Github 地址
+" /><meta name="keywords" content="Mac, Github, Vue, React, Front End" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.1 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://qingw.github.io/post/2019/2019-05-16-hacker-laws-chinese/" />
+<link href="/post/2019/2019-05-16-hacker-laws-chinese/" rel="alternate" type="application/rss+xml" title="Heal The World" />
+<link href="/post/2019/2019-05-16-hacker-laws-chinese/" rel="feed" type="application/rss+xml" title="Heal The World" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.06658218.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/reset-even.css">
+
+
+<meta property="og:title" content="黑客不可不知的定律" />
+<meta property="og:description" content="
+hacker-laws 的的中文翻译。
+
+
+对开发人员有用的定律、理论、原则和模式。(Laws, Theories, Principles and Patterns that developers will find useful.)
+
+为了方便阅读，维基百科增加了中文链接。英文链接表示 hacker-laws 项目尚未完成的主题。
+
+Github 地址" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qingw.github.io/post/2019/2019-05-16-hacker-laws-chinese/" />
+<meta property="article:published_time" content="2019-05-16T13:33:17+08:00" />
+<meta property="article:modified_time" content="2019-05-16T13:33:17+08:00" />
+<meta itemprop="name" content="黑客不可不知的定律">
+<meta itemprop="description" content="
+hacker-laws 的的中文翻译。
+
+
+对开发人员有用的定律、理论、原则和模式。(Laws, Theories, Principles and Patterns that developers will find useful.)
+
+为了方便阅读，维基百科增加了中文链接。英文链接表示 hacker-laws 项目尚未完成的主题。
+
+Github 地址">
+
+
+<meta itemprop="datePublished" content="2019-05-16T13:33:17&#43;08:00" />
+<meta itemprop="dateModified" content="2019-05-16T13:33:17&#43;08:00" />
+<meta itemprop="wordCount" content="5568">
+
+
+
+<meta itemprop="keywords" content="Hacker Laws," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="黑客不可不知的定律"/>
+<meta name="twitter:description" content="
+hacker-laws 的的中文翻译。
+
+
+对开发人员有用的定律、理论、原则和模式。(Laws, Theories, Principles and Patterns that developers will find useful.)
+
+为了方便阅读，维基百科增加了中文链接。英文链接表示 hacker-laws 项目尚未完成的主题。
+
+Github 地址"/>
+
+</head>
+<body>
+<div id="mobile-navbar" class="mobile-navbar">
+    <div class="mobile-header-logo">
+        <a href="/" class="logo">Heal The World</a>
+    </div>
+    <div class="mobile-navbar-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+    <ul class="mobile-menu-list">
+        <a href="/">
+            <li class="mobile-menu-item" title="首页">首页</li>
+        </a>
+        <a href="/post/">
+            <li class="mobile-menu-item" title="归档">归档</li>
+        </a>
+        <a href="/categories/">
+            <li class="mobile-menu-item" title="分类">分类</li>
+        </a>
+        <a href="/tags/">
+            <li class="mobile-menu-item" title="标签">标签</li>
+        </a>
+        <a href="/about/">
+            <li class="mobile-menu-item" title="关于我">关于我</li>
+        </a>
+        <a href="https://github.com/qingw/reading-list/">
+            <li class="mobile-menu-item" title="阅读清单">阅读清单</li>
+        </a>
+        
+    </ul>
+    <form class="search-form" style="position: absolute;">
+    <input name="search" type="search" style="height: 28px;padding-left: 30px;"/>
+    <input type="image" src="/img/search.svg" alt="Search" style="position: absolute;left: 6px;top: 6px;"/>
+</form>
+
+
+</nav>
+
+<div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+    <a href="/" class="logo">Heal The World</a>
+</div>
+
+<nav class="site-navbar">
+    <ul id="menu" class="menu" data-sum="0">
+        
+        <li class="menu-item menu-item-home">
+            <a class="menu-item-link" href="/" title="首页">首页</a>
+        </li>
+        
+        <li class="menu-item menu-item-archives">
+            <a class="menu-item-link" href="/post/" title="归档">归档</a>
+        </li>
+        
+        <li class="menu-item menu-item-categories">
+            <a class="menu-item-link" href="/categories/" title="分类">分类</a>
+        </li>
+        
+        <li class="menu-item menu-item-tags">
+            <a class="menu-item-link" href="/tags/" title="标签">标签</a>
+        </li>
+        
+        <li class="menu-item menu-item-about">
+            <a class="menu-item-link" href="/about/" title="关于我">关于我</a>
+        </li>
+        
+        <li class="menu-item menu-item-reading-list">
+            <a class="menu-item-link" href="https://github.com/qingw/reading-list/" title="阅读清单">阅读清单</a>
+        </li>
+        
+    </ul>
+</nav>
+
+        <form class="search-form" style="position: absolute;">
+    <input name="search" type="search" style="height: 28px;padding-left: 30px;"/>
+    <input type="image" src="/img/search.svg" alt="Search" style="position: absolute;left: 6px;top: 6px;"/>
+</form>
+
+
+
+    </header>
+
+
+    <main id="main" class="main">
+        <div class="content-wrapper">
+            <div id="content" class="content">
+                <article class="post">
+  
+  <header class="post-header">
+    <h1 class="post-title">黑客不可不知的定律</h1>
+
+    <div class="post-meta">
+      <span class="post-time"> 2019-05-16 13:33 </span>
+      <div class="post-category">
+        <a href="/categories/%E7%BF%BB%E8%AF%91/"> 翻译 </a>
+        </div>
+      <span class="more-meta"> 约 5568 字 </span>
+      <span class="more-meta"> 预计阅读 12 分钟 </span>
+      <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+    </div>
+  </header>
+
+  <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#介绍">介绍</a></li>
+<li><a href="#定律">定律</a>
+<ul>
+<li><a href="#阿姆达尔定律-amdahl-s-law">阿姆达尔定律 (Amdahl's Law)</a></li>
+<li><a href="#布鲁克斯法则-brooks-s-law">布鲁克斯法则 (Brooks's Law)</a></li>
+<li><a href="#康威定律-conway-s-law">康威定律 (Conway's Law)</a></li>
+<li><a href="#侯世达定律-hofstadter-s-law">侯世达定律 (Hofstadter's Law)</a></li>
+<li><a href="#技术成熟度曲线-the-hype-cycle-amara-s-law">技术成熟度曲线 (The Hype Cycle &amp; Amara's Law)</a></li>
+<li><a href="#隐式接口定律-hyrum-s-law">隐式接口定律 (Hyrum's Law)</a></li>
+<li><a href="#摩尔定律-moore-s-law">摩尔定律 (Moore's Law)</a></li>
+<li><a href="#帕金森定理-parkinson-s-law">帕金森定理 (Parkinson's Law)</a></li>
+<li><a href="#普特定律-putt-s-law">普特定律 (Putt's Law)</a></li>
+<li><a href="#复杂性守恒定律-the-law-of-conservation-of-complexity">复杂性守恒定律 (The Law of Conservation of Complexity)</a></li>
+<li><a href="#漏洞抽象定律-the-law-of-leaky-abstractions">漏洞抽象定律 (The Law of Leaky Abstractions)</a></li>
+<li><a href="#帕金森琐碎定理-the-law-of-triviality">帕金森琐碎定理 (The Law of Triviality)</a></li>
+<li><a href="#unix-哲学-the-unix-philosophy">Unix 哲学 (The Unix Philosophy)</a></li>
+<li><a href="#spotify-模型-the-spotify-model">Spotify 模型 (The Spotify Model)</a></li>
+<li><a href="#沃德勒定律-wadler-s-law">沃德勒定律 (Wadler's Law)</a></li>
+</ul></li>
+<li><a href="#原则">原则</a>
+<ul>
+<li><a href="#鲁棒性原则-the-robustness-principle">鲁棒性原则 (The Robustness Principle)</a></li>
+<li><a href="#solid">SOLID</a></li>
+<li><a href="#单一功能原则-the-single-responsibility-principle">单一功能原则 (The Single Responsibility Principle)</a></li>
+<li><a href="#开闭原则-the-open-closed-principle">开闭原则 (The Open/Closed Principle)</a></li>
+<li><a href="#里氏替换原则-the-liskov-substitution-principle">里氏替换原则 (The Liskov Substitution Principle)</a></li>
+<li><a href="#接口隔离原则-the-interface-segregation-principle">接口隔离原则 (The Interface Segregation Principle)</a></li>
+<li><a href="#依赖反转原则-the-dependency-inversion-principle">依赖反转原则 (The Dependency Inversion Principle)</a></li>
+</ul></li>
+<li><a href="#阅读清单">阅读清单</a></li>
+<li><a href="#todo">TODO</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-content">
+    <blockquote>
+<p><a href="https://github.com/dwmkerr/hacker-laws">hacker-laws</a> 的的中文翻译。</p>
+</blockquote>
+
+<p>对开发人员有用的定律、理论、原则和模式。(Laws, Theories, Principles and Patterns that developers will find useful.)</p>
+
+<p>为了方便阅读，维基百科增加了中文链接。英文链接表示 <a href="https://github.com/dwmkerr/hacker-laws">hacker-laws</a> 项目尚未完成的主题。</p>
+
+<p><a href="https://github.com/nusr/hacker-laws-zh">Github 地址</a></p>
+
+<h2 id="介绍">介绍</h2>
+
+<p>当人们谈论开发时，会聊到许多定律。 这个仓库收录了一些最常见的定律。</p>
+
+<p>❗: 这个仓库包含对一些定律、原则以及模式的解释，但不<strong>提倡</strong>其中任何一个。 它们的应用始终存在着争论，并且很大程度上取决于你正在做什么。</p>
+
+<h2 id="定律">定律</h2>
+
+<p>现在我们开始吧！</p>
+
+<h3 id="阿姆达尔定律-amdahl-s-law">阿姆达尔定律 (Amdahl's Law)</h3>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Amdahl%27s_law">英文维基百科</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E9%98%BF%E5%A7%86%E8%BE%BE%E5%B0%94%E5%AE%9A%E5%BE%8B">中文维基百科</a></li>
+</ul>
+
+<blockquote>
+<p>阿姆达尔定律是一个显示计算任务<strong>潜在加速</strong>能力的公式。这种能力可以通过增加系统资源来实现，通常用于并行计算中。它可以预测增加处理器数量的实际好处，然而增加处理器数量会受到程序并行性的限制。</p>
+</blockquote>
+
+<p>举例说明：如果程序由两部分组成，部分 A 必须由单个处理器执行，部分 B 可以并行运行。那么向执行程序的系统添加多个处理器只能获得有限的好处。它可以极大地提升部分 B 的运行速度，但部分 A 的运行速度将保持不变。</p>
+
+<p>下图展示了运行速度的潜能：</p>
+
+<p><img src="./images/amdahls_law.png" alt="阿姆达尔定律" /></p>
+
+<p><em>(图片来源: By Daniels220 at English Wikipedia, Creative Commons Attribution-Share Alike 3.0 Unported, <a href="https://en.wikipedia.org/wiki/File:AmdahlsLaw.svg">https://en.wikipedia.org/wiki/File:AmdahlsLaw.svg</a>)</em></p>
+
+<p>可以看出，50％ 并行化的程序仅仅受益于 10 个处理单元，而 95％ 并行化的程序可以通过超过一千个处理单元显著提升速度。</p>
+
+<p>随着<a href="#%E6%91%A9%E5%B0%94%E5%AE%9A%E5%BE%8B-moores-law">摩尔定律</a>减慢，单个处理器的速度增加缓慢，并行化是提高性能的关键。图形编程是一个极好的例子，现代着色器可以并行渲染单个像素或片段。这也是为什么现代显卡通常具有数千个处理核心（GPU 或着色器单元）的原因。</p>
+
+<p>参见：</p>
+
+<ul>
+<li><a href="#%E5%B8%83%E9%B2%81%E5%85%8B%E6%96%AF%E6%B3%95%E5%88%99-brookss-law">布鲁克斯法则</a></li>
+<li><a href="#%E6%91%A9%E5%B0%94%E5%AE%9A%E5%BE%8B-moores-law">摩尔定律</a></li>
+</ul>
+
+<h3 id="布鲁克斯法则-brooks-s-law">布鲁克斯法则 (Brooks's Law)</h3>
+
+<ul>
+<li><a href="https://en.m.wikipedia.org/wiki/Brooks%27s_law">英文维基百科</a></li>
+</ul>
+
+<blockquote>
+<p>软件开发后期，添加人力只会使项目开发得更慢。</p>
+</blockquote>
+
+<p>这个定律表明，在许多情况下，试图通过增加人力来加速延期项目的交付，将会使项目交付得更晚。布鲁克斯也明白，这是一种过度简化。但一般的推理是，新资源的增加时间和通信开销，会使开发速度减慢。而且，许多任务是不可分的，比如更多的资源容易分配，这也意味着潜在的速度增加也更低。</p>
+
+<p>谚语 <strong>九个女人不能在一个月内生一个孩子</strong> 与布鲁克斯法则同出一辙，特别是某些不可分割或者并行的工作。</p>
+
+<p>这是<a href="#%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95">《人月神话》</a>的中心主题。</p>
+
+<p>参见：</p>
+
+<ul>
+<li><a href="#todo">Death March</a></li>
+<li><a href="#%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95">阅读清单：《人月神话》</a></li>
+</ul>
+
+<h3 id="康威定律-conway-s-law">康威定律 (Conway's Law)</h3>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Conway%27s_law">英文维基百科</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%BA%B7%E5%A8%81%E5%AE%9A%E5%BE%8B">中文维基百科</a></li>
+</ul>
+
+<p>系统的技术边界受制于组织的结构。改进组织时，通常会提到它。康威定律表明，如果一个组织被分散成许多小而无联系的单元，那么它开发的软件也是小而分散的。如果一个组织更多地垂直建立在特性或其服务周围，那么软件系统也会反映这一点。</p>
+
+<p>参见：</p>
+
+<ul>
+<li><a href="#spotify-%E6%A8%A1%E5%9E%8B-the-spotify-model">The Spotify Model</a></li>
+</ul>
+
+<h3 id="侯世达定律-hofstadter-s-law">侯世达定律 (Hofstadter's Law)</h3>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Hofstadter%27s_law">英文维基百科</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E4%BE%AF%E4%B8%96%E8%BE%BE%E5%AE%9A%E5%BE%8B">中文维基百科</a></li>
+</ul>
+
+<blockquote>
+<p>即使考虑到侯世达定律，它也总是比你预期的要长。</p>
+</blockquote>
+
+<p>在估计需要多长时间开发时，你可能会听到此定律。软件开发似乎不言而喻，我们往往不能准确地估计需要多长时间才能完成。</p>
+
+<p>语出<a href="#%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95">《哥德尔、艾舍尔、巴赫：集异璧之大成》</a>。</p>
+
+<p>参见：</p>
+
+<ul>
+<li><a href="#%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95">阅读清单：《哥德尔、艾舍尔、巴赫：集异璧之大成》</a></li>
+</ul>
+
+<h3 id="技术成熟度曲线-the-hype-cycle-amara-s-law">技术成熟度曲线 (The Hype Cycle &amp; Amara's Law)</h3>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Hype_cycle">英文维基百科</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%8A%80%E6%9C%AF%E6%88%90%E7%86%9F%E5%BA%A6%E6%9B%B2%E7%BA%BF">中文维基百科</a></li>
+</ul>
+
+<blockquote>
+<p>我们倾向于过高估计技术在短期内的影响，并低估长期效应。</p>
+
+<p>(罗伊·阿马拉)</p>
+</blockquote>
+
+<p>技术成熟度曲线是<a href="https://zh.wikipedia.org/wiki/%E9%AB%98%E5%BE%B7%E7%BA%B3%E5%92%A8%E8%AF%A2%E5%85%AC%E5%8F%B8">高德纳咨询公司</a>对技术最初兴起和发展的视觉展现。一图顶千言：</p>
+
+<p><img src="./images/gartner_hype_cycle.png" alt="The Hype Cycle" /></p>
+
+<p><em>(图片来源: By Jeremykemp at English Wikipedia, CC BY-SA 3.0, <a href="https://commons.wikimedia.org/w/index.php?curid=10547051">https://commons.wikimedia.org/w/index.php?curid=10547051</a>)</em></p>
+
+<p>简而言之，这个周期表明，新技术及其潜在影响通常会引发一阵浪潮。团队快速使用这些新技术，有时会对结果感到失望。这可能是因为该技术还不够成熟，或者现实应用还没有完全实现。经过一段时间后，技术的能力提高了，使用它的实际机会会增加，最终团队也可以提高工作效率。罗伊·阿马拉简洁地总结了这一点：我们倾向于高估技术短期内的影响，并低估长期效应。</p>
+
+<h3 id="隐式接口定律-hyrum-s-law">隐式接口定律 (Hyrum's Law)</h3>
+
+<ul>
+<li><a href="http://www.hyrumslaw.com/">英文在线地址</a></li>
+</ul>
+
+<blockquote>
+<p>API 有足够多的用户。
+你在合同中的承诺并不重要：
+你系统的所有可观察行为将取决于其他人。</p>
+
+<p>（Hyrum Wright）</p>
+</blockquote>
+
+<p>隐式接口定律表明，当你的 API 有足够多的用户时，API 的所有行为（即使那些未被定义为公共说明的一部分）最终都会被其他人所依赖。 一个简单的例子，例如 API 的响应时间这种非功能性因素。 一个更微妙的例子是：用户使用正则表达式判断错误信息的类型时，即使 API 的公共说明没有说明消息的内容，来指示用户错误的类型。一些用户可能会使用该消息，并且更改该消息。实际上会破坏 API 的使用。</p>
+
+<p>参见：</p>
+
+<ul>
+<li><a href="#%E6%BC%8F%E6%B4%9E%E6%8A%BD%E8%B1%A1%E5%AE%9A%E5%BE%8B-the-law-of-leaky-abstractions">漏洞抽象定律</a></li>
+</ul>
+
+<h3 id="摩尔定律-moore-s-law">摩尔定律 (Moore's Law)</h3>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Moore%27s_law">英文维基百科</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%91%A9%E5%B0%94%E5%AE%9A%E5%BE%8B">中文维基百科</a></li>
+</ul>
+
+<blockquote>
+<p>集成电路中的晶体管数量大约每两年翻一番。</p>
+</blockquote>
+
+<p>通常用于说明半导体和芯片技术提高的绝对速度。从 20 世纪 70 年代到 21 世纪后期，摩尔的预测被证明是高度准确的。 近年来，这种趋势略有变化，部分原因受到<a href="https://zh.wikipedia.org/wiki/%E9%87%8F%E5%AD%90%E7%A9%BF%E9%9A%A7%E6%95%88%E6%87%89">量子隧穿效应</a>影响。然而，并行化计算的进步以及半导体技术和量子计算潜在的革命性变化，可能意味着摩尔定律在未来几十年内继续保持正确。</p>
+
+<h3 id="帕金森定理-parkinson-s-law">帕金森定理 (Parkinson's Law)</h3>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Parkinson%27s_law">英文维基百科</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%B8%95%E9%87%91%E6%A3%AE%E5%AE%9A%E7%90%86">中文维基百科</a></li>
+</ul>
+
+<blockquote>
+<p>在工作能够完成的时限内，工作量会一直增加，直到所有可用时间都被填满为止。</p>
+</blockquote>
+
+<p>基于官僚机构的研究背景，该定律被应用于软件开发中。该理论认为，团队在截止日期之前效率低下，然后在截止日期前赶紧完成工作，从而使实际截止日期变得随意。</p>
+
+<p>将这个定理与<a href="#%E4%BE%AF%E4%B8%96%E8%BE%BE%E5%AE%9A%E5%BE%8B-hofstadters-law">侯世达定律</a>相结合，则会获得更加悲观的观点：为了在规定时间内完成工作，工作将增多，花费比预期更长的时间。</p>
+
+<p>参见：</p>
+
+<ul>
+<li><a href="#%E4%BE%AF%E4%B8%96%E8%BE%BE%E5%AE%9A%E5%BE%8B-hofstadters-law">侯世达定律</a></li>
+</ul>
+
+<h3 id="普特定律-putt-s-law">普特定律 (Putt's Law)</h3>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Putt%27s_Law_and_the_Successful_Technocrat">英文维基百科</a></li>
+</ul>
+
+<blockquote>
+<p>技术由两类人主导，一类是纯粹的管理人员， 一类是纯粹的技术人员。</p>
+</blockquote>
+
+<p>普特定律常常遵循普特推论：</p>
+
+<blockquote>
+<p>每一个技术层次，假以时日，能力将逆转。</p>
+</blockquote>
+
+<p>这些结论表明，由于各种选择标准和群体组织的趋势，技术组织的工作层面将有一些技术人员，以及一些不了解复杂性和挑战的管理人员。这种现象可能是由于 <a href="#TODO">The Peter Principe</a> 或 <a href="#TODO">Dilbert's Law</a> 造成的。</p>
+
+<p>但是，应该强调的是，诸如此类的定律是一种广泛的概括，可能适用于某些类型的组织，而不适用于其他组织。</p>
+
+<p>参见：</p>
+
+<ul>
+<li><a href="#TODO">The Peter Principe</a></li>
+<li><a href="#TODO">Dilbert's Law</a>.</li>
+</ul>
+
+<h3 id="复杂性守恒定律-the-law-of-conservation-of-complexity">复杂性守恒定律 (The Law of Conservation of Complexity)</h3>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Law_of_conservation_of_complexity">英文维基百科</a></li>
+</ul>
+
+<p>该定律表明系统中存在着一定程度的复杂性，并且不能减少。</p>
+
+<p>系统中的某些复杂性是<strong>无意的</strong>。这是由于结构不良，错误或者糟糕的建模造成的。可以减少以及消除无意的复杂性。然而，由于待解决问题固有的复杂性，某些复杂性是<strong>内在的</strong>。这种复杂性可以转移，但不能消除。</p>
+
+<p>该定律有趣的一点是，即使简化整个系统，内在的复杂性也不会降低。它会<strong>转移到用户</strong>，并且用户必须以更复杂的方式行事。</p>
+
+<h3 id="漏洞抽象定律-the-law-of-leaky-abstractions">漏洞抽象定律 (The Law of Leaky Abstractions)</h3>
+
+<ul>
+<li><a href="https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/">英文在线地址</a></li>
+</ul>
+
+<blockquote>
+<p>在某种程度上，所有非平凡的抽象都是漏洞。</p>
+
+<p>(乔尔斯·波尔斯基)</p>
+</blockquote>
+
+<p>该定律指出，通常用于简化复杂系统的抽象，某些情况下将在底层系统爆出漏洞，这使得抽象表现为意外的方式。</p>
+
+<p>例如加载文件并读取其内容。文件系统 API 是较低级别内核系统的抽象，它们本身是与磁盘（或 SSD 的闪存）上的数据更改相关的物理过程抽象。在大多数情况下，处理文件（如二进制数据流）的抽象将起作用。但是，对于磁盘驱动器，顺序读取数据将比随机访问快得多（由于页面错误的开销增加）。但对于 SSD 驱动器，此开销不会出现。需要理解基础细节来处理这种情况（例如，数据库索引文件的良好结构可以减少随机访问的开销），开发人员需要合理的抽象，来处理不同的细节。</p>
+
+<p>当引入的抽象更多时，上面的例子会变得更复杂。Linux 操作系统允许通过网络访问文件，但在本地表示为普通文件。如果存在网络故障，这种抽象将有漏洞。如果开发人员将这些文件视为普通文件，而不考虑它们可能会受到网络延迟和故障的影响，那么解决方案就会出错。</p>
+
+<p>描述该定律的文章表明，过度依赖抽象，加上对底层过程的理解不足，实际上使得问题在某些情况下更加复杂。</p>
+
+<p>参见：</p>
+
+<ul>
+<li><a href="#%E9%9A%90%E5%BC%8F%E6%8E%A5%E5%8F%A3%E5%AE%9A%E5%BE%8B-hyrums-law">隐式接口定律</a></li>
+</ul>
+
+<p>真实的例子：</p>
+
+<ul>
+<li><a href="https://forums.adobe.com/thread/376152">Photoshop 启动缓慢</a>：我过去遇到过一个问题，就是 Photoshop 启动缓慢，有时需要几分钟。问题好像是 Photoshop 启动时，会读取当前默认打印机的一些信息。但是，如果该打印机实际上是一台网络打印机，则可能需要很长的时间。将网络打印机与本地打印机当作同样的抽象，导致连接不良的情况下出现问题。</li>
+</ul>
+
+<h3 id="帕金森琐碎定理-the-law-of-triviality">帕金森琐碎定理 (The Law of Triviality)</h3>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Law_of_triviality">英文维基百科</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%B8%95%E9%87%91%E6%A3%AE%E7%91%A3%E7%A2%8E%E5%AE%9A%E7%90%86">中文维基百科</a></li>
+</ul>
+
+<p>该定理显示，群体将给予更多的时间和注意力来处理琐碎的问题，而不是用来处理严肃而实质性的问题。</p>
+
+<p>常见的虚构例子是委员会批准核电站的计划，他们大部分时间都在讨论自行车棚的结构，而不是电厂本身等更为重要的设计。如果没有大量的专业知识或者准备，很难给非常大的复杂主题讨论提供宝贵的意见。但是，人们希望看到更多意见。因此，倾向于将过多的时间集中在小细节上，这很容易推理，但不被看重。</p>
+
+<p>上面的虚构例子导致使用<strong>Bike Shedding</strong>这个词，作为在琐碎细节上浪费时间的表达。</p>
+
+<h3 id="unix-哲学-the-unix-philosophy">Unix 哲学 (The Unix Philosophy)</h3>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Unix_philosophy">英文维基百科</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/Unix%E5%93%B2%E5%AD%A6">中文维基百科</a></li>
+</ul>
+
+<p>Unix 哲学指软件组件应该很小，并专注于做一件特定的事情。将小而简单以及定义良好的单元组合在一起，而不是使用大而复杂的多用途程序，可以更轻松地构建系统。</p>
+
+<p>像<strong>微服务架构</strong>这种现代实践可以认为是这种哲学的应用，其中服务很小，集中于做一件特定的事情，由简单的构建块组成复杂的行为。</p>
+
+<h3 id="spotify-模型-the-spotify-model">Spotify 模型 (The Spotify Model)</h3>
+
+<ul>
+<li><a href="https://labs.spotify.com/2014/03/27/spotify-engineering-culture-part-1/">英文在线地址</a></li>
+</ul>
+
+<p>Spotify 模型是团队和组织结构的一种方法，已被 Spotify 实验室推广开来。在此模型中，团队围绕功能而非技术进行组织。</p>
+
+<p>Spotify 模型还普及了部落、行会以及章节的概念，这些是组织结构的其他组成部分。</p>
+
+<h3 id="沃德勒定律-wadler-s-law">沃德勒定律 (Wadler's Law)</h3>
+
+<ul>
+<li><a href="https://wiki.haskell.org/Wadler's_Law">英文在线地址</a></li>
+</ul>
+
+<blockquote>
+<p>任何语言设计中，讨论下面列表中某个要素所花费的总时间与其位置成正比。</p>
+
+<ol>
+<li>语义 (Semantics)</li>
+<li>语法 (Syntax)</li>
+<li>词法 (Lexical syntax)</li>
+<li>注释语法 (Lexical syntax of comments)</li>
+</ol>
+
+<p>（简而言之，在语义上花费一个小时，就要在注释语法上花费八个小时）。</p>
+</blockquote>
+
+<p>与 <a href="#%E5%B8%95%E9%87%91%E6%A3%AE%E7%90%90%E7%A2%8E%E5%AE%9A%E7%90%86-the-law-of-triviality">帕金森琐碎定理</a> 类似, 沃德勒定律指出，在设计语言时，与这些特征的重要性相比，花在语言结构上的时间过多。</p>
+
+<p>参见：</p>
+
+<ul>
+<li><a href="#%E5%B8%95%E9%87%91%E6%A3%AE%E7%90%90%E7%A2%8E%E5%AE%9A%E7%90%86-the-law-of-triviality">帕金森琐碎定理</a></li>
+</ul>
+
+<h2 id="原则">原则</h2>
+
+<p>原则通常是与设计相关的准则。</p>
+
+<h3 id="鲁棒性原则-the-robustness-principle">鲁棒性原则 (The Robustness Principle)</h3>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Robustness_principle">英文维基百科</a></li>
+</ul>
+
+<blockquote>
+<p>在自己所做的事情上要保守, 在接受别人的事情上要自由。</p>
+</blockquote>
+
+<p>通常应用于服务器应用程序开发中，该原则指出，你发送给其他人的内容应尽可能最小且符合要求，并且处理不符合要求的输入。</p>
+
+<p>该原则的目标是构建稳健的系统。如果可以理解意图，它们可以处理不良的输入。但是，接受错误格式的输入可能存在安全隐患，特别是此类的输入未经过充分测试。</p>
+
+<h3 id="solid">SOLID</h3>
+
+<p>这是一个缩写，指的是：</p>
+
+<ul>
+<li>S：<a href="#%E5%8D%95%E4%B8%80%E5%8A%9F%E8%83%BD%E5%8E%9F%E5%88%99-the-single-responsibility-principle">单一功能原则 (The Single Responsibility Principle)</a></li>
+<li>O：<a href="#%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99-the-openclosed-principle">开闭原则 (The Open/Closed Principle)</a></li>
+<li>L：<a href="#%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99-the-liskov-substitution-principle">里氏替换原则 (The Liskov Substitution Principle)</a></li>
+<li>I：<a href="#%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99-the-interface-segregation-principle">接口隔离原则 (The Interface Segregation Principle)</a></li>
+<li>D：<a href="#%E4%BE%9D%E8%B5%96%E5%8F%8D%E8%BD%AC%E5%8E%9F%E5%88%99-the-dependency-inversion-principle">依赖反转原则 (The Dependency Inversion Principle)</a></li>
+</ul>
+
+<p>这些是 <a href="#todo">Object-Oriented Programming</a> 的关键原则。诸如此类的设计原则能够帮助开发人员构建更易于维护的系统。</p>
+
+<h3 id="单一功能原则-the-single-responsibility-principle">单一功能原则 (The Single Responsibility Principle)</h3>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Single_responsibility_principle">英文维基百科</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%8D%95%E4%B8%80%E5%8A%9F%E8%83%BD%E5%8E%9F%E5%88%99">中文维基百科</a></li>
+</ul>
+
+<blockquote>
+<p>每个模块或者类只应该有一项功能。</p>
+</blockquote>
+
+<p><a href="#solid">SOLID</a> 的第一个原则。这个原则表明模块或者类只应该做一件事。实际上，这意味着对程序功能的单个小更改，应该只需要更改一个组件。例如，更改密码验证复杂性的方式应该只需要更改程序的一部分。</p>
+
+<p>理论上讲，这使代码更健壮，更容易更改。知道正在更改的组件只有一个功能，这意味着测试更改更容易。使用前面的例子，更改密码复杂性组件应该只影响与密码复杂性相关的功能。变更具有许多功能的组件可能要困难得多。</p>
+
+<p>参见：</p>
+
+<ul>
+<li><a href="#todo">Object-Orientated Programming</a></li>
+<li><a href="#solid">SOLID</a></li>
+</ul>
+
+<h3 id="开闭原则-the-open-closed-principle">开闭原则 (The Open/Closed Principle)</h3>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle">英文维基百科</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99">中文维基百科</a></li>
+</ul>
+
+<blockquote>
+<p>实体应开放扩展并关闭修改。</p>
+</blockquote>
+
+<p><a href="#solid">SOLID</a> 的第二个原则。这个原则指出实体（可以是类、模块、函数等）应该能够使它们的行为易于扩展，但是它们的扩展行为不应该被修改。</p>
+
+<p>举一个假设的例子，想象一个能够将 Markdown 转换为 HTML 的模块。如果可以扩展模块，而不修改内部模块来处理新的 markdown 特征，而无需修改内部模块，则可以认为是开放扩展。如果用户不能修改处理现有 Markdown 特征的模块，那么它被认为是关闭修改。</p>
+
+<p>这个原则与面向对象编程紧密相关，让我们可以设计对象以便于扩展，但是可以避免以意想不到的方式改变其现有对象的行为。</p>
+
+<p>参见：</p>
+
+<ul>
+<li><a href="#todo">Object-Orientated Programming</a></li>
+<li><a href="#solid">SOLID</a></li>
+</ul>
+
+<h3 id="里氏替换原则-the-liskov-substitution-principle">里氏替换原则 (The Liskov Substitution Principle)</h3>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">英文维基百科</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99">中文维基百科</a></li>
+</ul>
+
+<blockquote>
+<p>可以在不破坏系统的情况下，用子类型替换类型。</p>
+</blockquote>
+
+<p><a href="#solid">SOLID</a> 的第三个原则。该原则指出，如果组件依赖于类型，那么它应该能够使用该类型的子类型，而不会导致系统失败或者必须知道该子类型的详细信息。</p>
+
+<p>举个例子，假设我们有一个方法，读取 XML 文档。如果该方法使用基类型 <strong>file</strong>，则从 <strong>file</strong> 派生的任何内容，都能用在该方法中。 如果 <strong>file</strong> 支持反向查找，并且 xml 解析器使用该函数，但是派生类型 <strong>network file</strong> 尝试反向查找时失败，则 <strong>network file</strong> 将违反该原则。</p>
+
+<p>该原则与面向对象编程紧密相关，必须仔细建模、层次结构，以避免混淆系统用户。</p>
+
+<p>参见：</p>
+
+<ul>
+<li><a href="#todo">Object-Orientated Programming</a></li>
+<li><a href="#solid">SOLID</a></li>
+</ul>
+
+<h3 id="接口隔离原则-the-interface-segregation-principle">接口隔离原则 (The Interface Segregation Principle)</h3>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Interface_segregation_principle">英文维基百科</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99">中文维基百科</a></li>
+</ul>
+
+<blockquote>
+<p>不应强制任何客户端依赖于它不使用的方法。</p>
+</blockquote>
+
+<p><a href="#solid">SOLID</a> 的第四个原则。该原则指出组件的消费者不应该依赖于它实际上不使用的组件函数。</p>
+
+<p>举一个例子，假设我们有一个方法，读取 XML 文档。它只需要读取文件中的字节，向前移动或向后移动。如果由于文件结构不相关（例如更新文件安全性的权限模型），需要更新此方法，则该原则已失效。文件最好实现 <strong>可查询流</strong> 接口，并让 XML 读取器使用该接口。</p>
+
+<p>该原则与面向对象编程紧密相关，其中接口，层次结构和抽象类型用于不同组件的 <a href="#todo">minimise the coupling</a>。 <a href="#todo">Duck typing</a> 是一种通过消除显式接口来强制执行该原则的方法。</p>
+
+<p>参见：</p>
+
+<ul>
+<li><a href="#todo">Object-Orientated Programming</a></li>
+<li><a href="#solid">SOLID</a></li>
+<li><a href="#todo">Duck Typing</a></li>
+<li><a href="#todo">Decoupling</a></li>
+</ul>
+
+<h3 id="依赖反转原则-the-dependency-inversion-principle">依赖反转原则 (The Dependency Inversion Principle)</h3>
+
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Dependency_inversion_principle">英文维基百科</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E4%BE%9D%E8%B5%96%E5%8F%8D%E8%BD%AC%E5%8E%9F%E5%88%99">中文维基百科</a></li>
+</ul>
+
+<blockquote>
+<p>高级模块不应该依赖于低级实现。</p>
+</blockquote>
+
+<p><a href="#solid">SOLID</a> 的第五个原则。该原则指出，更高级别的协调组件不应该知道其依赖项的详细信息。</p>
+
+<p>举个例子，假设我们有一个从网站读取元数据的程序。我们假设主要组件必须知道下载网页内容的组件，以及可以读取元数据的组件。如果我们考虑依赖反转，主要组件将仅依赖于可以获取字节数据的抽象组件，然后是一个能够从字节流中读取元数据的抽象组件，主要组件不需要了解 TCP、IP、HTTP、HTML 等。</p>
+
+<p>这个原则很复杂，因为它似乎可以反转系统的预期依赖性（因此得名）。实践中，这也意味着，单独的编排组件必须确保抽象类型的正确实现被使用（例如在前面的例子中，必须提供元数据读取器组件、HTTP 文件下载功能和 HTML 元标签读取器）。然后，这涉及诸如 <a href="#todo">Inversion of Control</a> 和 <a href="#todo">Dependency Injection</a> 之类的模式。</p>
+
+<p>参见：</p>
+
+<ul>
+<li><a href="#todo">Object-Orientated Programming</a></li>
+<li><a href="#solid">SOLID</a></li>
+<li><a href="#todo">Inversion of Control</a></li>
+<li><a href="#todo">Dependency Injection</a></li>
+</ul>
+
+<h2 id="阅读清单">阅读清单</h2>
+
+<p>如果你觉得这些概念很有趣，你可能会喜欢以下书籍。</p>
+
+<ul>
+<li><a href="https://www.goodreads.com/book/show/13629.The_Mythical_Man_Month">《人月神话》谷歌阅读地址</a>、<a href="https://book.douban.com/subject/26358448/">豆瓣地址</a> - 软件工程的经典书籍。这本书的中心主题就是<a href="#%E5%B8%83%E9%B2%81%E5%85%8B%E6%96%AF%E6%B3%95%E5%88%99-brookss-law">布鲁克斯法则</a> 。</li>
+<li><a href="https://www.goodreads.com/book/show/24113.G_del_Escher_Bach">《哥德尔、艾舍尔、巴赫：集异璧之大成》谷歌阅读地址</a>、<a href="https://book.douban.com/subject/1291204/">豆瓣地址</a> - 这本书很难分类。</li>
+</ul>
+
+<h2 id="todo">TODO</h2>
+
+<p>嗨！如果你读到这里，点击了一个我尚未编写的主题链接，我感到很抱歉。这是正在进行中的工作！</p>
+
+<p>随意给 <a href="https://github.com/dwmkerr/hacker-laws">hacker-laws</a> 提 <a href="https://github.com/dwmkerr/hacker-laws/issues">Issue</a> 或者 <a href="https://github.com/dwmkerr/hacker-laws/pulls">Pull Request</a>。
+&gt; 首发 <a href="https://nusr.github.io/">https://nusr.github.io/</a></p>
+  </div>
+
+  <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Simon Wang</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-05-16 13:33
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a target="_blank" rel="license noopener" href="https://github.com/qingw/m0110.com/blob/master/LICENSE">MIT</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin-simon.jpeg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay-simon.jpeg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+    <div class="post-tags">
+      <a href="/tags/Hacker-Laws/">Hacker Laws</a>
+      </div>
+    <nav class="post-nav">
+      <a class="prev" href="/post/2019/2019-05-29-use-rss/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">使用 RSS 主动阅读技术博客</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+      <a class="next" href="/post/2019/2019-05-08-react-unstated-next/">
+        <span class="next-text nav-default">React 状态管理终结篇</span>
+        <span class="next-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav>
+  </footer>
+  <script src="https://utteranc.es/client.js"
+          repo="qingw/m0110.com"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterance.</a></noscript>
+</article>
+            </div>
+            
+
+        </div>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="social-links">
+  <a href="http://www.cnblogs.com/m0110" class="iconfont icon-cnblogs" title="cnblogs" rel="noopener" target="_blank" data-title="cnblogs"> </a>
+  <a href="mailto:qingwuking@gmail.com" class="iconfont icon-email" title="email" rel="noopener" target="_blank" data-title="email"> </a>
+  <a href="https://github.com/qingw" class="iconfont icon-github" title="github" rel="noopener" target="_blank" data-title="github"> </a>
+  <a href="https://juejin.im/user/5da59ad26fb9a04e0762dc7d" class="iconfont icon-juejin" title="juejin" rel="noopener" target="_blank" data-title="juejin"> </a>
+  <a href="https://www.v2ex.com/member/haskeller" class="iconfont icon-v2ex" title="v2ex" rel="noopener" target="_blank" data-title="v2ex"> </a>
+  <a href="https://qingw.github.io/index.xml" type="application/rss+xml" rel="noopener" target="_blank" class="iconfont icon-rss" title="rss"></a>
+
+
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+    <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy;
+    2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Simon Wang</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+    </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOjkYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "zh-CN".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.47f727f4.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150101234-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

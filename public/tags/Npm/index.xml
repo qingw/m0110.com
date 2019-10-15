@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Npm on Heal The World</title>
+    <link>https://qingw.github.io/tags/Npm/</link>
+    <description>Recent content in Npm on Heal The World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 21 Apr 2019 12:55:27 +0800</lastBuildDate>
+    
+	<atom:link href="https://qingw.github.io/tags/Npm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>一行命令更新所有 npm 依赖包</title>
+      <link>https://qingw.github.io/post/2019/2019-04-21-update-all-npm-package/</link>
+      <pubDate>Sun, 21 Apr 2019 12:55:27 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-21-update-all-npm-package/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;npm&lt;/strong&gt; 包的更新速度很快，为了将项目或者全局依赖更新到最新版本。传统的做法是一个一个更新，比如更新 &lt;strong&gt;react&lt;/strong&gt; 到最新版本，命令如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# npm&lt;/span&gt;
+npm i --save react@latest
+&lt;span class=&#34;c1&#34;&gt;# yarn&lt;/span&gt;
+yarn add react@latest&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;yarn&lt;/strong&gt; 是 facebook 发明的新一代 js 包管理器，支持离线使用。&lt;a href=&#34;https://yarnpkg.com/zh-Hans/docs/migrating-from-npm&#34;&gt;这是 npm 与 yarn 的 命令对照&lt;/a&gt;。
+但是，这种做法相当耗时。有没有更简单的方法呢？&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

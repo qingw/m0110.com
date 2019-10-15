@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chrome on Heal The World</title>
+    <link>https://qingw.github.io/tags/Chrome/</link>
+    <description>Recent content in Chrome on Heal The World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 07 Jul 2019 22:28:34 +0800</lastBuildDate>
+    
+	<atom:link href="https://qingw.github.io/tags/Chrome/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 Create-React-App 开发 Chrome 扩展</title>
+      <link>https://qingw.github.io/post/2019/2019-07-07-create-react-app-chrome-extension/</link>
+      <pubDate>Sun, 07 Jul 2019 22:28:34 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-07-07-create-react-app-chrome-extension/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;整理 Kindle 标注、书签和笔记从未如此简单！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Kindle 标注管理应用 &lt;a href=&#34;https://kmate.me/cn/&#34;&gt;Kindle Mate&lt;/a&gt; 只支持 Windows，不支持 Mac。标注只是解析&lt;strong&gt;我的剪贴&lt;/strong&gt;文本文件，配合 &lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader&#34;&gt;FileReader&lt;/a&gt; API，写个 Chrome 扩展解析文本文件就好了。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

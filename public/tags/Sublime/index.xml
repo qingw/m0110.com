@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sublime on Heal The World</title>
+    <link>https://qingw.github.io/tags/Sublime/</link>
+    <description>Recent content in Sublime on Heal The World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 13 Apr 2019 14:58:13 +0800</lastBuildDate>
+    
+	<atom:link href="https://qingw.github.io/tags/Sublime/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>解决 mac 10.14.4 无法 sublime text 3207 安装 Package Control,以及安装第三方包报错 `Package Control There are no packages available for installation`</title>
+      <link>https://qingw.github.io/post/2019/2019-04-13-mac-sublime/</link>
+      <pubDate>Sat, 13 Apr 2019 14:58:13 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-13-mac-sublime/</guid>
+      <description>&lt;p&gt;下载最新的 sublime text 3207，无法安装 &lt;strong&gt;Package Control&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;根据&lt;a href=&#34;https://packagecontrol.io/installation&#34;&gt;官方提示&lt;/a&gt;，手动安装 &lt;strong&gt;Package Control&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;手动安装 &lt;strong&gt;Package Control&lt;/strong&gt; 后，无法安装第三方包。&lt;/p&gt;
+
+&lt;p&gt;一顿搜索以后，发现配置代理就可以解决这个问题。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

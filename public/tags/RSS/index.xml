@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RSS on Heal The World</title>
+    <link>https://qingw.github.io/tags/RSS/</link>
+    <description>Recent content in RSS on Heal The World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 29 May 2019 21:57:13 +0800</lastBuildDate>
+    
+	<atom:link href="https://qingw.github.io/tags/RSS/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 RSS 主动阅读技术博客</title>
+      <link>https://qingw.github.io/post/2019/2019-05-29-use-rss/</link>
+      <pubDate>Wed, 29 May 2019 21:57:13 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-05-29-use-rss/</guid>
+      <description>&lt;p&gt;RSS (Rich Site Summary) 是一种聚合信息的方式。&lt;/p&gt;
+
+&lt;p&gt;微博、今日头条等新闻平台，是一种被动的阅读方式，它推荐给你什么，你就阅读什么，比较被动。&lt;/p&gt;
+
+&lt;p&gt;而 RSS 是一种主动的阅读方式，你订阅了什么，它才向你推送。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mac on Heal The World</title>
+    <link>https://qingw.github.io/categories/Mac/</link>
+    <description>Recent content in Mac on Heal The World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 01 May 2019 18:24:43 +0800</lastBuildDate>
+    
+	<atom:link href="https://qingw.github.io/categories/Mac/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title> Mac OS 版本信息</title>
+      <link>https://qingw.github.io/post/awesome-macos-command-line-zh/glossary/</link>
+      <pubDate>Wed, 01 May 2019 18:24:43 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/awesome-macos-command-line-zh/glossary/</guid>
+      <description>版本 名称 发布日期 最新版本 Rhapsody Developer Release Grail1Z4 / Titan1U August 31, 1997 DR2 (May 14, 1998) Mac OS X Server 1.0 Hera March 16, 1999 1.2v3 (October 27, 2000) Mac OS X Developer Preview n/a March 16, 1999 DP4 (April 5, 2000) Mac OS X Public Beta Kodiak September 13, 2000 n/a Mac OS X 10.0 Cheetah March 24, 2001 10.0.4</description>
+    </item>
+    
+    <item>
+      <title>Awesome Mac OS Command Line</title>
+      <link>https://qingw.github.io/post/awesome-macos-command-line-zh/README/</link>
+      <pubDate>Wed, 01 May 2019 14:25:24 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/awesome-macos-command-line-zh/README/</guid>
+      <description>awesome-macos-command-line 的中文翻译，翻译不妥的地方，欢迎提 issue 或者 pull request 。 翻译本教程，见识了许多没用过的终端命令，加深了对 Mac 的认识。 精心为 OS X 挑选的 shell 命令和工具。 “你</description>
+    </item>
+    
+    <item>
+      <title>Awesome Mac OS Command Line 中文翻译</title>
+      <link>https://qingw.github.io/post/awesome-macos-command-line-zh/entry/</link>
+      <pubDate>Wed, 01 May 2019 14:25:24 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/awesome-macos-command-line-zh/entry/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/herrbischoff/awesome-macos-command-line&#34;&gt;awesome-macos-command-line&lt;/a&gt; 收集了很多有趣的 Mac 终端命令。&lt;/p&gt;
+
+&lt;p&gt;看了一遍后，发现帮助很大。&lt;/p&gt;
+
+&lt;p&gt;见识许多没有使用过的命令，加深了对 Mac 的认识。&lt;/p&gt;
+
+&lt;p&gt;所以翻译成了中文，共享给其他需要使用的人。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/nusr/awesome-macos-command-line-zh&#34;&gt;Github 地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;翻译不妥的地方，欢迎提 issue 或者 pull request 。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>代码片段</title>
+      <link>https://qingw.github.io/post/awesome-macos-command-line-zh/snippets/</link>
+      <pubDate>Wed, 01 May 2019 14:25:24 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/awesome-macos-command-line-zh/snippets/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;各种有用的 Bash 风格命令，可随时复制、粘贴。
+&lt;a href=&#34;https://github.com/nusr/awesome-macos-command-line-zh&#34;&gt;Awesome OS X Command Line&lt;/a&gt; 的一部分。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>函数</title>
+      <link>https://qingw.github.io/post/awesome-macos-command-line-zh/functions/</link>
+      <pubDate>Wed, 01 May 2019 14:25:24 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/awesome-macos-command-line-zh/functions/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;OS X 特定 Bash 风格的好用函数集合。&lt;a href=&#34;https://github.com/nusr/awesome-macos-command-line-zh&#34;&gt;Awesome OS X Command Line&lt;/a&gt; 的一部分。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>自启动服务</title>
+      <link>https://qingw.github.io/post/awesome-macos-command-line-zh/launchagents/</link>
+      <pubDate>Wed, 01 May 2019 14:25:24 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/awesome-macos-command-line-zh/launchagents/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;各种有用的自启动服务例子。 &lt;a href=&#34;https://github.com/nusr/awesome-macos-command-line-zh&#34;&gt;Awesome OS X Command Line&lt;/a&gt; 的一部分
+``&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>解决 Mac launchpad 启动台 Gitter 图标无法删除的问题</title>
+      <link>https://qingw.github.io/post/2019/2019-04-25-delete-mac-launchpad-icon/</link>
+      <pubDate>Thu, 25 Apr 2019 21:12:56 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-25-delete-mac-launchpad-icon/</guid>
+      <description>&lt;p&gt;Mac 删除应用非常简单，将应用拖到回收站就删除了。或者进入应用程序文件夹，选中程序，&lt;strong&gt;command + delete&lt;/strong&gt; 就删除了应用，这也是删除文件的快捷键。&lt;/p&gt;
+
+&lt;p&gt;但是，安装 &lt;strong&gt;Gitter&lt;/strong&gt; 后，删除了应用程序，图标一直删除不了。&lt;/p&gt;
+
+&lt;p&gt;我的 Mac 版本是 10.14.4 ，尝试以下方法，均无法删除 &lt;strong&gt;Gitter&lt;/strong&gt; 图标。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;拖到回收站删除，无效&lt;/li&gt;
+&lt;li&gt;长按图标，图标抖动后， &lt;strong&gt;Gitter&lt;/strong&gt; 图标没有出现 &lt;strong&gt;X&lt;/strong&gt;，无效&lt;/li&gt;
+&lt;li&gt;命令行运行如下命令,无效&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>解决 mac HomeBrew 下载缓慢的问题</title>
+      <link>https://qingw.github.io/post/2019/2019-04-13-mac-homebrew/</link>
+      <pubDate>Sat, 13 Apr 2019 15:57:25 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-13-mac-homebrew/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;文章首发 &lt;a href=&#34;https://nusr.github.io/&#34;&gt;https://nusr.github.io/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;为了更好的管理安装的程序开发包，使用包管理器是最方便的。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;macOS&lt;/strong&gt; 自身不提供包管理器，常用的包管理器有&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://brew.sh/&#34;&gt;HomeBrew&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.macports.org/&#34;&gt;MacPorts&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;MacPorts&lt;/strong&gt; 第一次使用要 build 整个基本库，编译时间很长。优点是不怎么依赖系统，更新 &lt;strong&gt;macOS&lt;/strong&gt; 不会破坏现有的包，以及可以使用所有的开源包。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;HomeBrew&lt;/strong&gt; 尽量使用系统现有的库，减少编译时间，安装简单。缺点是与系统紧密相连。&lt;/p&gt;
+
+&lt;p&gt;简单优先原则，使用了 &lt;strong&gt;HomeBrew&lt;/strong&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>解决 mac 10.14.4 无法 sublime text 3207 安装 Package Control,以及安装第三方包报错 `Package Control There are no packages available for installation`</title>
+      <link>https://qingw.github.io/post/2019/2019-04-13-mac-sublime/</link>
+      <pubDate>Sat, 13 Apr 2019 14:58:13 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-13-mac-sublime/</guid>
+      <description>&lt;p&gt;下载最新的 sublime text 3207，无法安装 &lt;strong&gt;Package Control&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;根据&lt;a href=&#34;https://packagecontrol.io/installation&#34;&gt;官方提示&lt;/a&gt;，手动安装 &lt;strong&gt;Package Control&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;手动安装 &lt;strong&gt;Package Control&lt;/strong&gt; 后，无法安装第三方包。&lt;/p&gt;
+
+&lt;p&gt;一顿搜索以后，发现配置代理就可以解决这个问题。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

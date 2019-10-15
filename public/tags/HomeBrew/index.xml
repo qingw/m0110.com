@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HomeBrew on Heal The World</title>
+    <link>https://qingw.github.io/tags/HomeBrew/</link>
+    <description>Recent content in HomeBrew on Heal The World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 13 Apr 2019 15:57:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://qingw.github.io/tags/HomeBrew/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>解决 mac HomeBrew 下载缓慢的问题</title>
+      <link>https://qingw.github.io/post/2019/2019-04-13-mac-homebrew/</link>
+      <pubDate>Sat, 13 Apr 2019 15:57:25 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-13-mac-homebrew/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;文章首发 &lt;a href=&#34;https://nusr.github.io/&#34;&gt;https://nusr.github.io/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;为了更好的管理安装的程序开发包，使用包管理器是最方便的。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;macOS&lt;/strong&gt; 自身不提供包管理器，常用的包管理器有&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://brew.sh/&#34;&gt;HomeBrew&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.macports.org/&#34;&gt;MacPorts&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;MacPorts&lt;/strong&gt; 第一次使用要 build 整个基本库，编译时间很长。优点是不怎么依赖系统，更新 &lt;strong&gt;macOS&lt;/strong&gt; 不会破坏现有的包，以及可以使用所有的开源包。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;HomeBrew&lt;/strong&gt; 尽量使用系统现有的库，减少编译时间，安装简单。缺点是与系统紧密相连。&lt;/p&gt;
+
+&lt;p&gt;简单优先原则，使用了 &lt;strong&gt;HomeBrew&lt;/strong&gt;。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

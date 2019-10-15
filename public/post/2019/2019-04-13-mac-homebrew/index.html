@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>解决 mac HomeBrew 下载缓慢的问题 - Heal The World</title>
+    <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Simon Wang" /><meta name="description" content=" 文章首发 https://nusr.github.io/
+ 为了更好的管理安装的程序开发包，使用包管理器是最方便的。
+macOS 自身不提供包管理器，常用的包管理器有
+ HomeBrew MacPorts  MacPorts 第一次使用要 build 整个基本库，编译时间很长。优点是不怎么依赖系统，更新 macOS 不会破坏现有的包，以及可以使用所有的开源包。
+HomeBrew 尽量使用系统现有的库，减少编译时间，安装简单。缺点是与系统紧密相连。
+简单优先原则，使用了 HomeBrew。
+" /><meta name="keywords" content="Mac, Github, Vue, React, Front End" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.1 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://qingw.github.io/post/2019/2019-04-13-mac-homebrew/" />
+<link href="/post/2019/2019-04-13-mac-homebrew/" rel="alternate" type="application/rss+xml" title="Heal The World" />
+<link href="/post/2019/2019-04-13-mac-homebrew/" rel="feed" type="application/rss+xml" title="Heal The World" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.06658218.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/reset-even.css">
+
+
+<meta property="og:title" content="解决 mac HomeBrew 下载缓慢的问题" />
+<meta property="og:description" content="
+文章首发 https://nusr.github.io/
+
+
+为了更好的管理安装的程序开发包，使用包管理器是最方便的。
+
+macOS 自身不提供包管理器，常用的包管理器有
+
+
+HomeBrew
+MacPorts
+
+
+MacPorts 第一次使用要 build 整个基本库，编译时间很长。优点是不怎么依赖系统，更新 macOS 不会破坏现有的包，以及可以使用所有的开源包。
+
+HomeBrew 尽量使用系统现有的库，减少编译时间，安装简单。缺点是与系统紧密相连。
+
+简单优先原则，使用了 HomeBrew。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qingw.github.io/post/2019/2019-04-13-mac-homebrew/" />
+<meta property="article:published_time" content="2019-04-13T15:57:25+08:00" />
+<meta property="article:modified_time" content="2019-04-13T15:57:25+08:00" />
+<meta itemprop="name" content="解决 mac HomeBrew 下载缓慢的问题">
+<meta itemprop="description" content="
+文章首发 https://nusr.github.io/
+
+
+为了更好的管理安装的程序开发包，使用包管理器是最方便的。
+
+macOS 自身不提供包管理器，常用的包管理器有
+
+
+HomeBrew
+MacPorts
+
+
+MacPorts 第一次使用要 build 整个基本库，编译时间很长。优点是不怎么依赖系统，更新 macOS 不会破坏现有的包，以及可以使用所有的开源包。
+
+HomeBrew 尽量使用系统现有的库，减少编译时间，安装简单。缺点是与系统紧密相连。
+
+简单优先原则，使用了 HomeBrew。">
+
+
+<meta itemprop="datePublished" content="2019-04-13T15:57:25&#43;08:00" />
+<meta itemprop="dateModified" content="2019-04-13T15:57:25&#43;08:00" />
+<meta itemprop="wordCount" content="963">
+
+
+
+<meta itemprop="keywords" content="HomeBrew," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="解决 mac HomeBrew 下载缓慢的问题"/>
+<meta name="twitter:description" content="
+文章首发 https://nusr.github.io/
+
+
+为了更好的管理安装的程序开发包，使用包管理器是最方便的。
+
+macOS 自身不提供包管理器，常用的包管理器有
+
+
+HomeBrew
+MacPorts
+
+
+MacPorts 第一次使用要 build 整个基本库，编译时间很长。优点是不怎么依赖系统，更新 macOS 不会破坏现有的包，以及可以使用所有的开源包。
+
+HomeBrew 尽量使用系统现有的库，减少编译时间，安装简单。缺点是与系统紧密相连。
+
+简单优先原则，使用了 HomeBrew。"/>
+
+</head>
+<body>
+<div id="mobile-navbar" class="mobile-navbar">
+    <div class="mobile-header-logo">
+        <a href="/" class="logo">Heal The World</a>
+    </div>
+    <div class="mobile-navbar-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+    <ul class="mobile-menu-list">
+        <a href="/">
+            <li class="mobile-menu-item" title="首页">首页</li>
+        </a>
+        <a href="/post/">
+            <li class="mobile-menu-item" title="归档">归档</li>
+        </a>
+        <a href="/categories/">
+            <li class="mobile-menu-item" title="分类">分类</li>
+        </a>
+        <a href="/tags/">
+            <li class="mobile-menu-item" title="标签">标签</li>
+        </a>
+        <a href="/about/">
+            <li class="mobile-menu-item" title="关于我">关于我</li>
+        </a>
+        <a href="https://github.com/qingw/reading-list/">
+            <li class="mobile-menu-item" title="阅读清单">阅读清单</li>
+        </a>
+        
+    </ul>
+    <form class="search-form" style="position: absolute;">
+    <input name="search" type="search" style="height: 28px;padding-left: 30px;"/>
+    <input type="image" src="/img/search.svg" alt="Search" style="position: absolute;left: 6px;top: 6px;"/>
+</form>
+
+
+</nav>
+
+<div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+    <a href="/" class="logo">Heal The World</a>
+</div>
+
+<nav class="site-navbar">
+    <ul id="menu" class="menu" data-sum="0">
+        
+        <li class="menu-item menu-item-home">
+            <a class="menu-item-link" href="/" title="首页">首页</a>
+        </li>
+        
+        <li class="menu-item menu-item-archives">
+            <a class="menu-item-link" href="/post/" title="归档">归档</a>
+        </li>
+        
+        <li class="menu-item menu-item-categories">
+            <a class="menu-item-link" href="/categories/" title="分类">分类</a>
+        </li>
+        
+        <li class="menu-item menu-item-tags">
+            <a class="menu-item-link" href="/tags/" title="标签">标签</a>
+        </li>
+        
+        <li class="menu-item menu-item-about">
+            <a class="menu-item-link" href="/about/" title="关于我">关于我</a>
+        </li>
+        
+        <li class="menu-item menu-item-reading-list">
+            <a class="menu-item-link" href="https://github.com/qingw/reading-list/" title="阅读清单">阅读清单</a>
+        </li>
+        
+    </ul>
+</nav>
+
+        <form class="search-form" style="position: absolute;">
+    <input name="search" type="search" style="height: 28px;padding-left: 30px;"/>
+    <input type="image" src="/img/search.svg" alt="Search" style="position: absolute;left: 6px;top: 6px;"/>
+</form>
+
+
+
+    </header>
+
+
+    <main id="main" class="main">
+        <div class="content-wrapper">
+            <div id="content" class="content">
+                <article class="post">
+  
+  <header class="post-header">
+    <h1 class="post-title">解决 mac HomeBrew 下载缓慢的问题</h1>
+
+    <div class="post-meta">
+      <span class="post-time"> 2019-04-13 15:57 </span>
+      <div class="post-category">
+        <a href="/categories/Mac/"> Mac </a>
+        </div>
+      <span class="more-meta"> 约 963 字 </span>
+      <span class="more-meta"> 预计阅读 2 分钟 </span>
+      <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+    </div>
+  </header>
+
+  <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#安装-homebrew">安装 HomeBrew</a></li>
+<li><a href="#homebrew-常用命令">HomeBrew 常用命令：</a></li>
+<li><a href="#解决安装第三包缓慢">解决安装第三包缓慢</a></li>
+<li><a href="#homebrew-cask">HomeBrew Cask</a></li>
+<li><a href="#homebrew-cask-安装程序">HomeBrew Cask 安装程序</a>
+<ul>
+<li><a href="#搜索-qq">搜索 QQ</a></li>
+<li><a href="#查看软件信息">查看软件信息</a></li>
+<li><a href="#安装-qq">安装 QQ</a></li>
+<li><a href="#升级所有程序">升级所有程序</a></li>
+<li><a href="#使用代理">使用代理</a></li>
+</ul></li>
+<li><a href="#额外说明">额外说明</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-content">
+    <blockquote>
+<p>文章首发 <a href="https://nusr.github.io/">https://nusr.github.io/</a></p>
+</blockquote>
+
+<p>为了更好的管理安装的程序开发包，使用包管理器是最方便的。</p>
+
+<p><strong>macOS</strong> 自身不提供包管理器，常用的包管理器有</p>
+
+<ol>
+<li><a href="https://brew.sh/">HomeBrew</a></li>
+<li><a href="https://www.macports.org/">MacPorts</a></li>
+</ol>
+
+<p><strong>MacPorts</strong> 第一次使用要 build 整个基本库，编译时间很长。优点是不怎么依赖系统，更新 <strong>macOS</strong> 不会破坏现有的包，以及可以使用所有的开源包。</p>
+
+<p><strong>HomeBrew</strong> 尽量使用系统现有的库，减少编译时间，安装简单。缺点是与系统紧密相连。</p>
+
+<p>简单优先原则，使用了 <strong>HomeBrew</strong>。</p>
+
+<h2 id="安装-homebrew">安装 HomeBrew</h2>
+
+<p>安装 <strong>HomeBrew</strong>，安装命令如下</p>
+
+<p><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></p>
+
+<p>控制输入 <code>brew -v</code>,输出以下内容表示安装成功。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">Homebrew 2.0.6
+Homebrew/homebrew-core (git revision c432e8; last commit 2019-04-12)
+Homebrew/homebrew-cask (git revision 22128; last commit 2019-04-13)</pre></td></tr></table>
+</div>
+</div>
+<h2 id="homebrew-常用命令">HomeBrew 常用命令：</h2>
+
+<p>搜索包： <code>brew search [package-name]</code><code>查看包的信息：</code>brew info [package-name]<code>安装包：</code>brew install [package-name]<code>更新所有包：</code>brew update<code>更新某个包：</code>brew upgrade [package-name]<code>卸载某个包：</code>brew uninstall [package-name]<code>列出所有安装的包：</code>brew list `</p>
+
+<h2 id="解决安装第三包缓慢">解决安装第三包缓慢</h2>
+
+<p>开始没有使用代理安装第三方包，下载超级慢，配置代理后，火箭般的下载速度。</p>
+
+<p>比如安装 <strong>nodejs</strong> ,使用代理前的命令如下：</p>
+
+<p><code>brew install node</code></p>
+
+<p>使用代理后，安装命令如下：</p>
+
+<p><code>ALL_PROXY=socks5://127.0.0.1:1086 brew install node</code></p>
+
+<p>不使用镜像源的原因是，不能做到实时同步。安装报错，折腾半天，可以就是因为包有点老。</p>
+
+<h2 id="homebrew-cask">HomeBrew Cask</h2>
+
+<p><strong>HomeBrew Cask</strong> 是通过命令行安装、卸载软件的方式，比 <strong>App Store</strong> 好用。安装简单，卸载软件也十分干净。</p>
+
+<p>简单点说，<strong>HomeBrew</strong> 安装开发环境所用的包，而 <strong>HomeBrew Cask</strong> 是安装编译好的应用程序(<strong>.dmg/.pkg</strong>)。</p>
+
+<p><strong>HomeBrew</strong> 默认集成了 <strong>HomeBrew Cask</strong>，无需额外安装 。</p>
+
+<p>使用 <code>brew cask</code>，就是使用 <strong>HomeBrew Cask</strong> 。</p>
+
+<p>命令行输入 <code>brew cask</code>,就会列出所有 <strong>HomeBrew Cask</strong> 的命令。</p>
+
+<h2 id="homebrew-cask-安装程序">HomeBrew Cask 安装程序</h2>
+
+<p>以下通过 <strong>HomeBrew Cask</strong> 安装 <strong>QQ</strong> 举例。</p>
+
+<h3 id="搜索-qq">搜索 QQ</h3>
+
+<p>搜索 <strong>QQ</strong> ，使用 <code>brew search [app-nam]</code>,就会列出含有 <strong>qq</strong> 字段的软件。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ brew search qq
+==&gt; Casks
+qq ✔            qqbrowser       qqlive          qqmacmgr        qqmusic</pre></td></tr></table>
+</div>
+</div>
+<h3 id="查看软件信息">查看软件信息</h3>
+
+<p>搜索出的软件特别多，不知道安装源时,使用 <code>brew cask info [app-name]</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">$ brew cask info qq
+qq: 6.5.3
+https://im.qq.com/macqq/
+/usr/local/Caskroom/qq/6.5.3 (2 files, 231.2KB)
+From: https://github.com/Homebrew/homebrew-cask/blob/master/Casks/qq.rb
+==&gt; Name
+QQ
+==&gt; Artifacts
+QQ.app (App)</pre></td></tr></table>
+</div>
+</div>
+<h3 id="安装-qq">安装 QQ</h3>
+
+<p>可以确认时腾讯出品，放心安装,使用 <code>brew cask install [app-name]</code> 安装</p>
+
+<p><code>brew cask install qq</code></p>
+
+<h3 id="升级所有程序">升级所有程序</h3>
+
+<p>使用 <code>brew cask upgrade</code> 命令，就可以升级所有通过 <strong>HomeBrew Cask</strong> 的应用程序至最新版，这比一个一个软件点击更新，要快上许多。</p>
+
+<h3 id="使用代理">使用代理</h3>
+
+<p>安装一些软件时，下载速度比较慢，就可以使用代理了。</p>
+
+<p><code>ALL_PROXY=socks5://127.0.0.1:1086 brew cask install qq</code></p>
+
+<h2 id="额外说明">额外说明</h2>
+
+<p>最好不要将 <code>export ALL_PROXY=socks5://127.0.0.1:1086</code> 写入到 <strong>.zshrc</strong> 或者 <strong>.bash_profile</strong> 等配置文件中。</p>
+
+<p>因为这可能会导致其他的工具无法正常使用，每次 <strong>HomeBrew</strong> 使用代理前，加上 <code>ALL_PROXY=socks5://127.0.0.1:1086</code> 即可。</p>
+  </div>
+
+  <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Simon Wang</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-04-13 15:57
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a target="_blank" rel="license noopener" href="https://github.com/qingw/m0110.com/blob/master/LICENSE">MIT</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin-simon.jpeg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay-simon.jpeg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+    <div class="post-tags">
+      <a href="/tags/HomeBrew/">HomeBrew</a>
+      </div>
+    <nav class="post-nav">
+      <a class="prev" href="/post/2019/2019-04-16-vue-cli-github-pages/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">vue cli 3.x 项目部署到 github pages</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+      <a class="next" href="/post/2019/2019-04-13-mac-sublime/">
+        <span class="next-text nav-default">解决 mac 10.14.4 无法 sublime text 3207 安装 Package Control,以及安装第三方包报错 `Package Control There are no packages available for installation`</span>
+        <span class="next-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav>
+  </footer>
+  <script src="https://utteranc.es/client.js"
+          repo="qingw/m0110.com"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterance.</a></noscript>
+</article>
+            </div>
+            
+
+        </div>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="social-links">
+  <a href="http://www.cnblogs.com/m0110" class="iconfont icon-cnblogs" title="cnblogs" rel="noopener" target="_blank" data-title="cnblogs"> </a>
+  <a href="mailto:qingwuking@gmail.com" class="iconfont icon-email" title="email" rel="noopener" target="_blank" data-title="email"> </a>
+  <a href="https://github.com/qingw" class="iconfont icon-github" title="github" rel="noopener" target="_blank" data-title="github"> </a>
+  <a href="https://juejin.im/user/5da59ad26fb9a04e0762dc7d" class="iconfont icon-juejin" title="juejin" rel="noopener" target="_blank" data-title="juejin"> </a>
+  <a href="https://www.v2ex.com/member/haskeller" class="iconfont icon-v2ex" title="v2ex" rel="noopener" target="_blank" data-title="v2ex"> </a>
+  <a href="https://qingw.github.io/index.xml" type="application/rss+xml" rel="noopener" target="_blank" class="iconfont icon-rss" title="rss"></a>
+
+
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+    <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy;
+    2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Simon Wang</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+    </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOjkYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "zh-CN".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.47f727f4.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150101234-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>
