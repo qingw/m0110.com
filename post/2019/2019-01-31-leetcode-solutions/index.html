@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Leetcode 题解 - Heal The World</title>
+    <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Simon Wang" /><meta name="description" content="Leetcode Solutions Language: javascript c mysql Last updated: 2019-01-04 https://github.com/nusr/leetcode " /><meta name="keywords" content="Mac, Github, Vue, React, Front End" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.1 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://qingw.github.io/post/2019/2019-01-31-leetcode-solutions/" />
+<link href="/post/2019/2019-01-31-leetcode-solutions/" rel="alternate" type="application/rss+xml" title="Heal The World" />
+<link href="/post/2019/2019-01-31-leetcode-solutions/" rel="feed" type="application/rss+xml" title="Heal The World" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.06658218.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/reset-even.css">
+
+
+<meta property="og:title" content="Leetcode 题解" />
+<meta property="og:description" content="
+
+    
+    
+    
+    
+
+Leetcode Solutions
+
+
+    Language: javascript c mysql
+    
+    Last updated: 2019-01-04
+    
+    https://github.com/nusr/leetcode
+    
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qingw.github.io/post/2019/2019-01-31-leetcode-solutions/" />
+<meta property="article:published_time" content="2019-01-31T17:12:18+08:00" />
+<meta property="article:modified_time" content="2019-01-31T17:12:18+08:00" />
+<meta itemprop="name" content="Leetcode 题解">
+<meta itemprop="description" content="
+
+    
+    
+    
+    
+
+Leetcode Solutions
+
+
+    Language: javascript c mysql
+    
+    Last updated: 2019-01-04
+    
+    https://github.com/nusr/leetcode
+    
+">
+
+
+<meta itemprop="datePublished" content="2019-01-31T17:12:18&#43;08:00" />
+<meta itemprop="dateModified" content="2019-01-31T17:12:18&#43;08:00" />
+<meta itemprop="wordCount" content="640">
+
+
+
+<meta itemprop="keywords" content="Leetcode,Algorithm," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Leetcode 题解"/>
+<meta name="twitter:description" content="
+
+    
+    
+    
+    
+
+Leetcode Solutions
+
+
+    Language: javascript c mysql
+    
+    Last updated: 2019-01-04
+    
+    https://github.com/nusr/leetcode
+    
+"/>
+
+</head>
+<body>
+<div id="mobile-navbar" class="mobile-navbar">
+    <div class="mobile-header-logo">
+        <a href="/" class="logo">Heal The World</a>
+    </div>
+    <div class="mobile-navbar-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+    <ul class="mobile-menu-list">
+        <a href="/">
+            <li class="mobile-menu-item" title="首页">首页</li>
+        </a>
+        <a href="/post/">
+            <li class="mobile-menu-item" title="归档">归档</li>
+        </a>
+        <a href="/categories/">
+            <li class="mobile-menu-item" title="分类">分类</li>
+        </a>
+        <a href="/tags/">
+            <li class="mobile-menu-item" title="标签">标签</li>
+        </a>
+        <a href="/about/">
+            <li class="mobile-menu-item" title="关于我">关于我</li>
+        </a>
+        <a href="https://github.com/qingw/reading-list/">
+            <li class="mobile-menu-item" title="阅读清单">阅读清单</li>
+        </a>
+        
+    </ul>
+    <form class="search-form" style="position: absolute;">
+    <input name="search" type="search" style="height: 28px;padding-left: 30px;"/>
+    <input type="image" src="/img/search.svg" alt="Search" style="position: absolute;left: 6px;top: 6px;"/>
+</form>
+
+
+</nav>
+
+<div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+    <a href="/" class="logo">Heal The World</a>
+</div>
+
+<nav class="site-navbar">
+    <ul id="menu" class="menu" data-sum="0">
+        
+        <li class="menu-item menu-item-home">
+            <a class="menu-item-link" href="/" title="首页">首页</a>
+        </li>
+        
+        <li class="menu-item menu-item-archives">
+            <a class="menu-item-link" href="/post/" title="归档">归档</a>
+        </li>
+        
+        <li class="menu-item menu-item-categories">
+            <a class="menu-item-link" href="/categories/" title="分类">分类</a>
+        </li>
+        
+        <li class="menu-item menu-item-tags">
+            <a class="menu-item-link" href="/tags/" title="标签">标签</a>
+        </li>
+        
+        <li class="menu-item menu-item-about">
+            <a class="menu-item-link" href="/about/" title="关于我">关于我</a>
+        </li>
+        
+        <li class="menu-item menu-item-reading-list">
+            <a class="menu-item-link" href="https://github.com/qingw/reading-list/" title="阅读清单">阅读清单</a>
+        </li>
+        
+    </ul>
+</nav>
+
+        <form class="search-form" style="position: absolute;">
+    <input name="search" type="search" style="height: 28px;padding-left: 30px;"/>
+    <input type="image" src="/img/search.svg" alt="Search" style="position: absolute;left: 6px;top: 6px;"/>
+</form>
+
+
+
+    </header>
+
+
+    <main id="main" class="main">
+        <div class="content-wrapper">
+            <div id="content" class="content">
+                <article class="post">
+  
+  <header class="post-header">
+    <h1 class="post-title">Leetcode 题解</h1>
+
+    <div class="post-meta">
+      <span class="post-time"> 2019-01-31 17:12 </span>
+      <div class="post-category">
+        <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+        </div>
+      <span class="more-meta"> 约 640 字 </span>
+      <span class="more-meta"> 预计阅读 2 分钟 </span>
+      <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+    </div>
+  </header>
+
+  <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    
+  </div>
+</div>
+  <div class="post-content">
+    <p align="center"><img width="300" src="https://raw.githubusercontent.com/Ma63d/leetcode-spider/master/img/site-logo.png"></p>
+<p align="center">
+    <img src="https://img.shields.io/badge/Solved/Total(Locked)-104/957(162)-green.svg?style=flat-square" alt="">
+    <img src="https://img.shields.io/badge/Hard-1-blue.svg?style=flat-square" alt="">
+    <img src="https://img.shields.io/badge/Medium-11-blue.svg?style=flat-square" alt="">
+    <img src="https://img.shields.io/badge/Easy-92-blue.svg?style=flat-square" alt="">
+</p>
+<h3 align="center">Leetcode Solutions</h3>
+
+<p align="center">
+    <b>Language: javascript c mysql</b>
+    <br>
+    <b>Last updated: 2019-01-04</b>
+    <br>
+    <a href="https://github.com/nusr/leetcode">https://github.com/nusr/leetcode</a>
+    <br>
+</p>
+
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Problems</th>
+<th>Solutions</th>
+<th>Difficulty</th>
+<th>Acceptance</th>
+<th>Paid-Only</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>001</td>
+<td><a href="https://leetcode.com/problems/two-sum/">two-sum</a></td>
+<td><a href="https://nusr.github.io/blog/001.two-sum">c,javascript</a></td>
+<td>Easy</td>
+<td>39.69%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>002</td>
+<td><a href="https://leetcode.com/problems/add-two-numbers/">add-two-numbers</a></td>
+<td><a href="https://nusr.github.io/blog/002.add-two-numbers">javascript</a></td>
+<td>Medium</td>
+<td>30.01%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>007</td>
+<td><a href="https://leetcode.com/problems/reverse-integer/">reverse-integer</a></td>
+<td><a href="https://nusr.github.io/blog/007.reverse-integer">javascript</a></td>
+<td>Easy</td>
+<td>24.87%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>008</td>
+<td><a href="https://leetcode.com/problems/string-to-integer-atoi/">string-to-integer-atoi</a></td>
+<td><a href="https://nusr.github.io/blog/008.string-to-integer-atoi">javascript</a></td>
+<td>Medium</td>
+<td>14.34%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>009</td>
+<td><a href="https://leetcode.com/problems/palindrome-number/">palindrome-number</a></td>
+<td><a href="https://nusr.github.io/blog/009.palindrome-number">javascript,c</a></td>
+<td>Easy</td>
+<td>40.67%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>013</td>
+<td><a href="https://leetcode.com/problems/roman-to-integer/">roman-to-integer</a></td>
+<td><a href="https://nusr.github.io/blog/013.roman-to-integer">javascript</a></td>
+<td>Easy</td>
+<td>50.84%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>020</td>
+<td><a href="https://leetcode.com/problems/valid-parentheses/">valid-parentheses</a></td>
+<td><a href="https://nusr.github.io/blog/020.valid-parentheses">javascript</a></td>
+<td>Easy</td>
+<td>35.40%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>021</td>
+<td><a href="https://leetcode.com/problems/merge-two-sorted-lists/">merge-two-sorted-lists</a></td>
+<td><a href="https://nusr.github.io/blog/021.merge-two-sorted-lists">javascript</a></td>
+<td>Easy</td>
+<td>44.75%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>027</td>
+<td><a href="https://leetcode.com/problems/remove-element/">remove-element</a></td>
+<td><a href="https://nusr.github.io/blog/027.remove-element">c,javascript</a></td>
+<td>Easy</td>
+<td>42.90%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>028</td>
+<td><a href="https://leetcode.com/problems/implement-strstr/">implement-strstr</a></td>
+<td><a href="https://nusr.github.io/blog/028.implement-strstr">javascript</a></td>
+<td>Easy</td>
+<td>30.73%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>035</td>
+<td><a href="https://leetcode.com/problems/search-insert-position/">search-insert-position</a></td>
+<td><a href="https://nusr.github.io/blog/035.search-insert-position">c,javascript</a></td>
+<td>Easy</td>
+<td>40.21%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>050</td>
+<td><a href="https://leetcode.com/problems/powx-n/">powx-n</a></td>
+<td><a href="https://nusr.github.io/blog/050.powx-n">javascript</a></td>
+<td>Medium</td>
+<td>27.17%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>053</td>
+<td><a href="https://leetcode.com/problems/maximum-subarray/">maximum-subarray</a></td>
+<td><a href="https://nusr.github.io/blog/053.maximum-subarray">javascript,c</a></td>
+<td>Easy</td>
+<td>42.17%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>058</td>
+<td><a href="https://leetcode.com/problems/length-of-last-word/">length-of-last-word</a></td>
+<td><a href="https://nusr.github.io/blog/058.length-of-last-word">c</a></td>
+<td>Easy</td>
+<td>32.09%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>065</td>
+<td><a href="https://leetcode.com/problems/valid-number/">valid-number</a></td>
+<td><a href="https://nusr.github.io/blog/065.valid-number">javascript</a></td>
+<td>Hard</td>
+<td>13.57%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>066</td>
+<td><a href="https://leetcode.com/problems/plus-one/">plus-one</a></td>
+<td><a href="https://nusr.github.io/blog/066.plus-one">javascript</a></td>
+<td>Easy</td>
+<td>40.36%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>067</td>
+<td><a href="https://leetcode.com/problems/add-binary/">add-binary</a></td>
+<td><a href="https://nusr.github.io/blog/067.add-binary">javascript</a></td>
+<td>Easy</td>
+<td>37.10%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>069</td>
+<td><a href="https://leetcode.com/problems/sqrtx/">sqrtx</a></td>
+<td><a href="https://nusr.github.io/blog/069.sqrtx">c</a></td>
+<td>Easy</td>
+<td>30.13%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>070</td>
+<td><a href="https://leetcode.com/problems/climbing-stairs/">climbing-stairs</a></td>
+<td><a href="https://nusr.github.io/blog/070.climbing-stairs">javascript</a></td>
+<td>Easy</td>
+<td>42.73%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>083</td>
+<td><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/">remove-duplicates-from-sorted-list</a></td>
+<td><a href="https://nusr.github.io/blog/083.remove-duplicates-from-sorted-list">c</a></td>
+<td>Easy</td>
+<td>41.51%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>100</td>
+<td><a href="https://leetcode.com/problems/same-tree/">same-tree</a></td>
+<td><a href="https://nusr.github.io/blog/100.same-tree">javascript</a></td>
+<td>Easy</td>
+<td>49.02%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>102</td>
+<td><a href="https://leetcode.com/problems/binary-tree-level-order-traversal/">binary-tree-level-order-traversal</a></td>
+<td><a href="https://nusr.github.io/blog/102.binary-tree-level-order-traversal">javascript</a></td>
+<td>Medium</td>
+<td>46.07%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>104</td>
+<td><a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/">maximum-depth-of-binary-tree</a></td>
+<td><a href="https://nusr.github.io/blog/104.maximum-depth-of-binary-tree">javascript</a></td>
+<td>Easy</td>
+<td>58.24%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>107</td>
+<td><a href="https://leetcode.com/problems/binary-tree-level-order-traversal-ii/">binary-tree-level-order-traversal-ii</a></td>
+<td><a href="https://nusr.github.io/blog/107.binary-tree-level-order-traversal-ii">javascript</a></td>
+<td>Easy</td>
+<td>44.89%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>110</td>
+<td><a href="https://leetcode.com/problems/balanced-binary-tree/">balanced-binary-tree</a></td>
+<td><a href="https://nusr.github.io/blog/110.balanced-binary-tree">c,javascript</a></td>
+<td>Easy</td>
+<td>39.93%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>111</td>
+<td><a href="https://leetcode.com/problems/minimum-depth-of-binary-tree/">minimum-depth-of-binary-tree</a></td>
+<td><a href="https://nusr.github.io/blog/111.minimum-depth-of-binary-tree">javascript</a></td>
+<td>Easy</td>
+<td>34.54%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>118</td>
+<td><a href="https://leetcode.com/problems/pascals-triangle/">pascals-triangle</a></td>
+<td><a href="https://nusr.github.io/blog/118.pascals-triangle">javascript</a></td>
+<td>Easy</td>
+<td>43.51%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>119</td>
+<td><a href="https://leetcode.com/problems/pascals-triangle-ii/">pascals-triangle-ii</a></td>
+<td><a href="https://nusr.github.io/blog/119.pascals-triangle-ii">javascript</a></td>
+<td>Easy</td>
+<td>41.09%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>121</td>
+<td><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">best-time-to-buy-and-sell-stock</a></td>
+<td><a href="https://nusr.github.io/blog/121.best-time-to-buy-and-sell-stock">c,javascript</a></td>
+<td>Easy</td>
+<td>45.45%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>125</td>
+<td><a href="https://leetcode.com/problems/valid-palindrome/">valid-palindrome</a></td>
+<td><a href="https://nusr.github.io/blog/125.valid-palindrome">c</a></td>
+<td>Easy</td>
+<td>29.54%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>136</td>
+<td><a href="https://leetcode.com/problems/single-number/">single-number</a></td>
+<td><a href="https://nusr.github.io/blog/136.single-number">javascript</a></td>
+<td>Easy</td>
+<td>58.07%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>144</td>
+<td><a href="https://leetcode.com/problems/binary-tree-preorder-traversal/">binary-tree-preorder-traversal</a></td>
+<td><a href="https://nusr.github.io/blog/144.binary-tree-preorder-traversal">javascript</a></td>
+<td>Medium</td>
+<td>49.51%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>160</td>
+<td><a href="https://leetcode.com/problems/intersection-of-two-linked-lists/">intersection-of-two-linked-lists</a></td>
+<td><a href="https://nusr.github.io/blog/160.intersection-of-two-linked-lists">javascript</a></td>
+<td>Easy</td>
+<td>31.21%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>167</td>
+<td><a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/">two-sum-ii-input-array-is-sorted</a></td>
+<td><a href="https://nusr.github.io/blog/167.two-sum-ii-input-array-is-sorted">javascript</a></td>
+<td>Easy</td>
+<td>48.39%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>169</td>
+<td><a href="https://leetcode.com/problems/majority-element/">majority-element</a></td>
+<td><a href="https://nusr.github.io/blog/169.majority-element">c,javascript</a></td>
+<td>Easy</td>
+<td>50.68%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>175</td>
+<td><a href="https://leetcode.com/problems/combine-two-tables/">combine-two-tables</a></td>
+<td><a href="https://nusr.github.io/blog/175.combine-two-tables">mysql</a></td>
+<td>Easy</td>
+<td>47.55%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>189</td>
+<td><a href="https://leetcode.com/problems/rotate-array/">rotate-array</a></td>
+<td><a href="https://nusr.github.io/blog/189.rotate-array">javascript,c</a></td>
+<td>Easy</td>
+<td>28.06%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>190</td>
+<td><a href="https://leetcode.com/problems/reverse-bits/">reverse-bits</a></td>
+<td><a href="https://nusr.github.io/blog/190.reverse-bits">javascript</a></td>
+<td>Easy</td>
+<td>29.43%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>191</td>
+<td><a href="https://leetcode.com/problems/number-of-1-bits/">number-of-1-bits</a></td>
+<td><a href="https://nusr.github.io/blog/191.number-of-1-bits">c</a></td>
+<td>Easy</td>
+<td>41.18%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>202</td>
+<td><a href="https://leetcode.com/problems/happy-number/">happy-number</a></td>
+<td><a href="https://nusr.github.io/blog/202.happy-number">c</a></td>
+<td>Easy</td>
+<td>43.68%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>203</td>
+<td><a href="https://leetcode.com/problems/remove-linked-list-elements/">remove-linked-list-elements</a></td>
+<td><a href="https://nusr.github.io/blog/203.remove-linked-list-elements">c</a></td>
+<td>Easy</td>
+<td>34.87%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>204</td>
+<td><a href="https://leetcode.com/problems/count-primes/">count-primes</a></td>
+<td><a href="https://nusr.github.io/blog/204.count-primes">javascript</a></td>
+<td>Easy</td>
+<td>27.66%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>206</td>
+<td><a href="https://leetcode.com/problems/reverse-linked-list/">reverse-linked-list</a></td>
+<td><a href="https://nusr.github.io/blog/206.reverse-linked-list">c</a></td>
+<td>Easy</td>
+<td>51.36%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>217</td>
+<td><a href="https://leetcode.com/problems/contains-duplicate/">contains-duplicate</a></td>
+<td><a href="https://nusr.github.io/blog/217.contains-duplicate">c,javascript</a></td>
+<td>Easy</td>
+<td>49.94%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>226</td>
+<td><a href="https://leetcode.com/problems/invert-binary-tree/">invert-binary-tree</a></td>
+<td><a href="https://nusr.github.io/blog/226.invert-binary-tree">javascript,c</a></td>
+<td>Easy</td>
+<td>56.23%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>231</td>
+<td><a href="https://leetcode.com/problems/power-of-two/">power-of-two</a></td>
+<td><a href="https://nusr.github.io/blog/231.power-of-two">c</a></td>
+<td>Easy</td>
+<td>41.42%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>234</td>
+<td><a href="https://leetcode.com/problems/palindrome-linked-list/">palindrome-linked-list</a></td>
+<td><a href="https://nusr.github.io/blog/234.palindrome-linked-list">c</a></td>
+<td>Easy</td>
+<td>34.84%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>237</td>
+<td><a href="https://leetcode.com/problems/delete-node-in-a-linked-list/">delete-node-in-a-linked-list</a></td>
+<td><a href="https://nusr.github.io/blog/237.delete-node-in-a-linked-list">javascript</a></td>
+<td>Easy</td>
+<td>50.88%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>242</td>
+<td><a href="https://leetcode.com/problems/valid-anagram/">valid-anagram</a></td>
+<td><a href="https://nusr.github.io/blog/242.valid-anagram">javascript</a></td>
+<td>Easy</td>
+<td>50.10%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>258</td>
+<td><a href="https://leetcode.com/problems/add-digits/">add-digits</a></td>
+<td><a href="https://nusr.github.io/blog/258.add-digits">c</a></td>
+<td>Easy</td>
+<td>53.14%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>263</td>
+<td><a href="https://leetcode.com/problems/ugly-number/">ugly-number</a></td>
+<td><a href="https://nusr.github.io/blog/263.ugly-number">c</a></td>
+<td>Easy</td>
+<td>40.21%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>268</td>
+<td><a href="https://leetcode.com/problems/missing-number/">missing-number</a></td>
+<td><a href="https://nusr.github.io/blog/268.missing-number">javascript,c</a></td>
+<td>Easy</td>
+<td>46.92%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>283</td>
+<td><a href="https://leetcode.com/problems/move-zeroes/">move-zeroes</a></td>
+<td><a href="https://nusr.github.io/blog/283.move-zeroes">c,javascript</a></td>
+<td>Easy</td>
+<td>53.11%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>326</td>
+<td><a href="https://leetcode.com/problems/power-of-three/">power-of-three</a></td>
+<td><a href="https://nusr.github.io/blog/326.power-of-three">c</a></td>
+<td>Easy</td>
+<td>41.21%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>342</td>
+<td><a href="https://leetcode.com/problems/power-of-four/">power-of-four</a></td>
+<td><a href="https://nusr.github.io/blog/342.power-of-four">javascript,c</a></td>
+<td>Easy</td>
+<td>39.82%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>344</td>
+<td><a href="https://leetcode.com/problems/reverse-string/">reverse-string</a></td>
+<td><a href="https://nusr.github.io/blog/344.reverse-string">c</a></td>
+<td>Easy</td>
+<td>62.22%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>345</td>
+<td><a href="https://leetcode.com/problems/reverse-vowels-of-a-string/">reverse-vowels-of-a-string</a></td>
+<td><a href="https://nusr.github.io/blog/345.reverse-vowels-of-a-string">javascript</a></td>
+<td>Easy</td>
+<td>40.43%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>349</td>
+<td><a href="https://leetcode.com/problems/intersection-of-two-arrays/">intersection-of-two-arrays</a></td>
+<td><a href="https://nusr.github.io/blog/349.intersection-of-two-arrays">javascript</a></td>
+<td>Easy</td>
+<td>51.75%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>350</td>
+<td><a href="https://leetcode.com/problems/intersection-of-two-arrays-ii/">intersection-of-two-arrays-ii</a></td>
+<td><a href="https://nusr.github.io/blog/350.intersection-of-two-arrays-ii">javascript</a></td>
+<td>Easy</td>
+<td>46.07%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>367</td>
+<td><a href="https://leetcode.com/problems/valid-perfect-square/">valid-perfect-square</a></td>
+<td><a href="https://nusr.github.io/blog/367.valid-perfect-square">c</a></td>
+<td>Easy</td>
+<td>39.09%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>371</td>
+<td><a href="https://leetcode.com/problems/sum-of-two-integers/">sum-of-two-integers</a></td>
+<td><a href="https://nusr.github.io/blog/371.sum-of-two-integers">javascript</a></td>
+<td>Easy</td>
+<td>51.26%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>387</td>
+<td><a href="https://leetcode.com/problems/first-unique-character-in-a-string/">first-unique-character-in-a-string</a></td>
+<td><a href="https://nusr.github.io/blog/387.first-unique-character-in-a-string">javascript</a></td>
+<td>Easy</td>
+<td>48.35%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>389</td>
+<td><a href="https://leetcode.com/problems/find-the-difference/">find-the-difference</a></td>
+<td><a href="https://nusr.github.io/blog/389.find-the-difference">javascript</a></td>
+<td>Easy</td>
+<td>52.40%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>396</td>
+<td><a href="https://leetcode.com/problems/rotate-function/">rotate-function</a></td>
+<td><a href="https://nusr.github.io/blog/396.rotate-function">javascript</a></td>
+<td>Medium</td>
+<td>34.62%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>434</td>
+<td><a href="https://leetcode.com/problems/number-of-segments-in-a-string/">number-of-segments-in-a-string</a></td>
+<td><a href="https://nusr.github.io/blog/434.number-of-segments-in-a-string">c</a></td>
+<td>Easy</td>
+<td>36.49%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>441</td>
+<td><a href="https://leetcode.com/problems/arranging-coins/">arranging-coins</a></td>
+<td><a href="https://nusr.github.io/blog/441.arranging-coins">c</a></td>
+<td>Easy</td>
+<td>37.11%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>442</td>
+<td><a href="https://leetcode.com/problems/find-all-duplicates-in-an-array/">find-all-duplicates-in-an-array</a></td>
+<td><a href="https://nusr.github.io/blog/442.find-all-duplicates-in-an-array">javascript</a></td>
+<td>Medium</td>
+<td>59.12%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>461</td>
+<td><a href="https://leetcode.com/problems/hamming-distance/">hamming-distance</a></td>
+<td><a href="https://nusr.github.io/blog/461.hamming-distance">c</a></td>
+<td>Easy</td>
+<td>69.72%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>476</td>
+<td><a href="https://leetcode.com/problems/number-complement/">number-complement</a></td>
+<td><a href="https://nusr.github.io/blog/476.number-complement">javascript</a></td>
+<td>Easy</td>
+<td>61.78%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>485</td>
+<td><a href="https://leetcode.com/problems/max-consecutive-ones/">max-consecutive-ones</a></td>
+<td><a href="https://nusr.github.io/blog/485.max-consecutive-ones">javascript,c</a></td>
+<td>Easy</td>
+<td>54.14%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>504</td>
+<td><a href="https://leetcode.com/problems/base-7/">base-7</a></td>
+<td><a href="https://nusr.github.io/blog/504.base-7">javascript</a></td>
+<td>Easy</td>
+<td>44.32%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>507</td>
+<td><a href="https://leetcode.com/problems/perfect-number/">perfect-number</a></td>
+<td><a href="https://nusr.github.io/blog/507.perfect-number">javascript</a></td>
+<td>Easy</td>
+<td>32.78%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>520</td>
+<td><a href="https://leetcode.com/problems/detect-capital/">detect-capital</a></td>
+<td><a href="https://nusr.github.io/blog/520.detect-capital">c</a></td>
+<td>Easy</td>
+<td>52.06%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>535</td>
+<td><a href="https://leetcode.com/problems/encode-and-decode-tinyurl/">encode-and-decode-tinyurl</a></td>
+<td><a href="https://nusr.github.io/blog/535.encode-and-decode-tinyurl">javascript</a></td>
+<td>Medium</td>
+<td>75.13%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>541</td>
+<td><a href="https://leetcode.com/problems/reverse-string-ii/">reverse-string-ii</a></td>
+<td><a href="https://nusr.github.io/blog/541.reverse-string-ii">javascript</a></td>
+<td>Easy</td>
+<td>44.72%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>551</td>
+<td><a href="https://leetcode.com/problems/student-attendance-record-i/">student-attendance-record-i</a></td>
+<td><a href="https://nusr.github.io/blog/551.student-attendance-record-i">javascript</a></td>
+<td>Easy</td>
+<td>45.04%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>557</td>
+<td><a href="https://leetcode.com/problems/reverse-words-in-a-string-iii/">reverse-words-in-a-string-iii</a></td>
+<td><a href="https://nusr.github.io/blog/557.reverse-words-in-a-string-iii">javascript</a></td>
+<td>Easy</td>
+<td>62.40%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>561</td>
+<td><a href="https://leetcode.com/problems/array-partition-i/">array-partition-i</a></td>
+<td><a href="https://nusr.github.io/blog/561.array-partition-i">c,javascript</a></td>
+<td>Easy</td>
+<td>67.77%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>595</td>
+<td><a href="https://leetcode.com/problems/big-countries/">big-countries</a></td>
+<td><a href="https://nusr.github.io/blog/595.big-countries">mysql</a></td>
+<td>Easy</td>
+<td>72.43%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>617</td>
+<td><a href="https://leetcode.com/problems/merge-two-binary-trees/">merge-two-binary-trees</a></td>
+<td><a href="https://nusr.github.io/blog/617.merge-two-binary-trees">javascript</a></td>
+<td>Easy</td>
+<td>68.47%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>620</td>
+<td><a href="https://leetcode.com/problems/not-boring-movies/">not-boring-movies</a></td>
+<td><a href="https://nusr.github.io/blog/620.not-boring-movies">mysql</a></td>
+<td>Easy</td>
+<td>60.44%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>627</td>
+<td><a href="https://leetcode.com/problems/swap-salary/">swap-salary</a></td>
+<td><a href="https://nusr.github.io/blog/627.swap-salary">mysql</a></td>
+<td>Easy</td>
+<td>68.12%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>637</td>
+<td><a href="https://leetcode.com/problems/average-of-levels-in-binary-tree/">average-of-levels-in-binary-tree</a></td>
+<td><a href="https://nusr.github.io/blog/637.average-of-levels-in-binary-tree">javascript</a></td>
+<td>Easy</td>
+<td>57.41%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>654</td>
+<td><a href="https://leetcode.com/problems/maximum-binary-tree/">maximum-binary-tree</a></td>
+<td><a href="https://nusr.github.io/blog/654.maximum-binary-tree">c,javascript</a></td>
+<td>Medium</td>
+<td>71.08%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>657</td>
+<td><a href="https://leetcode.com/problems/robot-return-to-origin/">robot-return-to-origin</a></td>
+<td><a href="https://nusr.github.io/blog/657.robot-return-to-origin">javascript</a></td>
+<td>Easy</td>
+<td>70.17%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>700</td>
+<td><a href="https://leetcode.com/problems/search-in-a-binary-search-tree/">search-in-a-binary-search-tree</a></td>
+<td><a href="https://nusr.github.io/blog/700.search-in-a-binary-search-tree">c</a></td>
+<td>Easy</td>
+<td>64.86%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>701</td>
+<td><a href="https://leetcode.com/problems/insert-into-a-binary-search-tree/">insert-into-a-binary-search-tree</a></td>
+<td><a href="https://nusr.github.io/blog/701.insert-into-a-binary-search-tree">javascript,c</a></td>
+<td>Medium</td>
+<td>71.43%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>709</td>
+<td><a href="https://leetcode.com/problems/to-lower-case/">to-lower-case</a></td>
+<td><a href="https://nusr.github.io/blog/709.to-lower-case">javascript</a></td>
+<td>Easy</td>
+<td>75.25%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>728</td>
+<td><a href="https://leetcode.com/problems/self-dividing-numbers/">self-dividing-numbers</a></td>
+<td><a href="https://nusr.github.io/blog/728.self-dividing-numbers">javascript</a></td>
+<td>Easy</td>
+<td>68.17%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>771</td>
+<td><a href="https://leetcode.com/problems/jewels-and-stones/">jewels-and-stones</a></td>
+<td><a href="https://nusr.github.io/blog/771.jewels-and-stones">javascript</a></td>
+<td>Easy</td>
+<td>82.32%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>804</td>
+<td><a href="https://leetcode.com/problems/unique-morse-code-words/">unique-morse-code-words</a></td>
+<td><a href="https://nusr.github.io/blog/804.unique-morse-code-words">javascript</a></td>
+<td>Easy</td>
+<td>72.79%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>832</td>
+<td><a href="https://leetcode.com/problems/flipping-an-image/">flipping-an-image</a></td>
+<td><a href="https://nusr.github.io/blog/832.flipping-an-image">javascript</a></td>
+<td>Easy</td>
+<td>70.36%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>852</td>
+<td><a href="https://leetcode.com/problems/peak-index-in-a-mountain-array/">peak-index-in-a-mountain-array</a></td>
+<td><a href="https://nusr.github.io/blog/852.peak-index-in-a-mountain-array">javascript</a></td>
+<td>Easy</td>
+<td>68.20%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>867</td>
+<td><a href="https://leetcode.com/problems/transpose-matrix/">transpose-matrix</a></td>
+<td><a href="https://nusr.github.io/blog/867.transpose-matrix">javascript</a></td>
+<td>Easy</td>
+<td>63.43%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>868</td>
+<td><a href="https://leetcode.com/problems/binary-gap/">binary-gap</a></td>
+<td><a href="https://nusr.github.io/blog/868.binary-gap">javascript</a></td>
+<td>Easy</td>
+<td>59.17%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>872</td>
+<td><a href="https://leetcode.com/problems/leaf-similar-trees/">leaf-similar-trees</a></td>
+<td><a href="https://nusr.github.io/blog/872.leaf-similar-trees">javascript</a></td>
+<td>Easy</td>
+<td>61.40%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>876</td>
+<td><a href="https://leetcode.com/problems/middle-of-the-linked-list/">middle-of-the-linked-list</a></td>
+<td><a href="https://nusr.github.io/blog/876.middle-of-the-linked-list">javascript</a></td>
+<td>Easy</td>
+<td>63.02%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>884</td>
+<td><a href="https://leetcode.com/problems/uncommon-words-from-two-sentences/">uncommon-words-from-two-sentences</a></td>
+<td><a href="https://nusr.github.io/blog/884.uncommon-words-from-two-sentences">javascript</a></td>
+<td>Easy</td>
+<td>60.41%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>905</td>
+<td><a href="https://leetcode.com/problems/sort-array-by-parity/">sort-array-by-parity</a></td>
+<td><a href="https://nusr.github.io/blog/905.sort-array-by-parity">javascript</a></td>
+<td>Easy</td>
+<td>71.56%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>922</td>
+<td><a href="https://leetcode.com/problems/sort-array-by-parity-ii/">sort-array-by-parity-ii</a></td>
+<td><a href="https://nusr.github.io/blog/922.sort-array-by-parity-ii">javascript</a></td>
+<td>Easy</td>
+<td>66.26%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>929</td>
+<td><a href="https://leetcode.com/problems/unique-email-addresses/">unique-email-addresses</a></td>
+<td><a href="https://nusr.github.io/blog/929.unique-email-addresses">javascript</a></td>
+<td>Easy</td>
+<td>79.78%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>938</td>
+<td><a href="https://leetcode.com/problems/range-sum-of-bst/">range-sum-of-bst</a></td>
+<td><a href="https://nusr.github.io/blog/938.range-sum-of-bst">javascript</a></td>
+<td>Medium</td>
+<td>80.73%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>961</td>
+<td><a href="https://leetcode.com/problems/n-repeated-element-in-size-2n-array/">n-repeated-element-in-size-2n-array</a></td>
+<td><a href="https://nusr.github.io/blog/961.n-repeated-element-in-size-2n-array">javascript,c</a></td>
+<td>Easy</td>
+<td>73.70%</td>
+<td>No</td>
+</tr>
+
+<tr>
+<td>965</td>
+<td><a href="https://leetcode.com/problems/univalued-binary-tree/">univalued-binary-tree</a></td>
+<td><a href="https://nusr.github.io/blog/965.univalued-binary-tree">javascript,c</a></td>
+<td>Easy</td>
+<td>72.55%</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+  </div>
+
+  <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Simon Wang</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-01-31 17:12
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a target="_blank" rel="license noopener" href="https://github.com/qingw/m0110.com/blob/master/LICENSE">MIT</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin-simon.jpeg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay-simon.jpeg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+    <div class="post-tags">
+      <a href="/tags/Leetcode/">Leetcode</a>
+      <a href="/tags/Algorithm/">Algorithm</a>
+      </div>
+    <nav class="post-nav">
+      <a class="prev" href="/post/2019/2019-04-03-vue-cli-svg-symbol/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default"> @vue/cli 3.0 使用 svg-sprite-loader 加载本地 SVG 文件</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+      <a class="next" href="/post/2019/2019-01-31-why-I-recommend-you-to-use-kindle/">
+        <span class="next-text nav-default">我为什么推荐你使用kindle</span>
+        <span class="next-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav>
+  </footer>
+  <script src="https://utteranc.es/client.js"
+          repo="qingw/m0110.com"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterance.</a></noscript>
+</article>
+            </div>
+            
+
+        </div>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="social-links">
+  <a href="http://www.cnblogs.com/m0110" class="iconfont icon-cnblogs" title="cnblogs" rel="noopener" target="_blank" data-title="cnblogs"> </a>
+  <a href="mailto:qingwuking@gmail.com" class="iconfont icon-email" title="email" rel="noopener" target="_blank" data-title="email"> </a>
+  <a href="https://github.com/qingw" class="iconfont icon-github" title="github" rel="noopener" target="_blank" data-title="github"> </a>
+  <a href="https://juejin.im/user/5da59ad26fb9a04e0762dc7d" class="iconfont icon-juejin" title="juejin" rel="noopener" target="_blank" data-title="juejin"> </a>
+  <a href="https://www.v2ex.com/member/haskeller" class="iconfont icon-v2ex" title="v2ex" rel="noopener" target="_blank" data-title="v2ex"> </a>
+  <a href="https://qingw.github.io/index.xml" type="application/rss+xml" rel="noopener" target="_blank" class="iconfont icon-rss" title="rss"></a>
+
+
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+    <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy;
+    2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Simon Wang</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+    </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOjkYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "zh-CN".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.47f727f4.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150101234-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

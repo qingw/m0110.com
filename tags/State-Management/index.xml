@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>State Management on Heal The World</title>
+    <link>https://qingw.github.io/tags/State-Management/</link>
+    <description>Recent content in State Management on Heal The World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 08 May 2019 20:09:06 +0800</lastBuildDate>
+    
+	<atom:link href="https://qingw.github.io/tags/State-Management/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>React 状态管理终结篇</title>
+      <link>https://qingw.github.io/post/2019/2019-05-08-react-unstated-next/</link>
+      <pubDate>Wed, 08 May 2019 20:09:06 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-05-08-react-unstated-next/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/jamiebuilds/unstated-next&#34;&gt;Unstated Next&lt;/a&gt; readme 的中文翻译&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;这个库的作者希望使用 React 内置 API ,直接实现状态管理的功能。看完这个库的说明后，没有想到代码可以这个玩。短短几行代码，仅仅使用 React Hooks ，就实现了状态管理的功能。&lt;/p&gt;
+
+&lt;p&gt;看完之后，第一想法就是翻译成中文，分享给其他人。提交 Pull Request 后，库作者将我的翻译合并了。同时作者欢迎将 README 翻译成其他语言，以下是全部翻译内容，不妥之处欢迎指正或 Pull Request.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

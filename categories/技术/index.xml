@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技术 on Heal The World</title>
+    <link>https://qingw.github.io/categories/%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 技术 on Heal The World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 07 Jul 2019 22:28:34 +0800</lastBuildDate>
+    
+	<atom:link href="https://qingw.github.io/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 Create-React-App 开发 Chrome 扩展</title>
+      <link>https://qingw.github.io/post/2019/2019-07-07-create-react-app-chrome-extension/</link>
+      <pubDate>Sun, 07 Jul 2019 22:28:34 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-07-07-create-react-app-chrome-extension/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;整理 Kindle 标注、书签和笔记从未如此简单！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Kindle 标注管理应用 &lt;a href=&#34;https://kmate.me/cn/&#34;&gt;Kindle Mate&lt;/a&gt; 只支持 Windows，不支持 Mac。标注只是解析&lt;strong&gt;我的剪贴&lt;/strong&gt;文本文件，配合 &lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader&#34;&gt;FileReader&lt;/a&gt; API，写个 Chrome 扩展解析文本文件就好了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>React 状态管理终结篇</title>
+      <link>https://qingw.github.io/post/2019/2019-05-08-react-unstated-next/</link>
+      <pubDate>Wed, 08 May 2019 20:09:06 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-05-08-react-unstated-next/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/jamiebuilds/unstated-next&#34;&gt;Unstated Next&lt;/a&gt; readme 的中文翻译&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;这个库的作者希望使用 React 内置 API ,直接实现状态管理的功能。看完这个库的说明后，没有想到代码可以这个玩。短短几行代码，仅仅使用 React Hooks ，就实现了状态管理的功能。&lt;/p&gt;
+
+&lt;p&gt;看完之后，第一想法就是翻译成中文，分享给其他人。提交 Pull Request 后，库作者将我的翻译合并了。同时作者欢迎将 README 翻译成其他语言，以下是全部翻译内容，不妥之处欢迎指正或 Pull Request.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo &#43; Github Pages 搭建个人博客</title>
+      <link>https://qingw.github.io/post/2019/2019-04-26-creat-hugo-blog/</link>
+      <pubDate>Fri, 26 Apr 2019 13:06:49 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-26-creat-hugo-blog/</guid>
+      <description>&lt;p&gt;尝试过 Hexo 、GatsbyJs、 Vuepress 搭建博客后，对这些工具最大的不满，就是运行速度以及打包速度。&lt;/p&gt;
+
+&lt;p&gt;后来看到 &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; ,号称最快的静态站点生成器后。&lt;/p&gt;
+
+&lt;p&gt;尝试搭建博客，发现不管是运行速度，还是打包速度超级快，果断将个人博客迁移到 Hugo。
+Hugo 官方的定义是：&lt;/p&gt;
+
+&lt;p&gt;Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.(Hugo 是使用 Go 编写的快速而现代的静态站点生成器，旨在使网站创建变得有趣。)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>React 与 React-Native 使用同一个 meteor 后台</title>
+      <link>https://qingw.github.io/post/2019/2019-04-22-meteor-react-react-native/</link>
+      <pubDate>Mon, 22 Apr 2019 09:07:06 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-22-meteor-react-react-native/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.meteor.com/&#34;&gt;meteor&lt;/a&gt; 可以快速构建 pc,移动端，桌面端应用。&lt;/p&gt;
+
+&lt;p&gt;最大的优点是：数据库的数据发生变化时，可以实时推送到前端，非常适用于实时展示的应用开发。&lt;/p&gt;
+
+&lt;p&gt;在 react,react-native 应用中，可以仅使用同一个 meteor 后台，实时向前端推送数据。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/nusr/meteor&#34;&gt;github 代码地址&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>解决 React-Native 在 Mac 下启动报 error code 65</title>
+      <link>https://qingw.github.io/post/2019/2019-04-21-react-native-mac-error/</link>
+      <pubDate>Sun, 21 Apr 2019 16:55:06 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-21-react-native-mac-error/</guid>
+      <description>&lt;p&gt;React-Native 开发的项目，Android 方面没有任何问题，IOS 就是无法跑起来，报错信息如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;error Failed to build iOS project. We ran &lt;span class=&#34;s2&#34;&gt;&amp;#34;xcodebuild&amp;#34;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt; but it exited with error code &lt;span class=&#34;m&#34;&gt;65&lt;/span&gt;. To debug build logs further, consider building your app with Xcode.app, by opening reactNative.xcodeproj&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Mac 版本是 10.14.4 ，xcode 版本是 10.2.1&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>一行命令更新所有 npm 依赖包</title>
+      <link>https://qingw.github.io/post/2019/2019-04-21-update-all-npm-package/</link>
+      <pubDate>Sun, 21 Apr 2019 12:55:27 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-21-update-all-npm-package/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;npm&lt;/strong&gt; 包的更新速度很快，为了将项目或者全局依赖更新到最新版本。传统的做法是一个一个更新，比如更新 &lt;strong&gt;react&lt;/strong&gt; 到最新版本，命令如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# npm&lt;/span&gt;
+npm i --save react@latest
+&lt;span class=&#34;c1&#34;&gt;# yarn&lt;/span&gt;
+yarn add react@latest&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;yarn&lt;/strong&gt; 是 facebook 发明的新一代 js 包管理器，支持离线使用。&lt;a href=&#34;https://yarnpkg.com/zh-Hans/docs/migrating-from-npm&#34;&gt;这是 npm 与 yarn 的 命令对照&lt;/a&gt;。
+但是，这种做法相当耗时。有没有更简单的方法呢？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>vue cli 3.x 项目部署到 github pages</title>
+      <link>https://qingw.github.io/post/2019/2019-04-16-vue-cli-github-pages/</link>
+      <pubDate>Tue, 16 Apr 2019 21:20:39 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-16-vue-cli-github-pages/</guid>
+      <description>&lt;p&gt;github pages 是 github 免费为用户提供的服务，写博客，或者部署一些纯静态项目。&lt;/p&gt;
+
+&lt;p&gt;最近将 vue cli 3.x 初始化项目部署到 github pages，踩了一些坑，记录如下。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title> @vue/cli 3.0 使用 svg-sprite-loader 加载本地 SVG 文件</title>
+      <link>https://qingw.github.io/post/2019/2019-04-03-vue-cli-svg-symbol/</link>
+      <pubDate>Wed, 03 Apr 2019 16:34:59 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-03-vue-cli-svg-symbol/</guid>
+      <description>&lt;p&gt;Vue 脚手架升级 3.0，项目也随之升级。&lt;a href=&#34;https://cli.vuejs.org/&#34;&gt;Vue cli 3.0&lt;/a&gt; 使用 svg-symbol(svg 雪碧图)，整个 &lt;a href=&#34;https://www.iconfont.cn&#34;&gt;iconfont&lt;/a&gt; 的图标库为你所用，加快开发速度。Ant-Design 也使用这种方式引入图标。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 题解</title>
+      <link>https://qingw.github.io/post/2019/2019-01-31-leetcode-solutions/</link>
+      <pubDate>Thu, 31 Jan 2019 17:12:18 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-01-31-leetcode-solutions/</guid>
+      <description>&lt;p align=&#34;center&#34;&gt;&lt;img width=&#34;300&#34; src=&#34;https://raw.githubusercontent.com/Ma63d/leetcode-spider/master/img/site-logo.png&#34;&gt;&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;
+    &lt;img src=&#34;https://img.shields.io/badge/Solved/Total(Locked)-104/957(162)-green.svg?style=flat-square&#34; alt=&#34;&#34;&gt;
+    &lt;img src=&#34;https://img.shields.io/badge/Hard-1-blue.svg?style=flat-square&#34; alt=&#34;&#34;&gt;
+    &lt;img src=&#34;https://img.shields.io/badge/Medium-11-blue.svg?style=flat-square&#34; alt=&#34;&#34;&gt;
+    &lt;img src=&#34;https://img.shields.io/badge/Easy-92-blue.svg?style=flat-square&#34; alt=&#34;&#34;&gt;
+&lt;/p&gt;
+&lt;h3 align=&#34;center&#34;&gt;Leetcode Solutions&lt;/h3&gt;
+
+&lt;p align=&#34;center&#34;&gt;
+    &lt;b&gt;Language: javascript c mysql&lt;/b&gt;
+    &lt;br&gt;
+    &lt;b&gt;Last updated: 2019-01-04&lt;/b&gt;
+    &lt;br&gt;
+    &lt;a href=&#34;https://github.com/nusr/leetcode&#34;&gt;https://github.com/nusr/leetcode&lt;/a&gt;
+    &lt;br&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Node.js 种子下载器</title>
+      <link>https://qingw.github.io/post/2018/2018-10-11-nodejs-seed-downloader/</link>
+      <pubDate>Thu, 11 Oct 2018 12:58:44 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2018/2018-10-11-nodejs-seed-downloader/</guid>
+      <description>&lt;p&gt;庆祝 2018 国庆，制作了一个 &lt;code&gt;Node.js&lt;/code&gt; 的种子下载器。爬取页面，根据页面的链接，破解另外一个网站，下载种子文件。项目比较简单，爬取页面没有使用任何爬虫框架。&lt;a href=&#34;https://github.com/nusr/FBIWarning&#34;&gt;项目源码&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Node.js 多版本安装</title>
+      <link>https://qingw.github.io/post/2018/2018-10-01-install-multi-version-nodejs/</link>
+      <pubDate>Mon, 01 Oct 2018 15:37:44 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2018/2018-10-01-install-multi-version-nodejs/</guid>
+      <description>Node.js® is a JavaScript runtime built on Chrome&#39;s V8 JavaScript engine（Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境）。 Node.js 跨平台，支持 Windows、 Linux、M</description>
+    </item>
+    
+  </channel>
+</rss>

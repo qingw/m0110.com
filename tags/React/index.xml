@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React on Heal The World</title>
+    <link>https://qingw.github.io/tags/React/</link>
+    <description>Recent content in React on Heal The World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 07 Jul 2019 22:28:34 +0800</lastBuildDate>
+    
+	<atom:link href="https://qingw.github.io/tags/React/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用 Create-React-App 开发 Chrome 扩展</title>
+      <link>https://qingw.github.io/post/2019/2019-07-07-create-react-app-chrome-extension/</link>
+      <pubDate>Sun, 07 Jul 2019 22:28:34 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-07-07-create-react-app-chrome-extension/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;整理 Kindle 标注、书签和笔记从未如此简单！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Kindle 标注管理应用 &lt;a href=&#34;https://kmate.me/cn/&#34;&gt;Kindle Mate&lt;/a&gt; 只支持 Windows，不支持 Mac。标注只是解析&lt;strong&gt;我的剪贴&lt;/strong&gt;文本文件，配合 &lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader&#34;&gt;FileReader&lt;/a&gt; API，写个 Chrome 扩展解析文本文件就好了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>React 状态管理终结篇</title>
+      <link>https://qingw.github.io/post/2019/2019-05-08-react-unstated-next/</link>
+      <pubDate>Wed, 08 May 2019 20:09:06 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-05-08-react-unstated-next/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/jamiebuilds/unstated-next&#34;&gt;Unstated Next&lt;/a&gt; readme 的中文翻译&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;这个库的作者希望使用 React 内置 API ,直接实现状态管理的功能。看完这个库的说明后，没有想到代码可以这个玩。短短几行代码，仅仅使用 React Hooks ，就实现了状态管理的功能。&lt;/p&gt;
+
+&lt;p&gt;看完之后，第一想法就是翻译成中文，分享给其他人。提交 Pull Request 后，库作者将我的翻译合并了。同时作者欢迎将 README 翻译成其他语言，以下是全部翻译内容，不妥之处欢迎指正或 Pull Request.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>React 与 React-Native 使用同一个 meteor 后台</title>
+      <link>https://qingw.github.io/post/2019/2019-04-22-meteor-react-react-native/</link>
+      <pubDate>Mon, 22 Apr 2019 09:07:06 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-22-meteor-react-react-native/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.meteor.com/&#34;&gt;meteor&lt;/a&gt; 可以快速构建 pc,移动端，桌面端应用。&lt;/p&gt;
+
+&lt;p&gt;最大的优点是：数据库的数据发生变化时，可以实时推送到前端，非常适用于实时展示的应用开发。&lt;/p&gt;
+
+&lt;p&gt;在 react,react-native 应用中，可以仅使用同一个 meteor 后台，实时向前端推送数据。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/nusr/meteor&#34;&gt;github 代码地址&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

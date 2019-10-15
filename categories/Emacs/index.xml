@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs on Heal The World</title>
+    <link>https://qingw.github.io/categories/Emacs/</link>
+    <description>Recent content in Emacs on Heal The World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 15 Oct 2019 21:18:31 +0800</lastBuildDate>
+    
+	<atom:link href="https://qingw.github.io/categories/Emacs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2019 10 15 Doom Emacs</title>
+      <link>https://qingw.github.io/post/2019/2019-10-15-doom-emacs/</link>
+      <pubDate>Tue, 15 Oct 2019 21:18:31 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-10-15-doom-emacs/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

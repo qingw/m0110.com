@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Node.js 多版本安装 - Heal The World</title>
+    <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Simon Wang" /><meta name="description" content="Node.js 的版本更新非常快，所有有时需要在多个版本之间切换，就需要安装多个版本的 Node.js." /><meta name="keywords" content="Mac, Github, Vue, React, Front End" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.1 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://qingw.github.io/post/2018/2018-10-01-install-multi-version-nodejs/" />
+<link href="/post/2018/2018-10-01-install-multi-version-nodejs/" rel="alternate" type="application/rss+xml" title="Heal The World" />
+<link href="/post/2018/2018-10-01-install-multi-version-nodejs/" rel="feed" type="application/rss+xml" title="Heal The World" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.06658218.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/reset-even.css">
+
+
+<meta property="og:title" content="Node.js 多版本安装" />
+<meta property="og:description" content="Node.js 的版本更新非常快，所有有时需要在多个版本之间切换，就需要安装多个版本的 Node.js." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qingw.github.io/post/2018/2018-10-01-install-multi-version-nodejs/" />
+<meta property="article:published_time" content="2018-10-01T15:37:44+08:00" />
+<meta property="article:modified_time" content="2018-10-01T15:37:44+08:00" />
+<meta itemprop="name" content="Node.js 多版本安装">
+<meta itemprop="description" content="Node.js 的版本更新非常快，所有有时需要在多个版本之间切换，就需要安装多个版本的 Node.js.">
+
+
+<meta itemprop="datePublished" content="2018-10-01T15:37:44&#43;08:00" />
+<meta itemprop="dateModified" content="2018-10-01T15:37:44&#43;08:00" />
+<meta itemprop="wordCount" content="904">
+
+
+
+<meta itemprop="keywords" content="Node.js," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Node.js 多版本安装"/>
+<meta name="twitter:description" content="Node.js 的版本更新非常快，所有有时需要在多个版本之间切换，就需要安装多个版本的 Node.js."/>
+
+</head>
+<body>
+<div id="mobile-navbar" class="mobile-navbar">
+    <div class="mobile-header-logo">
+        <a href="/" class="logo">Heal The World</a>
+    </div>
+    <div class="mobile-navbar-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+    <ul class="mobile-menu-list">
+        <a href="/">
+            <li class="mobile-menu-item" title="首页">首页</li>
+        </a>
+        <a href="/post/">
+            <li class="mobile-menu-item" title="归档">归档</li>
+        </a>
+        <a href="/categories/">
+            <li class="mobile-menu-item" title="分类">分类</li>
+        </a>
+        <a href="/tags/">
+            <li class="mobile-menu-item" title="标签">标签</li>
+        </a>
+        <a href="/about/">
+            <li class="mobile-menu-item" title="关于我">关于我</li>
+        </a>
+        <a href="https://github.com/qingw/reading-list/">
+            <li class="mobile-menu-item" title="阅读清单">阅读清单</li>
+        </a>
+        
+    </ul>
+    <form class="search-form" style="position: absolute;">
+    <input name="search" type="search" style="height: 28px;padding-left: 30px;"/>
+    <input type="image" src="/img/search.svg" alt="Search" style="position: absolute;left: 6px;top: 6px;"/>
+</form>
+
+
+</nav>
+
+<div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+    <a href="/" class="logo">Heal The World</a>
+</div>
+
+<nav class="site-navbar">
+    <ul id="menu" class="menu" data-sum="0">
+        
+        <li class="menu-item menu-item-home">
+            <a class="menu-item-link" href="/" title="首页">首页</a>
+        </li>
+        
+        <li class="menu-item menu-item-archives">
+            <a class="menu-item-link" href="/post/" title="归档">归档</a>
+        </li>
+        
+        <li class="menu-item menu-item-categories">
+            <a class="menu-item-link" href="/categories/" title="分类">分类</a>
+        </li>
+        
+        <li class="menu-item menu-item-tags">
+            <a class="menu-item-link" href="/tags/" title="标签">标签</a>
+        </li>
+        
+        <li class="menu-item menu-item-about">
+            <a class="menu-item-link" href="/about/" title="关于我">关于我</a>
+        </li>
+        
+        <li class="menu-item menu-item-reading-list">
+            <a class="menu-item-link" href="https://github.com/qingw/reading-list/" title="阅读清单">阅读清单</a>
+        </li>
+        
+    </ul>
+</nav>
+
+        <form class="search-form" style="position: absolute;">
+    <input name="search" type="search" style="height: 28px;padding-left: 30px;"/>
+    <input type="image" src="/img/search.svg" alt="Search" style="position: absolute;left: 6px;top: 6px;"/>
+</form>
+
+
+
+    </header>
+
+
+    <main id="main" class="main">
+        <div class="content-wrapper">
+            <div id="content" class="content">
+                <article class="post">
+  
+  <header class="post-header">
+    <h1 class="post-title">Node.js 多版本安装</h1>
+
+    <div class="post-meta">
+      <span class="post-time"> 2018-10-01 15:37 </span>
+      <div class="post-category">
+        <a href="/categories/%E6%8A%80%E6%9C%AF/"> 技术 </a>
+        </div>
+      <span class="more-meta"> 约 904 字 </span>
+      <span class="more-meta"> 预计阅读 2 分钟 </span>
+      <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+    </div>
+  </header>
+
+  <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#单个-node-js-版本的安装">单个 Node.js 版本的安装</a>
+<ul>
+<li><a href="#windows-安装遇到的坑">windows 安装遇到的坑</a></li>
+</ul></li>
+<li><a href="#多个-node-js-版本的安装">多个 Node.js 版本的安装</a></li>
+<li><a href="#nvm-windows-安装-node-js">nvm-windows 安装 Node.js</a></li>
+<li><a href="#node-js-包管理器">Node.js 包管理器</a>
+<ul>
+<li><a href="#npm-yarn-命令对照表">npm yarn 命令对照表</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-outdated">
+    <div class="hint">
+      <p>【注意】最后更新于 <span class="timeago" datetime="2018-10-01T15:37:44" title="October 1, 2018">October 1, 2018</span>，文中内容可能已过时，请谨慎使用。</p>
+    </div>
+  </div>
+  <div class="post-content">
+    
+
+<p>Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine（Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境）。</p>
+
+<ul>
+<li>Node.js 跨平台，支持 Windows、 Linux、Mac,</li>
+<li>2018.10.8 Node.js 最新版本 10.11.0</li>
+<li>Node.js 的包管理器 npm，是全球最大的开源库生态系统。</li>
+</ul>
+
+<h2 id="单个-node-js-版本的安装">单个 Node.js 版本的安装</h2>
+
+<p>Node.js 单个版本的安装非常简单，根据自己的操作系统，从<a href="https://node.js.org">官网</a>下载安装程序，按照默认安装即可。国外的网站，下载速度较慢，国内有<a href="http://node.js.cn/download/">镜像网站</a>,下载较快。</p>
+
+<h3 id="windows-安装遇到的坑">windows 安装遇到的坑</h3>
+
+<p>使用 npm install 安装包时报错，卸载了 Node.js 重新安装，依然报错</p>
+
+<p><strong>解决方法：安装盘文件系统为 FAT32，改为 NTFS，就可以安装包，不会报错了</strong></p>
+
+<h2 id="多个-node-js-版本的安装">多个 Node.js 版本的安装</h2>
+
+<p>Node.js 的版本更新非常快，所有有时需要在多个版本之间切换，就需要安装多个版本的 Node.js.
+Node.js 多个版本的安装，需要借助相应的工具。 MAC 和 Linux 用户，可以使用以下的安装工具。</p>
+
+<ul>
+<li><a href="https://github.com/creationix/nvm">nvm</a></li>
+<li><a href="https://github.com/tj/n">n</a></li>
+</ul>
+
+<p>我使用的是 windows,上面两种方式都不可以使用，可以使用 <a href="https://github.com/coreybutler/nvm-windows/releases">nvm-windows</a>,下载安装包，按照默认安装即可。</p>
+
+<h2 id="nvm-windows-安装-node-js">nvm-windows 安装 Node.js</h2>
+
+<p>安装 nvm-windows 后，nodejs 依然还没有安装。打开 PowerShell 、 CMD 、 git bash(推荐),在命令行输入 <code>nvm</code> 回车会 nvm 所有可以使用的命令，说说常用的几个命令。</p>
+
+<p><img src="https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104838685-1317602773.png" alt="" /></p>
+
+<p><strong>获取所有可以安装的 Node.js 版本</strong></p>
+
+<p><code>nvm list available</code></p>
+
+<p><img src="https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104855297-1627992804.png" alt="" /></p>
+
+<p><code>LTS</code> 指最新稳定版本，<code>CURRENT</code> 指最新版本，一般安装 <code>LTS</code></p>
+
+<p><strong>安装指定版本的 Node.js</strong></p>
+
+<p><code>nvm install 10.11.0</code></p>
+
+<p><strong>列出所有已经安装的版本</strong></p>
+
+<p><code>nvm list</code></p>
+
+<p><strong>指定当前要使用的 Node.js 版本,只用指定使用的 Node.js 版本后，nodejs 的才真正安装了。</strong></p>
+
+<p><code>nvm use 10.11.0</code></p>
+
+<p><img src="https://img2018.cnblogs.com/blog/1187660/201810/1187660-20181001104913058-1588118055.png" alt="" /></p>
+
+<p><strong>卸载某个 Node.js 版本</strong></p>
+
+<p><code>nvm uninstall 10.11.0</code></p>
+
+<h2 id="node-js-包管理器">Node.js 包管理器</h2>
+
+<p>Node.js 包管理器一览表</p>
+
+<ul>
+<li>npm</li>
+<li>cnpm</li>
+<li>yarn</li>
+</ul>
+
+<p>npm 是 Node.js 自带的包管理器，但是默认下载依赖包的地址是国外服务器，下载速度较慢。使用 npm ,下载包两小时，敲代码 5 分钟。阿里巴巴是 Node.js 前端非常重视 Node.js 的使用，于是，淘宝开发了 cnpm,使用与 npm 一致，默认下载是国内地址，下载速度快得飞起。下载地址<a href="https://npm.taobao.org/">https://npm.taobao.org</a></p>
+
+<p><a href="https://yarnpkg.com/zh-Hans/">yarn</a> 是 facebook 开发的新一代包管理器，主要是解决依赖包的安装问题。支持离线安装依赖包，同时依赖包的安装顺序不会出错。</p>
+
+<h3 id="npm-yarn-命令对照表">npm yarn 命令对照表</h3>
+
+<table>
+<thead>
+<tr>
+<th>npm</th>
+<th>Yarn</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>npm install</td>
+<td>yarn install</td>
+</tr>
+
+<tr>
+<td>(N/A)</td>
+<td>yarn install --flat</td>
+</tr>
+
+<tr>
+<td>(N/A)</td>
+<td>yarn install --har</td>
+</tr>
+
+<tr>
+<td>(N/A)</td>
+<td>yarn install --no-lockfile</td>
+</tr>
+
+<tr>
+<td>(N/A)</td>
+<td>yarn install --pure-lockfile</td>
+</tr>
+
+<tr>
+<td>npm install [package]</td>
+<td>(N/A)</td>
+</tr>
+
+<tr>
+<td>npm install --save [package]</td>
+<td>yarn add [package]</td>
+</tr>
+
+<tr>
+<td>npm install --save-dev [package]</td>
+<td>yarn add [package][--dev/-d]</td>
+</tr>
+
+<tr>
+<td>(N/A)</td>
+<td>yarn add [package][--peer/-p]</td>
+</tr>
+
+<tr>
+<td>npm install --save-optional [package]</td>
+<td>yarn add [package][--optional/-o]</td>
+</tr>
+
+<tr>
+<td>npm install --save-exact [package]</td>
+<td>yarn add [package][--exact/-e]</td>
+</tr>
+
+<tr>
+<td>(N/A)</td>
+<td>yarn add [package][--tilde/-t]</td>
+</tr>
+
+<tr>
+<td>npm install --global [package]</td>
+<td>yarn global add [package]</td>
+</tr>
+
+<tr>
+<td>npm rebuild</td>
+<td>yarn install --force</td>
+</tr>
+
+<tr>
+<td>npm uninstall [package]</td>
+<td>(N/A)</td>
+</tr>
+
+<tr>
+<td>npm uninstall --save [package]</td>
+<td>yarn remove [package]</td>
+</tr>
+
+<tr>
+<td>npm uninstall --save-dev [package]</td>
+<td>yarn remove [package]</td>
+</tr>
+
+<tr>
+<td>npm uninstall --save-optional [package]</td>
+<td>yarn remove [package]</td>
+</tr>
+
+<tr>
+<td>npm cache clean</td>
+<td>yarn cache clean</td>
+</tr>
+
+<tr>
+<td>rm -rf node_modules &amp;&amp; npm install</td>
+<td>yarn upgrade</td>
+</tr>
+</tbody>
+</table>
+
+  </div>
+
+  <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Simon Wang</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2018-10-01 15:37
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a target="_blank" rel="license noopener" href="https://github.com/qingw/m0110.com/blob/master/LICENSE">MIT</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin-simon.jpeg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay-simon.jpeg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+    <div class="post-tags">
+      <a href="/tags/Node.js/">Node.js</a>
+      </div>
+    <nav class="post-nav">
+      <a class="prev" href="/post/2018/2018-10-11-nodejs-seed-downloader/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Node.js 种子下载器</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+      
+    </nav>
+  </footer>
+  <script src="https://utteranc.es/client.js"
+          repo="qingw/m0110.com"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterance.</a></noscript>
+</article>
+            </div>
+            
+
+        </div>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="social-links">
+  <a href="http://www.cnblogs.com/m0110" class="iconfont icon-cnblogs" title="cnblogs" rel="noopener" target="_blank" data-title="cnblogs"> </a>
+  <a href="mailto:qingwuking@gmail.com" class="iconfont icon-email" title="email" rel="noopener" target="_blank" data-title="email"> </a>
+  <a href="https://github.com/qingw" class="iconfont icon-github" title="github" rel="noopener" target="_blank" data-title="github"> </a>
+  <a href="https://juejin.im/user/5da59ad26fb9a04e0762dc7d" class="iconfont icon-juejin" title="juejin" rel="noopener" target="_blank" data-title="juejin"> </a>
+  <a href="https://www.v2ex.com/member/haskeller" class="iconfont icon-v2ex" title="v2ex" rel="noopener" target="_blank" data-title="v2ex"> </a>
+  <a href="https://qingw.github.io/index.xml" type="application/rss+xml" rel="noopener" target="_blank" class="iconfont icon-rss" title="rss"></a>
+
+
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+    <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy;
+    2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Simon Wang</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+    </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOjkYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "zh-CN".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.47f727f4.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150101234-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

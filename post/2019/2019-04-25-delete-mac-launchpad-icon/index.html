@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>解决 Mac launchpad 启动台 Gitter 图标无法删除的问题 - Heal The World</title>
+    <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Simon Wang" /><meta name="description" content="Mac 删除应用非常简单，将应用拖到回收站就删除了。或者进入应用程序文件夹，选中程序，command &#43; delete 就删除了应用，这也是删除文件的快捷键。
+但是，安装 Gitter 后，删除了应用程序，图标一直删除不了。
+我的 Mac 版本是 10.14.4 ，尝试以下方法，均无法删除 Gitter 图标。
+ 拖到回收站删除，无效 长按图标，图标抖动后， Gitter 图标没有出现 X，无效 命令行运行如下命令,无效 " /><meta name="keywords" content="Mac, Github, Vue, React, Front End" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.1 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://qingw.github.io/post/2019/2019-04-25-delete-mac-launchpad-icon/" />
+<link href="/post/2019/2019-04-25-delete-mac-launchpad-icon/" rel="alternate" type="application/rss+xml" title="Heal The World" />
+<link href="/post/2019/2019-04-25-delete-mac-launchpad-icon/" rel="feed" type="application/rss+xml" title="Heal The World" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.06658218.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/reset-even.css">
+
+
+<meta property="og:title" content="解决 Mac launchpad 启动台 Gitter 图标无法删除的问题" />
+<meta property="og:description" content="Mac 删除应用非常简单，将应用拖到回收站就删除了。或者进入应用程序文件夹，选中程序，command &#43; delete 就删除了应用，这也是删除文件的快捷键。
+
+但是，安装 Gitter 后，删除了应用程序，图标一直删除不了。
+
+我的 Mac 版本是 10.14.4 ，尝试以下方法，均无法删除 Gitter 图标。
+
+
+拖到回收站删除，无效
+长按图标，图标抖动后， Gitter 图标没有出现 X，无效
+命令行运行如下命令,无效
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qingw.github.io/post/2019/2019-04-25-delete-mac-launchpad-icon/" />
+<meta property="article:published_time" content="2019-04-25T21:12:56+08:00" />
+<meta property="article:modified_time" content="2019-04-25T21:12:56+08:00" />
+<meta itemprop="name" content="解决 Mac launchpad 启动台 Gitter 图标无法删除的问题">
+<meta itemprop="description" content="Mac 删除应用非常简单，将应用拖到回收站就删除了。或者进入应用程序文件夹，选中程序，command &#43; delete 就删除了应用，这也是删除文件的快捷键。
+
+但是，安装 Gitter 后，删除了应用程序，图标一直删除不了。
+
+我的 Mac 版本是 10.14.4 ，尝试以下方法，均无法删除 Gitter 图标。
+
+
+拖到回收站删除，无效
+长按图标，图标抖动后， Gitter 图标没有出现 X，无效
+命令行运行如下命令,无效
+">
+
+
+<meta itemprop="datePublished" content="2019-04-25T21:12:56&#43;08:00" />
+<meta itemprop="dateModified" content="2019-04-25T21:12:56&#43;08:00" />
+<meta itemprop="wordCount" content="273">
+
+
+
+<meta itemprop="keywords" content="Gitter," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="解决 Mac launchpad 启动台 Gitter 图标无法删除的问题"/>
+<meta name="twitter:description" content="Mac 删除应用非常简单，将应用拖到回收站就删除了。或者进入应用程序文件夹，选中程序，command &#43; delete 就删除了应用，这也是删除文件的快捷键。
+
+但是，安装 Gitter 后，删除了应用程序，图标一直删除不了。
+
+我的 Mac 版本是 10.14.4 ，尝试以下方法，均无法删除 Gitter 图标。
+
+
+拖到回收站删除，无效
+长按图标，图标抖动后， Gitter 图标没有出现 X，无效
+命令行运行如下命令,无效
+"/>
+
+</head>
+<body>
+<div id="mobile-navbar" class="mobile-navbar">
+    <div class="mobile-header-logo">
+        <a href="/" class="logo">Heal The World</a>
+    </div>
+    <div class="mobile-navbar-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+    <ul class="mobile-menu-list">
+        <a href="/">
+            <li class="mobile-menu-item" title="首页">首页</li>
+        </a>
+        <a href="/post/">
+            <li class="mobile-menu-item" title="归档">归档</li>
+        </a>
+        <a href="/categories/">
+            <li class="mobile-menu-item" title="分类">分类</li>
+        </a>
+        <a href="/tags/">
+            <li class="mobile-menu-item" title="标签">标签</li>
+        </a>
+        <a href="/about/">
+            <li class="mobile-menu-item" title="关于我">关于我</li>
+        </a>
+        <a href="https://github.com/qingw/reading-list/">
+            <li class="mobile-menu-item" title="阅读清单">阅读清单</li>
+        </a>
+        
+    </ul>
+    <form class="search-form" style="position: absolute;">
+    <input name="search" type="search" style="height: 28px;padding-left: 30px;"/>
+    <input type="image" src="/img/search.svg" alt="Search" style="position: absolute;left: 6px;top: 6px;"/>
+</form>
+
+
+</nav>
+
+<div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+    <a href="/" class="logo">Heal The World</a>
+</div>
+
+<nav class="site-navbar">
+    <ul id="menu" class="menu" data-sum="0">
+        
+        <li class="menu-item menu-item-home">
+            <a class="menu-item-link" href="/" title="首页">首页</a>
+        </li>
+        
+        <li class="menu-item menu-item-archives">
+            <a class="menu-item-link" href="/post/" title="归档">归档</a>
+        </li>
+        
+        <li class="menu-item menu-item-categories">
+            <a class="menu-item-link" href="/categories/" title="分类">分类</a>
+        </li>
+        
+        <li class="menu-item menu-item-tags">
+            <a class="menu-item-link" href="/tags/" title="标签">标签</a>
+        </li>
+        
+        <li class="menu-item menu-item-about">
+            <a class="menu-item-link" href="/about/" title="关于我">关于我</a>
+        </li>
+        
+        <li class="menu-item menu-item-reading-list">
+            <a class="menu-item-link" href="https://github.com/qingw/reading-list/" title="阅读清单">阅读清单</a>
+        </li>
+        
+    </ul>
+</nav>
+
+        <form class="search-form" style="position: absolute;">
+    <input name="search" type="search" style="height: 28px;padding-left: 30px;"/>
+    <input type="image" src="/img/search.svg" alt="Search" style="position: absolute;left: 6px;top: 6px;"/>
+</form>
+
+
+
+    </header>
+
+
+    <main id="main" class="main">
+        <div class="content-wrapper">
+            <div id="content" class="content">
+                <article class="post">
+  
+  <header class="post-header">
+    <h1 class="post-title">解决 Mac launchpad 启动台 Gitter 图标无法删除的问题</h1>
+
+    <div class="post-meta">
+      <span class="post-time"> 2019-04-25 21:12 </span>
+      <div class="post-category">
+        <a href="/categories/Mac/"> Mac </a>
+        </div>
+      <span class="more-meta"> 约 273 字 </span>
+      <span class="more-meta"> 预计阅读 1 分钟 </span>
+      <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+    </div>
+  </header>
+
+  <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#解决方法">解决方法</a></li>
+<li><a href="#参考">参考</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+  <div class="post-content">
+    <p>Mac 删除应用非常简单，将应用拖到回收站就删除了。或者进入应用程序文件夹，选中程序，<strong>command + delete</strong> 就删除了应用，这也是删除文件的快捷键。</p>
+
+<p>但是，安装 <strong>Gitter</strong> 后，删除了应用程序，图标一直删除不了。</p>
+
+<p>我的 Mac 版本是 10.14.4 ，尝试以下方法，均无法删除 <strong>Gitter</strong> 图标。</p>
+
+<ol>
+<li>拖到回收站删除，无效</li>
+<li>长按图标，图标抖动后， <strong>Gitter</strong> 图标没有出现 <strong>X</strong>，无效</li>
+<li>命令行运行如下命令,无效</li>
+</ol>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">defaults write com.apple.dock ResetLaunchPad -bool true<span class="p">;</span>killall Dock</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="解决方法">解决方法</h2>
+
+<p>最后找到如下命令，成功删除了 <strong>Gitter</strong> 图标。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sqlite3 <span class="k">$(</span>find /private/var/folders <span class="se">\(</span> -name com.apple.dock.launchpad -a -user <span class="nv">$USER</span> <span class="se">\)</span> <span class="m">2</span>&gt; /dev/null<span class="k">)</span>/db/db <span class="s2">&#34;DELETE FROM apps WHERE title=&#39;Gitter&#39;;&#34;</span> <span class="o">&amp;&amp;</span> killall Dock</code></pre></td></tr></table>
+</div>
+</div>
+<p>将命令中 <strong>Gitter</strong> 替换成你要删除的图标名称，大小写敏感，写成 <strong>gitter</strong> 就没有删除成功，名称换成 <strong>Gitter</strong> ，就删除成功了，大功告成。</p>
+
+<h2 id="参考">参考</h2>
+
+<ol>
+<li><a href="https://apple.stackexchange.com/questions/144756/how-to-remove-an-icon-from-launchpad-that-does-not-appear-in-the-finder">https://apple.stackexchange.com/questions/144756/how-to-remove-an-icon-from-launchpad-that-does-not-appear-in-the-finder</a></li>
+</ol>
+
+<blockquote>
+<p>文章首发 <a href="https://nusr.github.io/">https://nusr.github.io/</a></p>
+</blockquote>
+  </div>
+
+  <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">Simon Wang</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-04-25 21:12
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a target="_blank" rel="license noopener" href="https://github.com/qingw/m0110.com/blob/master/LICENSE">MIT</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/weixin-simon.jpeg">
+        <span>微信打赏</span>
+      </label>
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/images/alipay-simon.jpeg">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div><footer class="post-footer">
+    <div class="post-tags">
+      <a href="/tags/Gitter/">Gitter</a>
+      </div>
+    <nav class="post-nav">
+      <a class="prev" href="/post/2019/2019-04-26-creat-hugo-blog/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Hugo &#43; Github Pages 搭建个人博客</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+      <a class="next" href="/post/2019/2019-04-22-meteor-react-react-native/">
+        <span class="next-text nav-default">React 与 React-Native 使用同一个 meteor 后台</span>
+        <span class="next-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav>
+  </footer>
+  <script src="https://utteranc.es/client.js"
+          repo="qingw/m0110.com"
+          issue-term="pathname"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/utterance">comments powered by utterance.</a></noscript>
+</article>
+            </div>
+            
+
+        </div>
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="social-links">
+  <a href="http://www.cnblogs.com/m0110" class="iconfont icon-cnblogs" title="cnblogs" rel="noopener" target="_blank" data-title="cnblogs"> </a>
+  <a href="mailto:qingwuking@gmail.com" class="iconfont icon-email" title="email" rel="noopener" target="_blank" data-title="email"> </a>
+  <a href="https://github.com/qingw" class="iconfont icon-github" title="github" rel="noopener" target="_blank" data-title="github"> </a>
+  <a href="https://juejin.im/user/5da59ad26fb9a04e0762dc7d" class="iconfont icon-juejin" title="juejin" rel="noopener" target="_blank" data-title="juejin"> </a>
+  <a href="https://www.v2ex.com/member/haskeller" class="iconfont icon-v2ex" title="v2ex" rel="noopener" target="_blank" data-title="v2ex"> </a>
+  <a href="https://qingw.github.io/index.xml" type="application/rss+xml" rel="noopener" target="_blank" class="iconfont icon-rss" title="rss"></a>
+
+
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 -
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+    <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy;
+    2017 -
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Simon Wang</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+    </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOjkYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.min.js" integrity="sha256-jwCP0NAdCBloaIWTWHmW4i3snUNMHUNO+jr9rYd2iOI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/timeago.js@3.0.2/dist/timeago.locales.min.js" integrity="sha256-ZwofwC1Lf/faQCzN7nZtfijVV6hSwxjQMwXL4gn9qU8=" crossorigin="anonymous"></script>
+  <script><!-- NOTE: timeago.js uses the language code format like "zh_CN" (underscore and case sensitive) -->
+    var languageCode = "zh-CN".replace(/-/g, '_').replace(/_(.*)/, function ($0, $1) {return $0.replace($1, $1.toUpperCase());});
+    timeago().render(document.querySelectorAll('.timeago'), languageCode);
+    timeago.cancel();  
+  </script>
+<script type="text/javascript" src="/dist/even.47f727f4.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-150101234-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+
+</body>
+</html>

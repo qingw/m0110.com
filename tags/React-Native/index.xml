@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>React-Native on Heal The World</title>
+    <link>https://qingw.github.io/tags/React-Native/</link>
+    <description>Recent content in React-Native on Heal The World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 22 Apr 2019 09:07:06 +0800</lastBuildDate>
+    
+	<atom:link href="https://qingw.github.io/tags/React-Native/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>React 与 React-Native 使用同一个 meteor 后台</title>
+      <link>https://qingw.github.io/post/2019/2019-04-22-meteor-react-react-native/</link>
+      <pubDate>Mon, 22 Apr 2019 09:07:06 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-22-meteor-react-react-native/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.meteor.com/&#34;&gt;meteor&lt;/a&gt; 可以快速构建 pc,移动端，桌面端应用。&lt;/p&gt;
+
+&lt;p&gt;最大的优点是：数据库的数据发生变化时，可以实时推送到前端，非常适用于实时展示的应用开发。&lt;/p&gt;
+
+&lt;p&gt;在 react,react-native 应用中，可以仅使用同一个 meteor 后台，实时向前端推送数据。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/nusr/meteor&#34;&gt;github 代码地址&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>解决 React-Native 在 Mac 下启动报 error code 65</title>
+      <link>https://qingw.github.io/post/2019/2019-04-21-react-native-mac-error/</link>
+      <pubDate>Sun, 21 Apr 2019 16:55:06 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-21-react-native-mac-error/</guid>
+      <description>&lt;p&gt;React-Native 开发的项目，Android 方面没有任何问题，IOS 就是无法跑起来，报错信息如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;error Failed to build iOS project. We ran &lt;span class=&#34;s2&#34;&gt;&amp;#34;xcodebuild&amp;#34;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt; but it exited with error code &lt;span class=&#34;m&#34;&gt;65&lt;/span&gt;. To debug build logs further, consider building your app with Xcode.app, by opening reactNative.xcodeproj&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Mac 版本是 10.14.4 ，xcode 版本是 10.2.1&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gitter on Heal The World</title>
+    <link>https://qingw.github.io/tags/Gitter/</link>
+    <description>Recent content in Gitter on Heal The World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 25 Apr 2019 21:12:56 +0800</lastBuildDate>
+    
+	<atom:link href="https://qingw.github.io/tags/Gitter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>解决 Mac launchpad 启动台 Gitter 图标无法删除的问题</title>
+      <link>https://qingw.github.io/post/2019/2019-04-25-delete-mac-launchpad-icon/</link>
+      <pubDate>Thu, 25 Apr 2019 21:12:56 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-25-delete-mac-launchpad-icon/</guid>
+      <description>&lt;p&gt;Mac 删除应用非常简单，将应用拖到回收站就删除了。或者进入应用程序文件夹，选中程序，&lt;strong&gt;command + delete&lt;/strong&gt; 就删除了应用，这也是删除文件的快捷键。&lt;/p&gt;
+
+&lt;p&gt;但是，安装 &lt;strong&gt;Gitter&lt;/strong&gt; 后，删除了应用程序，图标一直删除不了。&lt;/p&gt;
+
+&lt;p&gt;我的 Mac 版本是 10.14.4 ，尝试以下方法，均无法删除 &lt;strong&gt;Gitter&lt;/strong&gt; 图标。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;拖到回收站删除，无效&lt;/li&gt;
+&lt;li&gt;长按图标，图标抖动后， &lt;strong&gt;Gitter&lt;/strong&gt; 图标没有出现 &lt;strong&gt;X&lt;/strong&gt;，无效&lt;/li&gt;
+&lt;li&gt;命令行运行如下命令,无效&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hacker Laws on Heal The World</title>
+    <link>https://qingw.github.io/tags/Hacker-Laws/</link>
+    <description>Recent content in Hacker Laws on Heal The World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 16 May 2019 13:33:17 +0800</lastBuildDate>
+    
+	<atom:link href="https://qingw.github.io/tags/Hacker-Laws/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>黑客不可不知的定律</title>
+      <link>https://qingw.github.io/post/2019/2019-05-16-hacker-laws-chinese/</link>
+      <pubDate>Thu, 16 May 2019 13:33:17 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-05-16-hacker-laws-chinese/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/dwmkerr/hacker-laws&#34;&gt;hacker-laws&lt;/a&gt; 的的中文翻译。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;对开发人员有用的定律、理论、原则和模式。(Laws, Theories, Principles and Patterns that developers will find useful.)&lt;/p&gt;
+
+&lt;p&gt;为了方便阅读，维基百科增加了中文链接。英文链接表示 &lt;a href=&#34;https://github.com/dwmkerr/hacker-laws&#34;&gt;hacker-laws&lt;/a&gt; 项目尚未完成的主题。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/nusr/hacker-laws-zh&#34;&gt;Github 地址&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

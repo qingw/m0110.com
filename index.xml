@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Heal The World</title>
+    <link>https://qingw.github.io/</link>
+    <description>Recent content on Heal The World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 15 Oct 2019 21:18:31 +0800</lastBuildDate>
+    
+	<atom:link href="https://qingw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2019 10 15 Doom Emacs</title>
+      <link>https://qingw.github.io/post/2019/2019-10-15-doom-emacs/</link>
+      <pubDate>Tue, 15 Oct 2019 21:18:31 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-10-15-doom-emacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>使用 Create-React-App 开发 Chrome 扩展</title>
+      <link>https://qingw.github.io/post/2019/2019-07-07-create-react-app-chrome-extension/</link>
+      <pubDate>Sun, 07 Jul 2019 22:28:34 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-07-07-create-react-app-chrome-extension/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;整理 Kindle 标注、书签和笔记从未如此简单！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Kindle 标注管理应用 &lt;a href=&#34;https://kmate.me/cn/&#34;&gt;Kindle Mate&lt;/a&gt; 只支持 Windows，不支持 Mac。标注只是解析&lt;strong&gt;我的剪贴&lt;/strong&gt;文本文件，配合 &lt;a href=&#34;https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader&#34;&gt;FileReader&lt;/a&gt; API，写个 Chrome 扩展解析文本文件就好了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用 RSS 主动阅读技术博客</title>
+      <link>https://qingw.github.io/post/2019/2019-05-29-use-rss/</link>
+      <pubDate>Wed, 29 May 2019 21:57:13 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-05-29-use-rss/</guid>
+      <description>&lt;p&gt;RSS (Rich Site Summary) 是一种聚合信息的方式。&lt;/p&gt;
+
+&lt;p&gt;微博、今日头条等新闻平台，是一种被动的阅读方式，它推荐给你什么，你就阅读什么，比较被动。&lt;/p&gt;
+
+&lt;p&gt;而 RSS 是一种主动的阅读方式，你订阅了什么，它才向你推送。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>黑客不可不知的定律</title>
+      <link>https://qingw.github.io/post/2019/2019-05-16-hacker-laws-chinese/</link>
+      <pubDate>Thu, 16 May 2019 13:33:17 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-05-16-hacker-laws-chinese/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/dwmkerr/hacker-laws&#34;&gt;hacker-laws&lt;/a&gt; 的的中文翻译。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;对开发人员有用的定律、理论、原则和模式。(Laws, Theories, Principles and Patterns that developers will find useful.)&lt;/p&gt;
+
+&lt;p&gt;为了方便阅读，维基百科增加了中文链接。英文链接表示 &lt;a href=&#34;https://github.com/dwmkerr/hacker-laws&#34;&gt;hacker-laws&lt;/a&gt; 项目尚未完成的主题。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/nusr/hacker-laws-zh&#34;&gt;Github 地址&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>React 状态管理终结篇</title>
+      <link>https://qingw.github.io/post/2019/2019-05-08-react-unstated-next/</link>
+      <pubDate>Wed, 08 May 2019 20:09:06 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-05-08-react-unstated-next/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/jamiebuilds/unstated-next&#34;&gt;Unstated Next&lt;/a&gt; readme 的中文翻译&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;这个库的作者希望使用 React 内置 API ,直接实现状态管理的功能。看完这个库的说明后，没有想到代码可以这个玩。短短几行代码，仅仅使用 React Hooks ，就实现了状态管理的功能。&lt;/p&gt;
+
+&lt;p&gt;看完之后，第一想法就是翻译成中文，分享给其他人。提交 Pull Request 后，库作者将我的翻译合并了。同时作者欢迎将 README 翻译成其他语言，以下是全部翻译内容，不妥之处欢迎指正或 Pull Request.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>utterances 用做博客评论</title>
+      <link>https://qingw.github.io/post/2019/2019-05-04-utterances-introduce/</link>
+      <pubDate>Sat, 04 May 2019 11:10:56 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-05-04-utterances-introduce/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/utterance/utterances&#34;&gt;utterances&lt;/a&gt; 是一款基于 GitHub issues 的评论工具。&lt;/p&gt;
+
+&lt;p&gt;相比同类的工具 gitment、gitalk 以及 disqus 评论工具，优点如下：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;极其轻量&lt;/li&gt;
+&lt;li&gt;加载非常快&lt;/li&gt;
+&lt;li&gt;配置比较简单&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title> Mac OS 版本信息</title>
+      <link>https://qingw.github.io/post/awesome-macos-command-line-zh/glossary/</link>
+      <pubDate>Wed, 01 May 2019 18:24:43 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/awesome-macos-command-line-zh/glossary/</guid>
+      <description>版本 名称 发布日期 最新版本 Rhapsody Developer Release Grail1Z4 / Titan1U August 31, 1997 DR2 (May 14, 1998) Mac OS X Server 1.0 Hera March 16, 1999 1.2v3 (October 27, 2000) Mac OS X Developer Preview n/a March 16, 1999 DP4 (April 5, 2000) Mac OS X Public Beta Kodiak September 13, 2000 n/a Mac OS X 10.0 Cheetah March 24, 2001 10.0.4</description>
+    </item>
+    
+    <item>
+      <title>Awesome Mac OS Command Line</title>
+      <link>https://qingw.github.io/post/awesome-macos-command-line-zh/README/</link>
+      <pubDate>Wed, 01 May 2019 14:25:24 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/awesome-macos-command-line-zh/README/</guid>
+      <description>awesome-macos-command-line 的中文翻译，翻译不妥的地方，欢迎提 issue 或者 pull request 。 翻译本教程，见识了许多没用过的终端命令，加深了对 Mac 的认识。 精心为 OS X 挑选的 shell 命令和工具。 “你</description>
+    </item>
+    
+    <item>
+      <title>Awesome Mac OS Command Line 中文翻译</title>
+      <link>https://qingw.github.io/post/awesome-macos-command-line-zh/entry/</link>
+      <pubDate>Wed, 01 May 2019 14:25:24 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/awesome-macos-command-line-zh/entry/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/herrbischoff/awesome-macos-command-line&#34;&gt;awesome-macos-command-line&lt;/a&gt; 收集了很多有趣的 Mac 终端命令。&lt;/p&gt;
+
+&lt;p&gt;看了一遍后，发现帮助很大。&lt;/p&gt;
+
+&lt;p&gt;见识许多没有使用过的命令，加深了对 Mac 的认识。&lt;/p&gt;
+
+&lt;p&gt;所以翻译成了中文，共享给其他需要使用的人。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/nusr/awesome-macos-command-line-zh&#34;&gt;Github 地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;翻译不妥的地方，欢迎提 issue 或者 pull request 。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>代码片段</title>
+      <link>https://qingw.github.io/post/awesome-macos-command-line-zh/snippets/</link>
+      <pubDate>Wed, 01 May 2019 14:25:24 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/awesome-macos-command-line-zh/snippets/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;各种有用的 Bash 风格命令，可随时复制、粘贴。
+&lt;a href=&#34;https://github.com/nusr/awesome-macos-command-line-zh&#34;&gt;Awesome OS X Command Line&lt;/a&gt; 的一部分。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>函数</title>
+      <link>https://qingw.github.io/post/awesome-macos-command-line-zh/functions/</link>
+      <pubDate>Wed, 01 May 2019 14:25:24 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/awesome-macos-command-line-zh/functions/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;OS X 特定 Bash 风格的好用函数集合。&lt;a href=&#34;https://github.com/nusr/awesome-macos-command-line-zh&#34;&gt;Awesome OS X Command Line&lt;/a&gt; 的一部分。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>自启动服务</title>
+      <link>https://qingw.github.io/post/awesome-macos-command-line-zh/launchagents/</link>
+      <pubDate>Wed, 01 May 2019 14:25:24 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/awesome-macos-command-line-zh/launchagents/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;各种有用的自启动服务例子。 &lt;a href=&#34;https://github.com/nusr/awesome-macos-command-line-zh&#34;&gt;Awesome OS X Command Line&lt;/a&gt; 的一部分
+``&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo &#43; Github Pages 搭建个人博客</title>
+      <link>https://qingw.github.io/post/2019/2019-04-26-creat-hugo-blog/</link>
+      <pubDate>Fri, 26 Apr 2019 13:06:49 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-26-creat-hugo-blog/</guid>
+      <description>&lt;p&gt;尝试过 Hexo 、GatsbyJs、 Vuepress 搭建博客后，对这些工具最大的不满，就是运行速度以及打包速度。&lt;/p&gt;
+
+&lt;p&gt;后来看到 &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; ,号称最快的静态站点生成器后。&lt;/p&gt;
+
+&lt;p&gt;尝试搭建博客，发现不管是运行速度，还是打包速度超级快，果断将个人博客迁移到 Hugo。
+Hugo 官方的定义是：&lt;/p&gt;
+
+&lt;p&gt;Hugo is a fast and modern static site generator written in Go, and designed to make website creation fun again.(Hugo 是使用 Go 编写的快速而现代的静态站点生成器，旨在使网站创建变得有趣。)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>解决 Mac launchpad 启动台 Gitter 图标无法删除的问题</title>
+      <link>https://qingw.github.io/post/2019/2019-04-25-delete-mac-launchpad-icon/</link>
+      <pubDate>Thu, 25 Apr 2019 21:12:56 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-25-delete-mac-launchpad-icon/</guid>
+      <description>&lt;p&gt;Mac 删除应用非常简单，将应用拖到回收站就删除了。或者进入应用程序文件夹，选中程序，&lt;strong&gt;command + delete&lt;/strong&gt; 就删除了应用，这也是删除文件的快捷键。&lt;/p&gt;
+
+&lt;p&gt;但是，安装 &lt;strong&gt;Gitter&lt;/strong&gt; 后，删除了应用程序，图标一直删除不了。&lt;/p&gt;
+
+&lt;p&gt;我的 Mac 版本是 10.14.4 ，尝试以下方法，均无法删除 &lt;strong&gt;Gitter&lt;/strong&gt; 图标。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;拖到回收站删除，无效&lt;/li&gt;
+&lt;li&gt;长按图标，图标抖动后， &lt;strong&gt;Gitter&lt;/strong&gt; 图标没有出现 &lt;strong&gt;X&lt;/strong&gt;，无效&lt;/li&gt;
+&lt;li&gt;命令行运行如下命令,无效&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://qingw.github.io/about/</link>
+      <pubDate>Wed, 24 Apr 2019 22:25:24 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/about/</guid>
+      <description>热爱开源的前端工程师，Kindle 及 RSS 重度用户。</description>
+    </item>
+    
+    <item>
+      <title>React 与 React-Native 使用同一个 meteor 后台</title>
+      <link>https://qingw.github.io/post/2019/2019-04-22-meteor-react-react-native/</link>
+      <pubDate>Mon, 22 Apr 2019 09:07:06 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-22-meteor-react-react-native/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://www.meteor.com/&#34;&gt;meteor&lt;/a&gt; 可以快速构建 pc,移动端，桌面端应用。&lt;/p&gt;
+
+&lt;p&gt;最大的优点是：数据库的数据发生变化时，可以实时推送到前端，非常适用于实时展示的应用开发。&lt;/p&gt;
+
+&lt;p&gt;在 react,react-native 应用中，可以仅使用同一个 meteor 后台，实时向前端推送数据。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/nusr/meteor&#34;&gt;github 代码地址&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>解决 React-Native 在 Mac 下启动报 error code 65</title>
+      <link>https://qingw.github.io/post/2019/2019-04-21-react-native-mac-error/</link>
+      <pubDate>Sun, 21 Apr 2019 16:55:06 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-21-react-native-mac-error/</guid>
+      <description>&lt;p&gt;React-Native 开发的项目，Android 方面没有任何问题，IOS 就是无法跑起来，报错信息如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;error Failed to build iOS project. We ran &lt;span class=&#34;s2&#34;&gt;&amp;#34;xcodebuild&amp;#34;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;command&lt;/span&gt; but it exited with error code &lt;span class=&#34;m&#34;&gt;65&lt;/span&gt;. To debug build logs further, consider building your app with Xcode.app, by opening reactNative.xcodeproj&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Mac 版本是 10.14.4 ，xcode 版本是 10.2.1&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>一行命令更新所有 npm 依赖包</title>
+      <link>https://qingw.github.io/post/2019/2019-04-21-update-all-npm-package/</link>
+      <pubDate>Sun, 21 Apr 2019 12:55:27 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-21-update-all-npm-package/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;npm&lt;/strong&gt; 包的更新速度很快，为了将项目或者全局依赖更新到最新版本。传统的做法是一个一个更新，比如更新 &lt;strong&gt;react&lt;/strong&gt; 到最新版本，命令如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# npm&lt;/span&gt;
+npm i --save react@latest
+&lt;span class=&#34;c1&#34;&gt;# yarn&lt;/span&gt;
+yarn add react@latest&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;yarn&lt;/strong&gt; 是 facebook 发明的新一代 js 包管理器，支持离线使用。&lt;a href=&#34;https://yarnpkg.com/zh-Hans/docs/migrating-from-npm&#34;&gt;这是 npm 与 yarn 的 命令对照&lt;/a&gt;。
+但是，这种做法相当耗时。有没有更简单的方法呢？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>vue cli 3.x 项目部署到 github pages</title>
+      <link>https://qingw.github.io/post/2019/2019-04-16-vue-cli-github-pages/</link>
+      <pubDate>Tue, 16 Apr 2019 21:20:39 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-16-vue-cli-github-pages/</guid>
+      <description>&lt;p&gt;github pages 是 github 免费为用户提供的服务，写博客，或者部署一些纯静态项目。&lt;/p&gt;
+
+&lt;p&gt;最近将 vue cli 3.x 初始化项目部署到 github pages，踩了一些坑，记录如下。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>解决 mac HomeBrew 下载缓慢的问题</title>
+      <link>https://qingw.github.io/post/2019/2019-04-13-mac-homebrew/</link>
+      <pubDate>Sat, 13 Apr 2019 15:57:25 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-13-mac-homebrew/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;文章首发 &lt;a href=&#34;https://nusr.github.io/&#34;&gt;https://nusr.github.io/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;为了更好的管理安装的程序开发包，使用包管理器是最方便的。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;macOS&lt;/strong&gt; 自身不提供包管理器，常用的包管理器有&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://brew.sh/&#34;&gt;HomeBrew&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.macports.org/&#34;&gt;MacPorts&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;MacPorts&lt;/strong&gt; 第一次使用要 build 整个基本库，编译时间很长。优点是不怎么依赖系统，更新 &lt;strong&gt;macOS&lt;/strong&gt; 不会破坏现有的包，以及可以使用所有的开源包。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;HomeBrew&lt;/strong&gt; 尽量使用系统现有的库，减少编译时间，安装简单。缺点是与系统紧密相连。&lt;/p&gt;
+
+&lt;p&gt;简单优先原则，使用了 &lt;strong&gt;HomeBrew&lt;/strong&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>解决 mac 10.14.4 无法 sublime text 3207 安装 Package Control,以及安装第三方包报错 `Package Control There are no packages available for installation`</title>
+      <link>https://qingw.github.io/post/2019/2019-04-13-mac-sublime/</link>
+      <pubDate>Sat, 13 Apr 2019 14:58:13 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-13-mac-sublime/</guid>
+      <description>&lt;p&gt;下载最新的 sublime text 3207，无法安装 &lt;strong&gt;Package Control&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;根据&lt;a href=&#34;https://packagecontrol.io/installation&#34;&gt;官方提示&lt;/a&gt;，手动安装 &lt;strong&gt;Package Control&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;手动安装 &lt;strong&gt;Package Control&lt;/strong&gt; 后，无法安装第三方包。&lt;/p&gt;
+
+&lt;p&gt;一顿搜索以后，发现配置代理就可以解决这个问题。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title> @vue/cli 3.0 使用 svg-sprite-loader 加载本地 SVG 文件</title>
+      <link>https://qingw.github.io/post/2019/2019-04-03-vue-cli-svg-symbol/</link>
+      <pubDate>Wed, 03 Apr 2019 16:34:59 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-04-03-vue-cli-svg-symbol/</guid>
+      <description>&lt;p&gt;Vue 脚手架升级 3.0，项目也随之升级。&lt;a href=&#34;https://cli.vuejs.org/&#34;&gt;Vue cli 3.0&lt;/a&gt; 使用 svg-symbol(svg 雪碧图)，整个 &lt;a href=&#34;https://www.iconfont.cn&#34;&gt;iconfont&lt;/a&gt; 的图标库为你所用，加快开发速度。Ant-Design 也使用这种方式引入图标。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Leetcode 题解</title>
+      <link>https://qingw.github.io/post/2019/2019-01-31-leetcode-solutions/</link>
+      <pubDate>Thu, 31 Jan 2019 17:12:18 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-01-31-leetcode-solutions/</guid>
+      <description>&lt;p align=&#34;center&#34;&gt;&lt;img width=&#34;300&#34; src=&#34;https://raw.githubusercontent.com/Ma63d/leetcode-spider/master/img/site-logo.png&#34;&gt;&lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt;
+    &lt;img src=&#34;https://img.shields.io/badge/Solved/Total(Locked)-104/957(162)-green.svg?style=flat-square&#34; alt=&#34;&#34;&gt;
+    &lt;img src=&#34;https://img.shields.io/badge/Hard-1-blue.svg?style=flat-square&#34; alt=&#34;&#34;&gt;
+    &lt;img src=&#34;https://img.shields.io/badge/Medium-11-blue.svg?style=flat-square&#34; alt=&#34;&#34;&gt;
+    &lt;img src=&#34;https://img.shields.io/badge/Easy-92-blue.svg?style=flat-square&#34; alt=&#34;&#34;&gt;
+&lt;/p&gt;
+&lt;h3 align=&#34;center&#34;&gt;Leetcode Solutions&lt;/h3&gt;
+
+&lt;p align=&#34;center&#34;&gt;
+    &lt;b&gt;Language: javascript c mysql&lt;/b&gt;
+    &lt;br&gt;
+    &lt;b&gt;Last updated: 2019-01-04&lt;/b&gt;
+    &lt;br&gt;
+    &lt;a href=&#34;https://github.com/nusr/leetcode&#34;&gt;https://github.com/nusr/leetcode&lt;/a&gt;
+    &lt;br&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>我为什么推荐你使用kindle</title>
+      <link>https://qingw.github.io/post/2019/2019-01-31-why-I-recommend-you-to-use-kindle/</link>
+      <pubDate>Thu, 31 Jan 2019 15:30:21 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2019/2019-01-31-why-I-recommend-you-to-use-kindle/</guid>
+      <description>&lt;p&gt;使用 kindle 电子书的优点如下&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;搬家不用搬纸书&lt;/li&gt;
+&lt;li&gt;随时可以切换书本看&lt;/li&gt;
+&lt;li&gt;待机时间长，一般一个月充一次电&lt;/li&gt;
+&lt;li&gt;泡面盖&lt;/li&gt;
+&lt;li&gt;只能用来阅读，其他电子设备，如手机，IPAD 会打扰阅读&lt;/li&gt;
+&lt;li&gt;看英文书易于查单词&lt;/li&gt;
+&lt;li&gt;笔记易电子化&lt;/li&gt;
+&lt;li&gt;墨水屏，能带来纸书的阅读体验&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>Node.js 种子下载器</title>
+      <link>https://qingw.github.io/post/2018/2018-10-11-nodejs-seed-downloader/</link>
+      <pubDate>Thu, 11 Oct 2018 12:58:44 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2018/2018-10-11-nodejs-seed-downloader/</guid>
+      <description>&lt;p&gt;庆祝 2018 国庆，制作了一个 &lt;code&gt;Node.js&lt;/code&gt; 的种子下载器。爬取页面，根据页面的链接，破解另外一个网站，下载种子文件。项目比较简单，爬取页面没有使用任何爬虫框架。&lt;a href=&#34;https://github.com/nusr/FBIWarning&#34;&gt;项目源码&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Node.js 多版本安装</title>
+      <link>https://qingw.github.io/post/2018/2018-10-01-install-multi-version-nodejs/</link>
+      <pubDate>Mon, 01 Oct 2018 15:37:44 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2018/2018-10-01-install-multi-version-nodejs/</guid>
+      <description>Node.js® is a JavaScript runtime built on Chrome&#39;s V8 JavaScript engine（Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境）。 Node.js 跨平台，支持 Windows、 Linux、M</description>
+    </item>
+    
+  </channel>
+</rss>

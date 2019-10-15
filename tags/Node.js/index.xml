@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Node.js on Heal The World</title>
+    <link>https://qingw.github.io/tags/Node.js/</link>
+    <description>Recent content in Node.js on Heal The World</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 11 Oct 2018 12:58:44 +0800</lastBuildDate>
+    
+	<atom:link href="https://qingw.github.io/tags/Node.js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Node.js 种子下载器</title>
+      <link>https://qingw.github.io/post/2018/2018-10-11-nodejs-seed-downloader/</link>
+      <pubDate>Thu, 11 Oct 2018 12:58:44 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2018/2018-10-11-nodejs-seed-downloader/</guid>
+      <description>&lt;p&gt;庆祝 2018 国庆，制作了一个 &lt;code&gt;Node.js&lt;/code&gt; 的种子下载器。爬取页面，根据页面的链接，破解另外一个网站，下载种子文件。项目比较简单，爬取页面没有使用任何爬虫框架。&lt;a href=&#34;https://github.com/nusr/FBIWarning&#34;&gt;项目源码&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Node.js 多版本安装</title>
+      <link>https://qingw.github.io/post/2018/2018-10-01-install-multi-version-nodejs/</link>
+      <pubDate>Mon, 01 Oct 2018 15:37:44 +0800</pubDate>
+      
+      <guid>https://qingw.github.io/post/2018/2018-10-01-install-multi-version-nodejs/</guid>
+      <description>Node.js® is a JavaScript runtime built on Chrome&#39;s V8 JavaScript engine（Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境）。 Node.js 跨平台，支持 Windows、 Linux、M</description>
+    </item>
+    
+  </channel>
+</rss>
